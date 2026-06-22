@@ -297,6 +297,26 @@ section { padding: 72px 0; }
 }
 .dedication .ico-heart { width: 17px; height: 17px; vertical-align: -2px; margin-left: 4px; }
 
+/* ---------- Aşağı çekince yenileme (pull-to-refresh) ---------- */
+.ptr-indicator {
+  position: fixed; top: 0; left: 50%;
+  transform: translateX(-50%) translateY(-60px);
+  z-index: 300; opacity: 0; pointer-events: none;
+  transition: opacity .2s ease;
+}
+.ptr-indicator.ptr-snap,
+.ptr-indicator.ptr-refreshing {
+  transition: transform .4s cubic-bezier(.2,.8,.2,1), opacity .35s ease;
+}
+.ptr-circle {
+  width: 46px; height: 46px; border-radius: 13px; overflow: hidden;
+  box-shadow: 0 6px 20px rgba(44,36,28,.30);
+  transition: transform .12s linear;
+}
+.ptr-circle svg { width: 100%; height: 100%; display: block; }
+.ptr-indicator.ptr-refreshing .ptr-circle { animation: ptr-spin .7s linear infinite; }
+@keyframes ptr-spin { to { transform: rotate(360deg); } }
+
 /* ---------- Footer ---------- */
 .footer { background: #2c241c; color: #d8cdbb; padding: 56px 0 28px; margin-top: 0; }
 .footer a { color: #e8c79a; }
