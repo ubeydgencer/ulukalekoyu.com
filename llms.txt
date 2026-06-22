@@ -44,6 +44,7 @@ kerpiç evler ve tarihî konaklar (sivil mimari), dut bahçeleri.
 - [Ana Sayfa](https://ulukalekoyu.com/): Köyün genel tanıtımı ve arşive giriş.
 - [Tarih](https://ulukalekoyu.com/tarih.html): Demir Çağı'ndan bugüne zaman çizelgesi.
 - [Tarihi Yapılar](https://ulukalekoyu.com/mimari.html): Mimari eserlerin belgelenmesi ve fotoğrafları.
+- [Ulukale Dutu](https://ulukalekoyu.com/dut.html): Coğrafi işaretli endemik dut; özellikleri, hasat, ürünler, ekonomi, köylü sözleri.
 - [Fotoğraf Arşivi](https://ulukalekoyu.com/arsiv.html): Eski ve yeni fotoğraflar.
 - [Hafıza / Sözlü Tarih](https://ulukalekoyu.com/hafiza.html): Anılar, hane hikâyeleri, gelenekler; katkı formu.
 - [Ulusal Basın](https://ulukalekoyu.com/basin.html): Ulukale'nin ulusal basında yer aldığı haberlerin derlemesi (tarih, coğrafi işaretli dut, hafıza).
@@ -51,9 +52,19 @@ kerpiç evler ve tarihî konaklar (sivil mimari), dut bahçeleri.
 
 ## Ekonomi: Ulukale Dutu
 
-Ulukale, **coğrafi işaretli "Ulukale dutu"** ile tanınır. Yılda yaklaşık **400 ton** üretilir;
-yalnızca hayvan gübresiyle organik olarak yetiştirilir ve dutların yaklaşık %70'i dalında kurur.
-Hollanda, Almanya, Belçika ve Fransa gibi ülkelere ihraç edilir. Köyün başlıca geçim kaynağıdır.
+Ulukale, **coğrafi işaretli / organik tescilli "Ulukale dutu"** ile tanınır (tescil yılı/numarası
+kaynaklarda belirtilmemiştir). Vadiye özgü **endemik** bir meyvedir: vadi dışına dikildiğinde aynı
+renk ve aromayı vermez. **Çekirdeksizdir**, kaliteli olanı beyaz–altın sarısı renktedir. Bazı dut
+ağaçlarının **500–1000 yıllık** olduğu tahmin edilir.
+
+Taze değil **kurutmalık** yetiştirilir; "**dalında kuruma**" yöntemiyle, olgunlaşan dutlar dalında
+kuruyup kendiliğinden dökülür. Hasat Mayıs sonu/Haziran'dan Temmuz'a, ~**40 gün** sürer; serme,
+eleme ve temizleme işleri büyük ölçüde **kadınlar** tarafından yapılır.
+
+Ürünler: çerezlik kuru dut, dut pekmezi, orcik (köme), pestil. Ulukale ve Bozağaç köylerinde
+~1500–2000 dekar alanda, uygun yıllarda **400–500 ton** hasat alınır; **225 üretici aile** geçimini
+sağlar. Almanya, Belçika, Lüksemburg, İspanya ve ABD'ye ihraç edilir. (Kaynaklar: TRT Belgesel, İHA,
+Çemişgezek Belediyesi, T.C. Tarım ve Orman Bakanlığı yayını, gazetedetay.)
 
 ## Kaynaklar
 
