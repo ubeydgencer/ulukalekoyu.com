@@ -1,7 +1,0 @@
-{"ts":"2026-06-22T11:40:19.061Z","cmd":"goto","args":"http://localhost:8765/","origin":"http://localhost:8765/","durationMs":286,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-06-22T11:40:19.100Z","cmd":"viewport","args":"1280x900","origin":"http://localhost:8765/","durationMs":2,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-06-22T11:40:19.586Z","cmd":"screenshot","args":"/tmp/ulukale_home.png","origin":"http://localhost:8765/","durationMs":449,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-06-22T11:40:19.616Z","cmd":"console","args":"--errors","origin":"http://localhost:8765/","durationMs":1,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-06-22T11:40:19.651Z","cmd":"goto","args":"http://localhost:8765/tarih.html","origin":"http://localhost:8765/tarih.html","durationMs":6,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-06-22T11:40:19.877Z","cmd":"screenshot","args":"/tmp/ulukale_tarih.png","origin":"http://localhost:8765/tarih.html","durationMs":192,"status":"ok","hasCookies":false,"mode":"launched"}
-{"ts":"2026-06-22T11:40:20.334Z","cmd":"responsive","args":"/tmp/ulukale_resp","origin":"http://localhost:8765/tarih.html","durationMs":425,"status":"ok","hasCookies":false,"mode":"launched"}

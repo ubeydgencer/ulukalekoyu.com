@@ -10,3 +10,6 @@
 
 # Logs
 *.log
+
+# gstack browse logs
+.gstack/
