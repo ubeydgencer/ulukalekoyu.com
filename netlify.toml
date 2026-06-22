@@ -34,6 +34,14 @@
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
 
+# netlify.app alt alan adını birincil domaine kalıcı yönlendir (301)
+# Böylece ulukale.netlify.app'e gelen herkes ulukalekoyu.com'a düşer.
+[[redirects]]
+  from = "https://ulukale.netlify.app/*"
+  to = "https://ulukalekoyu.com/:splat"
+  status = 301
+  force = true
+
 # Form gönderiminden sonra teşekkür sayfası
 [[redirects]]
   from = "/tesekkurler"
