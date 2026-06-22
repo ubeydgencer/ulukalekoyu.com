@@ -264,6 +264,24 @@ section { padding: 72px 0; }
   padding: 14px 18px; font-size: 0.92rem; color: var(--ink-soft);
 }
 
+/* ---------- Basın listesi ---------- */
+.press-list { display: grid; gap: 18px; }
+.press-item {
+  display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 22px 24px; box-shadow: 0 1px 2px var(--shadow);
+  transition: transform .18s ease, box-shadow .18s ease; text-decoration: none;
+}
+.press-item:hover { transform: translateY(-3px); box-shadow: 0 10px 24px var(--shadow); text-decoration: none; }
+.press-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 10px; }
+.press-outlet {
+  background: rgba(169,84,45,0.10); color: var(--kerpic-dark); font-weight: 700;
+  font-size: 0.78rem; letter-spacing: 0.4px; padding: 4px 11px; border-radius: 100px;
+}
+.press-date { font-size: 0.82rem; color: var(--ink-soft); }
+.press-item h3 { font-size: 1.22rem; margin: 0 0 8px; color: var(--ink); }
+.press-item p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
+.press-item .read { display: inline-block; margin-top: 12px; font-size: 0.85rem; color: var(--kerpic-dark); font-weight: 600; }
+
 /* ---------- İthaf ---------- */
 .dedication { text-align: center; }
 .dedication .ded-kicker {
