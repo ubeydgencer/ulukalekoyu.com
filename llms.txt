@@ -11,6 +11,7 @@ kaynaklara dayanır (bkz. "Kaynaklar").
 ## Temel Bilgiler
 
 - **Adı:** Ulukale (Ulukale Köyü)
+- **Tarihsel adı:** Xozan (Hozan, Ermenice Խozán). Yöre, tarihsel Sophene (Dzopk) bölgesindedir. Ermeni kaynaklarında (Asoğik, Urfalı Mateos) Xozan kasabası ve burada yapılan büyük bir kiliseden söz edilir. Kaynak: Sevan Nişanyan, Nişanyan Yeradları / Türkiye'nin Ermeni Coğrafyası; Eprigyan c. II (1907).
 - **İl:** Tunceli (tarihsel/yöresel adıyla Dersim)
 - **İlçe:** Çemişgezek
 - **Konum:** Çemişgezek ilçe merkezine ~30 km, Tunceli il merkezine ~93 km uzaklıkta
