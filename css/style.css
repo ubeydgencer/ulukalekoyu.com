@@ -118,7 +118,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.2
 }
 .hero--photo::after { display: none; }
 
-.hero-inner { position: relative; z-index: 2; padding: 48px 0 56px; }
+.hero-inner { position: relative; z-index: 2; padding-top: 48px; padding-bottom: 56px; }
 .hero .eyebrow {
   display: inline-block; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;
   color: #f0d9b8; border: 1px solid rgba(247,239,224,0.4); padding: 5px 12px; border-radius: 100px;
@@ -345,7 +345,7 @@ section { padding: 72px 0; }
   .section-tight { padding: 34px 0; }
   .section-head { margin-bottom: 26px; }
   .page-hero { padding: 40px 0 32px; }
-  .hero-inner { padding: 40px 0 44px; }
+  .hero-inner { padding-top: 40px; padding-bottom: 44px; }
 
   /* Kutucukların iç boşlukları eşitlendi */
   .card { padding: 22px; }
