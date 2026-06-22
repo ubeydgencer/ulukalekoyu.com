@@ -312,10 +312,36 @@ section { padding: 72px 0; }
   .feature-row, .feature-row.rev { grid-template-columns: 1fr; }
   .footer .cols { grid-template-columns: 1fr; gap: 28px; }
 }
-@media (max-width: 540px) {
+@media (max-width: 600px) {
   body { font-size: 17px; }
+
+  /* Tüm sayfada tutarlı kenar boşluğu */
+  .container { padding: 0 20px; }
+
+  /* Tek sütun yerleşim */
   .grid-3, .grid-2, .gallery { grid-template-columns: 1fr; }
-  .stats { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 20px 12px; }
+
+  /* Düzenli dikey ritim */
+  section { padding: 46px 0; }
+  .section-tight { padding: 34px 0; }
+  .section-head { margin-bottom: 26px; }
+  .page-hero { padding: 40px 0 32px; }
+  .hero-inner { padding: 40px 0 44px; }
+
+  /* Kutucukların iç boşlukları eşitlendi */
+  .card { padding: 22px; }
+  .memory { padding: 22px 20px; }
+  .form { padding: 22px; }
   .cta { padding: 32px 22px; }
-  section { padding: 52px 0; }
+  .note { padding: 14px 16px; }
+
+  /* Zaman çizelgesi: aşırı sol girinti azaltıldı */
+  .timeline { padding-left: 0; }
+  .timeline::before { left: 7px; }
+  .tl-item { padding-left: 34px; padding-bottom: 32px; }
+  .tl-item::before { left: 0; width: 16px; height: 16px; }
+
+  /* Geniş galeri karesi tek sütunda normale dönsün */
+  .gallery .frame[style*="span 2"] { grid-column: 1 !important; aspect-ratio: 4 / 3 !important; }
 }
