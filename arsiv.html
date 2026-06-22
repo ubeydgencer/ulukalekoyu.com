@@ -4,11 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fotoğraf Arşivi — Ulukale Köyü Dijital Arşivi</title>
-<meta name="description" content="Ulukale köyünün dünden bugüne fotoğraf arşivi. Eski albümlerden gelen kareler ve köyün mevsimleri.">
+<meta name="description" content="Ulukale köyünün dünden bugüne fotoğraf arşivi. Eski albümlerden gelen kareler, tarihi yapılar ve köyün bugünkü hali.">
+<meta name="author" content="Ubeyd Gençer">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://ulukalekoyu.com/arsiv.html">
+<meta name="theme-color" content="#a9542d">
+
+<meta property="og:site_name" content="Ulukale Köyü Dijital Arşivi">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ulukalekoyu.com/arsiv.html">
+<meta property="og:title" content="Fotoğraf Arşivi — Ulukale Köyü">
+<meta property="og:description" content="Köyün dünden bugüne fotoğrafları — eski albümler ve tarihi yapılar.">
+<meta property="og:image" content="https://ulukalekoyu.com/images/koy-eski.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fotoğraf Arşivi — Ulukale Köyü">
+<meta name="twitter:description" content="Köyün dünden bugüne fotoğrafları.">
+<meta name="twitter:image" content="https://ulukalekoyu.com/images/koy-eski.jpg">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ImageGallery",
+      "name": "Ulukale Köyü Fotoğraf Arşivi",
+      "description": "Ulukale köyünün eski ve yeni fotoğrafları.",
+      "inLanguage": "tr",
+      "about": { "@type": "Place", "name": "Ulukale Köyü", "@id": "https://ulukalekoyu.com/#place" },
+      "mainEntityOfPage": "https://ulukalekoyu.com/arsiv.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://ulukalekoyu.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Fotoğraf Arşivi", "item": "https://ulukalekoyu.com/arsiv.html" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -17,7 +62,7 @@
     <a href="index.html" class="brand" style="text-decoration:none">
       <span class="mark">Ulukale</span><span class="sub">Köy Arşivi</span>
     </a>
-    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav').classList.toggle('open')"><svg class="ico" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
     <nav class="nav">
       <a href="index.html">Ana Sayfa</a>
       <a href="tarih.html">Tarih</a>
@@ -34,7 +79,7 @@
     <div class="crumbs"><a href="index.html">Ana Sayfa</a> · Fotoğraf Arşivi</div>
     <span class="kicker">Dünden Bugüne</span>
     <h1>Fotoğraf Arşivi</h1>
-    <p>Bir köyün hafızası en çok fotoğraflarda saklanır. Bu sayfa, eski albümlerden çıkan siyah-beyaz kareleri ve köyün bugünkü mevsimlerini bir araya getirmek için ayrıldı. Aşağıdaki çerçeveler, sizin paylaşacağınız fotoğraflarla dolacak.</p>
+    <p>Bir köyün hafızası en çok fotoğraflarda saklanır. Bu sayfa, eski albümlerden çıkan kareleri ve köyün bugünkü hâlini bir araya getiriyor. Boş çerçeveler, sizin paylaşacağınız fotoğraflarla dolacak.</p>
   </div>
 </section>
 
@@ -48,14 +93,13 @@
     </div>
     <div class="gallery">
       <div class="frame" style="grid-column: span 2; aspect-ratio: 16/9;"><img src="images/koy-eski.jpg" alt="Ulukale köyünün eski hali — minare ve harman yeri"><div class="cap">Ulukale, eski yıllar — minare, kerpiç evler ve harman yeri</div></div>
-      <div class="frame"><div class="ph"><span class="em">🖼️</span><small>Eski fotoğraf<br>eklenecek</small></div></div>
-      <div class="frame"><div class="ph"><span class="em">🖼️</span><small>Eski fotoğraf<br>eklenecek</small></div></div>
-      <div class="frame"><div class="ph"><span class="em">🖼️</span><small>Eski fotoğraf<br>eklenecek</small></div></div>
+      <div class="frame"><img src="images/koy-eski-2.jpg" alt="Ulukale köyü, kayalık dağ eteğinde eski görünüm"><div class="cap">Kayalık dağ eteğinde köy</div></div>
+      <div class="frame"><div class="ph"><svg class="ico-ph" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5L5 21"/></svg><br><small>Sizin eski<br>fotoğrafınız</small></div></div>
     </div>
   </div>
 </section>
 
-<!-- Köyün mevsimleri -->
+<!-- Köyün yapıları ve bugünü -->
 <section class="alt-bg">
   <div class="container">
     <div class="section-head">
@@ -111,8 +155,8 @@
       </div>
     </div>
     <div class="bottom">
-      <span>© <span id="yil"></span> ulukalekoyu.com — Gönüllü köy arşivi</span>
-      <span>Sevgiyle hazırlandı 🤎</span>
+      <span>© <span id="yil"></span> ulukalekoyu.com — Ubeyd Gençer</span>
+      <span>Ziya Gençer'in aziz hatırasına <svg class="ico-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.7-9.2C.9 8.6 2.4 5 6 5c2 0 3.2 1.1 4 2.3C10.8 6.1 12 5 14 5c3.6 0 5.1 3.6 3.7 6.8C19.5 16.3 12 21 12 21z"/></svg></span>
     </div>
   </div>
 </footer>

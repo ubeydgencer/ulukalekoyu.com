@@ -1,0 +1,15 @@
+/* TAKIM */
+Proje: Ulukale Köyü Dijital Arşivi
+Konum: Çemişgezek, Tunceli (Dersim), Türkiye
+İletişim: https://ulukalekoyu.com/iletisim.html
+
+/* HAKKINDA */
+Ulukale köyünün ~3000 yıllık tarihini, mimarisini ve hafızasını
+gelecek kuşaklara aktarmak için kurulmuş bağımsız, gönüllü bir arşiv.
+
+/* TEKNOLOJİ */
+Bağımlılıksız statik site — HTML5, CSS3.
+Barındırma: Netlify. Yazı tipleri: Fraunces, Lora.
+
+/* TEŞEKKÜR */
+Köyün hafızasını paylaşan herkese.

@@ -18,6 +18,22 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000"
 
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Arama/AI botları için doğru içerik tipleri
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+
 # Form gönderiminden sonra teşekkür sayfası
 [[redirects]]
   from = "/tesekkurler"

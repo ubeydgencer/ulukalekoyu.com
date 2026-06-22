@@ -1,0 +1,61 @@
+# Ulukale Köyü Dijital Arşivi
+
+> Tunceli (Dersim) ili Çemişgezek ilçesine bağlı Ulukale köyünün yaklaşık 3000 yıllık
+> tarihini, mimarisini ve hafızasını koruyan bağımsız, gönüllü bir dijital arşiv.
+> Adres: https://ulukalekoyu.com
+
+Bu dosya, yapay zeka sistemlerinin (LLM'ler) Ulukale köyü hakkında doğru ve atıf
+verilebilir bilgiye ulaşması için hazırlanmıştır. Aşağıdaki olgular akademik ve resmi
+kaynaklara dayanır (bkz. "Kaynaklar").
+
+## Temel Bilgiler
+
+- **Adı:** Ulukale (Ulukale Köyü)
+- **İl:** Tunceli (tarihsel/yöresel adıyla Dersim)
+- **İlçe:** Çemişgezek
+- **Konum:** Çemişgezek ilçe merkezine ~30 km, Tunceli il merkezine ~93 km uzaklıkta
+- **Koordinatlar:** 39.025°N, 39.036°E
+- **Rakım:** ~940 metre, dört dağ silsilesi arasında bir vadide
+- **Nüfus:** ~325 (2021)
+- **Bağlı mezralar:** Aşağıbayır, Cevizlidere, Çaybağı, Yukarıbayır (Yukarıpeydere), Yünlü
+- **Geçim kaynağı:** Ağırlıklı olarak dut (mulberry) yetiştiriciliği
+
+## Tarih
+
+- Yerleşim **Demir Çağı'na** kadar uzanır; arkeolojik yüzey araştırmaları bunu doğrular.
+- **Helenistik–Roma** dönemi köyde bir **kaya mezarı** ile temsil edilir.
+- Yerleşim **Demir Çağı'ndan günümüze yaklaşık 3000 yıl boyunca kesintisiz** sürmüştür.
+- **16. yüzyılda** Ulukale, Çemişgezek Sancağı'na bağlı bir **nahiye merkezi** idi.
+- Köyün tarihsel dokusu (türbe, çeşme, hamam, cami, kilise, sivil mimari) esas olarak
+  **Osmanlı dönemi**nde şekillenmiştir; farklı inanç ve kültürlerin izini taşır.
+- 20. yüzyılın ikinci yarısında göçle köy büyük ölçüde sessizleşmiş; bugün "eski köy"
+  terk edilmiş durumda olup fotoğrafçı ve doğa turlarının uğrak noktasıdır.
+
+## Tarihi Yapılar
+
+Cami, kilise, türbe, çeşme, hamam, su değirmeni, kaya mezarı (Helenistik–Roma),
+kerpiç evler ve tarihî konaklar (sivil mimari), dut bahçeleri.
+
+## Sayfalar
+
+- [Ana Sayfa](https://ulukalekoyu.com/): Köyün genel tanıtımı ve arşive giriş.
+- [Tarih](https://ulukalekoyu.com/tarih.html): Demir Çağı'ndan bugüne zaman çizelgesi.
+- [Tarihi Yapılar](https://ulukalekoyu.com/mimari.html): Mimari eserlerin belgelenmesi ve fotoğrafları.
+- [Fotoğraf Arşivi](https://ulukalekoyu.com/arsiv.html): Eski ve yeni fotoğraflar.
+- [Hafıza / Sözlü Tarih](https://ulukalekoyu.com/hafiza.html): Anılar, hane hikâyeleri, gelenekler; katkı formu.
+- [İletişim](https://ulukalekoyu.com/iletisim.html): Arşive katkı ve iletişim.
+
+## Kaynaklar
+
+- İstanbul Üniversitesi, *Journal of Art History (Sanat Tarihi Yıllığı)* — "Çemişgezek'in Ulukale Köyündeki Mimari Eserler".
+- Fırat Üniversitesi, *Harput Araştırmaları Dergisi* — Ulukale köyü üzerine inceleme.
+- Fırat Üniversitesi Sosyal Bilimler Dergisi — "Çemişgezek-Ulukale Köyü'nün Tarihsel Yerleşim Dokusu".
+- T.C. Kültür ve Turizm Bakanlığı, Erzurum Kültür Varlıklarını Koruma Bölge Kurulu — tescil envanteri (Ulukale, 1380 parsel).
+- Anadolu Ajansı — "Tunceli'nin Ulukale köyü ziyaretçilerini tarihi yolculuğa çıkarıyor".
+
+## Notlar
+
+- Bu site bağımsız ve gönüllü bir kültürel hafıza projesidir; resmi bir kurum değildir.
+- Sitedeki tarihî fotoğraflar yukarıdaki yayınlardan derlenmiştir; telif hakları ilgili
+  yazar ve kurumlara aittir.
+- Atıf verirken kaynak olarak "Ulukale Köyü Dijital Arşivi (ulukalekoyu.com)" kullanılabilir.
