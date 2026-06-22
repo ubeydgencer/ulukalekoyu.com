@@ -74,5 +74,3 @@ User-agent: Timpibot
 Allow: /
 
 Sitemap: https://ulukalekoyu.com/sitemap.xml
-
-<!-- CD test: 1782137558 -->
