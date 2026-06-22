@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hafıza & Sözlü Tarih — Ulukale Köyü Dijital Arşivi</title>
+<meta name="description" content="Ulukale köyünün sözlü tarihi: anılar, hane hikâyeleri, gelenekler, lakaplar ve yaşanmışlıklar. Köyün hafızasını birlikte kaydedelim.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <a href="index.html" class="brand" style="text-decoration:none">
+      <span class="mark">Ulukale</span><span class="sub">Köy Arşivi</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    <nav class="nav">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="tarih.html">Tarih</a>
+      <a href="mimari.html">Tarihi Yapılar</a>
+      <a href="arsiv.html">Fotoğraf Arşivi</a>
+      <a href="hafiza.html" class="active">Hafıza</a>
+      <a href="iletisim.html">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Ana Sayfa</a> · Hafıza</div>
+    <span class="kicker">Sözlü Tarih</span>
+    <h1>Anlatılmazsa Unutulur</h1>
+    <p>Yapılar zamanla yıkılır ama bir köyü asıl yaşatan, insanların hatıralarıdır. Bu sayfa; köylülerin anlattığı hikâyeleri, gelenekleri, lakapları ve yaşanmışlıkları kayıt altına almak için ayrıldı.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow">
+    <div class="memory" style="margin-bottom:24px">
+      <blockquote>"Köyünden ayrılanlar zaman zaman geri dönüp eski evlerinin, okullarının arasında dolaşıyor; geçmiş günleri hatırlıyorlar."</blockquote>
+      <cite>— Ulukale üzerine bir gözlem</cite>
+    </div>
+    <div class="note">
+      Bu bölüm henüz başlangıç aşamasında. Aşağıdaki başlıklar, toplamak istediğimiz hatıra türlerini gösteriyor. <strong>İlk hikâyeyi siz yazabilirsiniz.</strong>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Ne Topluyoruz?</span>
+      <h2>Hafızanın başlıkları</h2>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><span class="icon">🏠</span><h3>Hane & Aile Hikâyeleri</h3><p>Hangi ev kimindi, hangi soyadı nereden gelir, kim nereye göçtü? Köyün insan haritasını birlikte çıkaralım.</p></div>
+      <div class="card"><span class="icon">🎶</span><h3>Türküler & Lakaplar</h3><p>Köye özgü deyişler, ezgiler, sülale lakapları ve onların hikâyeleri.</p></div>
+      <div class="card"><span class="icon">🌾</span><h3>Gelenekler & İşler</h3><p>Dut hasadı, değirmen sırası, düğün âdetleri, bayramlar, imece günleri.</p></div>
+      <div class="card"><span class="icon">🍲</span><h3>Mutfak & Tarifler</h3><p>Köyün yemekleri, dut pekmezi, kışlık hazırlıklar ve nineden kalma tarifler.</p></div>
+      <div class="card"><span class="icon">🏫</span><h3>Okul Anıları</h3><p>Köy okulunda geçen yıllar, öğretmenler, sınıf arkadaşları ve o günlerin fotoğrafları.</p></div>
+      <div class="card"><span class="icon">📜</span><h3>Olaylar & Dönüm Noktaları</h3><p>Göç, doğal afetler, önemli yıllar — köyün kaderini değiştiren anlar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Hatıra paylaşım formu -->
+<section>
+  <div class="container narrow">
+    <div class="section-head">
+      <span class="kicker">İlk Sözü Söyle</span>
+      <h2>Hatıranı Bırak</h2>
+      <p>Kısa bir anı, bir isim, bir tarih... Ne hatırlıyorsanız değerli. Aşağıya yazın, arşive ekleyelim.</p>
+    </div>
+    <form class="form" name="hatira" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/tesekkurler">
+      <input type="hidden" name="form-name" value="hatira">
+      <p style="display:none"><label>Boş bırakın: <input name="bot-field"></label></p>
+      <div class="field">
+        <label for="ad">Adınız (isteğe bağlı)</label>
+        <input type="text" id="ad" name="ad" placeholder="Nasıl anılmak istersiniz?">
+      </div>
+      <div class="field">
+        <label for="baglanti">Köyle bağınız</label>
+        <select id="baglanti" name="baglanti">
+          <option>Köyde doğdum/büyüdüm</option>
+          <option>Ailem Ulukale'den</option>
+          <option>Akrabalarım var</option>
+          <option>Ziyaret ettim</option>
+          <option>Araştırmacı / ilgileniyorum</option>
+          <option>Diğer</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="baslik">Hatıranın başlığı</label>
+        <input type="text" id="baslik" name="baslik" placeholder="Örn: Değirmen sırası beklerken">
+      </div>
+      <div class="field">
+        <label for="hatira">Hatıranız</label>
+        <textarea id="hatira" name="hatira" placeholder="Aklınızda kalan her şey — kısa ya da uzun fark etmez..." required></textarea>
+      </div>
+      <div class="field">
+        <label for="eposta">E-posta (yayınlanmaz, sadece size ulaşabilmek için)</label>
+        <input type="email" id="eposta" name="eposta" placeholder="ornek@eposta.com">
+      </div>
+      <button type="submit" class="btn btn-primary">Hatırayı Gönder</button>
+      <p class="note" style="margin-top:18px">Gönderdiğiniz hatıralar gözden geçirildikten sonra arşivde yayımlanabilir. İsminizin görünmesini istemiyorsanız belirtmeniz yeterli.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="brand-f">Ulukale Köyü Dijital Arşivi</div>
+        <p class="desc">Çemişgezek (Dersim/Tunceli) Ulukale köyünün tarihini, mimarisini ve hafızasını gelecek kuşaklara aktarmak için kurulmuş bağımsız bir gönüllü arşividir.</p>
+      </div>
+      <div>
+        <h4>Arşiv</h4>
+        <ul>
+          <li><a href="tarih.html">Tarih</a></li>
+          <li><a href="mimari.html">Tarihi Yapılar</a></li>
+          <li><a href="arsiv.html">Fotoğraf Arşivi</a></li>
+          <li><a href="hafiza.html">Sözlü Tarih</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="iletisim.html">Katkıda Bulun</a></li>
+          <li>Çemişgezek / Tunceli</li>
+          <li>39.025°N, 39.036°E</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© <span id="yil"></span> ulukalekoyu.com — Gönüllü köy arşivi</span>
+      <span>Sevgiyle hazırlandı 🤎</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>İletişim & Katkı — Ulukale Köyü Dijital Arşivi</title>
+<meta name="description" content="Ulukale köyü dijital arşivine fotoğraf, belge ve anılarınızla katkıda bulunun. İletişim ve konum bilgileri.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <a href="index.html" class="brand" style="text-decoration:none">
+      <span class="mark">Ulukale</span><span class="sub">Köy Arşivi</span>
+    </a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav').classList.toggle('open')">☰</button>
+    <nav class="nav">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="tarih.html">Tarih</a>
+      <a href="mimari.html">Tarihi Yapılar</a>
+      <a href="arsiv.html">Fotoğraf Arşivi</a>
+      <a href="hafiza.html">Hafıza</a>
+      <a href="iletisim.html" class="active">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href="index.html">Ana Sayfa</a> · İletişim</div>
+    <span class="kicker">Arşivi Birlikte Büyütelim</span>
+    <h1>İletişim & Katkı</h1>
+    <p>Bu arşiv gönüllülükle ayakta duruyor. Köye dair her fotoğraf, belge, harita, anı ve düzeltme bizim için kıymetli. Aşağıdaki formla ya da doğrudan e-posta ile ulaşabilirsiniz.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="feature-row">
+      <div>
+        <form class="form" name="iletisim" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/tesekkurler">
+          <input type="hidden" name="form-name" value="iletisim">
+          <p style="display:none"><label>Boş bırakın: <input name="bot-field"></label></p>
+          <div class="field">
+            <label for="ad">Adınız</label>
+            <input type="text" id="ad" name="ad" required>
+          </div>
+          <div class="field">
+            <label for="eposta">E-posta</label>
+            <input type="email" id="eposta" name="eposta" required>
+          </div>
+          <div class="field">
+            <label for="konu">Konu</label>
+            <select id="konu" name="konu">
+              <option>Fotoğraf / belge paylaşmak istiyorum</option>
+              <option>Bir anı / hikâye eklemek istiyorum</option>
+              <option>Bilgi düzeltmesi</option>
+              <option>İş birliği / gönüllülük</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="mesaj">Mesajınız</label>
+            <textarea id="mesaj" name="mesaj" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Gönder</button>
+          <p class="note" style="margin-top:16px">Büyük dosya ve fotoğraf albümleri için önce mesaj atın; size dosya gönderebileceğiniz bir yöntemle dönüş yapalım.</p>
+        </form>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom:22px">
+          <span class="icon">📍</span>
+          <h3>Konum</h3>
+          <p>Ulukale Köyü, Çemişgezek ilçesi, Tunceli (Dersim).<br>İlçe merkezine ~30 km, Tunceli'ye ~93 km.<br>Rakım 940 m · 39.025°N, 39.036°E</p>
+          <p style="margin-top:12px"><a href="https://www.google.com/maps?q=39.025,39.036" target="_blank" rel="noopener" class="btn btn-outline">Haritada Aç</a></p>
+        </div>
+        <div class="card" style="margin-bottom:22px">
+          <span class="icon">✉️</span>
+          <h3>E-posta</h3>
+          <p>Doğrudan yazmak isterseniz formu kullanmanız yeterli; mesajınız e-posta olarak bize ulaşır.</p>
+        </div>
+        <div class="card">
+          <span class="icon">🤝</span>
+          <h3>Nasıl Katkı Yapabilirim?</h3>
+          <p>• Eski ve yeni fotoğraflar<br>• Tapular, mektuplar, haritalar<br>• Sözlü tarih ve anılar<br>• Yapıların güncel durumu<br>• Bilgi düzeltmeleri</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container narrow">
+    <div class="memory">
+      <blockquote>"Bir köyün belleği, onu hatırlayanlar yaşadıkça yaşar. Yazıya geçen ise kalıcı olur."</blockquote>
+      <cite>— Ulukale Köyü Dijital Arşivi</cite>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="cols">
+      <div>
+        <div class="brand-f">Ulukale Köyü Dijital Arşivi</div>
+        <p class="desc">Çemişgezek (Dersim/Tunceli) Ulukale köyünün tarihini, mimarisini ve hafızasını gelecek kuşaklara aktarmak için kurulmuş bağımsız bir gönüllü arşividir.</p>
+      </div>
+      <div>
+        <h4>Arşiv</h4>
+        <ul>
+          <li><a href="tarih.html">Tarih</a></li>
+          <li><a href="mimari.html">Tarihi Yapılar</a></li>
+          <li><a href="arsiv.html">Fotoğraf Arşivi</a></li>
+          <li><a href="hafiza.html">Sözlü Tarih</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="iletisim.html">Katkıda Bulun</a></li>
+          <li>Çemişgezek / Tunceli</li>
+          <li>39.025°N, 39.036°E</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© <span id="yil"></span> ulukalekoyu.com — Gönüllü köy arşivi</span>
+      <span>Sevgiyle hazırlandı 🤎</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+</body>
+</html>

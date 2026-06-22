@@ -1,0 +1,25 @@
+# Netlify yapılandırması — Ulukale Köyü Dijital Arşivi
+# Statik site: build adımı yok, dosyalar kök dizinde.
+
+[build]
+  publish = "."
+
+# Güvenlik ve performans başlıkları
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Statik varlıkları uzun süre önbelleğe al
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000"
+
+# Form gönderiminden sonra teşekkür sayfası
+[[redirects]]
+  from = "/tesekkurler"
+  to = "/tesekkurler.html"
+  status = 200
