@@ -282,6 +282,21 @@ section { padding: 72px 0; }
 .press-item p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
 .press-item .read { display: inline-block; margin-top: 12px; font-size: 0.85rem; color: var(--kerpic-dark); font-weight: 600; }
 
+/* ---------- Adın evrimi listesi ---------- */
+.name-evo { list-style: none; margin: 4px 0 18px; padding: 0; }
+.name-evo li {
+  display: flex; align-items: baseline; gap: 16px;
+  padding: 11px 0; border-bottom: 1px dashed var(--line);
+}
+.name-evo li:last-child { border-bottom: 0; }
+.name-evo .ne-date {
+  flex: 0 0 96px; font-size: 0.82rem; font-weight: 700;
+  color: var(--kerpic-dark); letter-spacing: 0.3px;
+}
+.name-evo .ne-name { font-family: var(--display); font-size: 1.2rem; color: var(--ink); }
+.name-evo li:first-child .ne-name { color: var(--kerpic-dark); }
+.name-evo .ne-note { font-size: 0.82rem; color: var(--ink-soft); font-style: italic; margin-left: 6px; }
+
 /* ---------- İthaf ---------- */
 .dedication { text-align: center; }
 .dedication .ded-kicker {
