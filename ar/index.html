@@ -49,7 +49,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 
 <script type="application/ld+json">
@@ -103,10 +103,10 @@
 <section class="section-tight alt-bg">
   <div class="container">
     <div class="stats">
-      <div class="stat"><div class="num">~3000</div><div class="lbl">عام من الاستيطان</div></div>
-      <div class="stat"><div class="num">940 م</div><div class="lbl">ارتفاع، بين أربعة جبال</div></div>
-      <div class="stat"><div class="num">القرن 16</div><div class="lbl">مركز ناحية عثمانية</div></div>
-      <div class="stat"><div class="num">5</div><div class="lbl">مزارع تابعة</div></div>
+      <div class="stat"><div class="num">~٣٠٠٠</div><div class="lbl">عام من الاستيطان</div></div>
+      <div class="stat"><div class="num">٩٤٠ م</div><div class="lbl">ارتفاع، بين أربعة جبال</div></div>
+      <div class="stat"><div class="num">القرن ١٦</div><div class="lbl">مركز ناحية عثمانية</div></div>
+      <div class="stat"><div class="num">٥</div><div class="lbl">مزارع تابعة</div></div>
     </div>
   </div>
 </section>
@@ -118,7 +118,7 @@
       <span class="kicker">أين تقع؟</span>
       <h2>قريةٌ تتذكّر حجارتها</h2>
     </div>
-    <p>أولوكالة مستوطنة قديمة في قضاء تشيميشكزك بولاية تونجلي، تبعد نحو 30 كيلومترًا عن مركز القضاء. في هذا الوادي الذي تحتضنه أربع سلاسل جبلية، تعود الحياة — بحسب المسوحات الأثرية — إلى العصر الحديدي. ويقف قبرٌ منحوت في الصخر من العصرين الهلنستي والروماني شاهدًا صامتًا على قِدَم القرية.</p>
+    <p>أولوكالة مستوطنة قديمة في قضاء تشيميشكزك بولاية تونجلي، تبعد نحو ٣٠ كيلومترًا عن مركز القضاء. في هذا الوادي الذي تحتضنه أربع سلاسل جبلية، تعود الحياة — بحسب المسوحات الأثرية — إلى العصر الحديدي. ويقف قبرٌ منحوت في الصخر من العصرين الهلنستي والروماني شاهدًا صامتًا على قِدَم القرية.</p>
     <p>في القرن السادس عشر كانت أولوكالة مركز ناحية ضمن سنجق تشيميشكزك؛ وبمقامها ونافورتها وحمّامها ومسجدها وكنيستها وعمارتها الطينية، تحمل أثر ثقافة متعدّدة الطبقات. ورغم هدوئها اليوم، ما زالت السطوح الترابية والنوافذ الخشبية لبيوتها المهجورة قائمة، جميلةً على نحوٍ مختلف في كل فصل.</p>
     <p>يهدف هذا الموقع إلى جمع ذاكرة قرية تبعثر أهلها: <strong>الصور القديمة، والحكايات المروية، وذكريات البيوت والعائلات، وتوثيق المباني المهدّدة بالاندثار.</strong> إن كان لديك حجرٌ أو صورةٌ أو ذكرى من القرية — فهذا مكانها أيضًا.</p>
   </div>
@@ -221,7 +221,7 @@
         <ul>
           <li><a href="iletisim.html">ساهِم معنا</a></li>
           <li>تشيميشكزك / تونجلي</li>
-          <li>39.025°N, 39.036°E</li>
+          <li>٣٩.٠٢٥°N, ٣٩.٠٣٦°E</li>
         </ul>
       </div>
     </div>
@@ -232,7 +232,7 @@
   </div>
 </footer>
 
-<script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+<script>document.getElementById('yil').textContent = String(new Date().getFullYear()).replace(/[0-9]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[+d];});</script>
 <script src="/js/ptr.js" defer></script>
 </body>
 </html>

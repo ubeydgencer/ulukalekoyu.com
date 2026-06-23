@@ -45,7 +45,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 
 <script type="application/ld+json">
@@ -121,13 +121,13 @@
       <div class="frame"><img src="/images/tas-yapi.jpg" alt="مبنى حجري أهلي"><div class="cap">العمارة الحجرية الأهلية</div></div>
       <div class="frame"><img src="/images/ic-mekan.jpg" alt="فضاء داخلي معقود"><div class="cap">فضاء داخلي معقود</div></div>
       <div class="frame"><img src="/images/koy-kalinti.jpg" alt="أطلال قرية أولوكالة القديمة"><div class="cap">أطلال القرية القديمة · صورة: Hürriyet</div></div>
-      <div class="frame"><img src="/images/koy-panorama.jpg" alt="قرية أولوكالة القديمة عند سفح الجبل"><div class="cap">القرية القديمة عند سفح الجبل · صورة: Haber7</div></div>
+      <div class="frame"><img src="/images/koy-panorama.jpg" alt="قرية أولوكالة القديمة عند سفح الجبل"><div class="cap">القرية القديمة عند سفح الجبل · صورة: Haber٧</div></div>
       <div class="frame"><img src="/images/koy-konak.jpg" alt="قصرٌ حجري في أولوكالة"><div class="cap">قصرٌ حجري بعوارض خشبية · صورة: AA</div></div>
       <div class="frame"><img src="/images/cami-kemer-2.jpg" alt="أقواس المسجد القديم في أولوكالة"><div class="cap">أقواس المسجد القديم · صورة: بوابة الثقافة</div></div>
-      <div class="frame"><img src="/images/cesme-2.jpg" alt="نافورة أولوكالة التاريخية"><div class="cap">النافورة التاريخية · صورة: Haber7</div></div>
+      <div class="frame"><img src="/images/cesme-2.jpg" alt="نافورة أولوكالة التاريخية"><div class="cap">النافورة التاريخية · صورة: Haber٧</div></div>
       <div class="frame"><img src="/images/koy-bugun-2.jpg" alt="قرية أولوكالة اليوم ومسجدها"><div class="cap">القرية ومسجدها اليوم · صورة: İstanbul Haber</div></div>
     </div>
-    <p class="note" style="margin-top:24px">جُمعت الصور من منشورات أكاديمية ومن الصحافة الوطنية (AA، Hürriyet، Haber7، NTV، بوابة الثقافة، İstanbul Haber)؛ والمصدر مذكورٌ تحت كل صورة. حقوق النشر لأصحابها؛ وإن طلب صاحب الحق الإزالة فالرجاء <a href="iletisim.html">التواصل معنا</a> وسنزيلها فورًا.</p>
+    <p class="note" style="margin-top:24px">جُمعت الصور من منشورات أكاديمية ومن الصحافة الوطنية (AA، Hürriyet، Haber٧، NTV، بوابة الثقافة، İstanbul Haber)؛ والمصدر مذكورٌ تحت كل صورة. حقوق النشر لأصحابها؛ وإن طلب صاحب الحق الإزالة فالرجاء <a href="iletisim.html">التواصل معنا</a> وسنزيلها فورًا.</p>
   </div>
 </section>
 
@@ -163,7 +163,7 @@
         <ul>
           <li><a href="iletisim.html">ساهِم معنا</a></li>
           <li>تشيميشكزك / تونجلي</li>
-          <li>39.025°N, 39.036°E</li>
+          <li>٣٩.٠٢٥°N, ٣٩.٠٣٦°E</li>
         </ul>
       </div>
     </div>
@@ -174,7 +174,7 @@
   </div>
 </footer>
 
-<script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+<script>document.getElementById('yil').textContent = String(new Date().getFullYear()).replace(/[0-9]/g,function(d){return '٠١٢٣٤٥٦٧٨٩'[+d];});</script>
 <script src="/js/ptr.js" defer></script>
 </body>
 </html>

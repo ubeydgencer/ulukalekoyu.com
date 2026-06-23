@@ -70,8 +70,9 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.2
 
 .nav { display: flex; gap: 4px; align-items: center; }
 .nav a {
-  color: var(--ink-soft); font-size: 0.95rem; padding: 8px 12px;
+  color: var(--ink-soft); font-size: 0.95rem; padding: 8px 11px;
   border-radius: var(--radius); text-decoration: none; transition: all .15s ease;
+  white-space: nowrap;
 }
 .nav a:hover { color: var(--kerpic-dark); background: var(--parchment-2); text-decoration: none; }
 .nav a.active { color: var(--kerpic-dark); font-weight: 600; }
@@ -91,7 +92,7 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.2
 .lang-switch a:hover { background: var(--parchment-2); color: var(--kerpic-dark); text-decoration: none; }
 .lang-switch a.active { color: var(--kerpic-dark); background: rgba(169,84,45,0.10); }
 .topbar .nav { margin-left: 0; }
-@media (max-width: 860px) {
+@media (max-width: 1180px) {
   .lang-switch { margin-left: auto; margin-right: 6px; }
 }
 
@@ -394,12 +395,13 @@ section { padding: 72px 0; }
 .crumbs a { color: var(--ink-soft); }
 
 /* ---------- RTL (Arapça / sağdan-sola) ---------- */
-[dir="rtl"] body { font-family: "Noto Naskh Arabic", "Amiri", var(--serif); }
+[dir="rtl"] body { font-family: "Cairo", "Noto Naskh Arabic", var(--serif); }
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4,
-[dir="rtl"] .brand .mark, [dir="rtl"] .hero h1, [dir="rtl"] .stat .num,
+[dir="rtl"] .hero h1, [dir="rtl"] .stat .num,
 [dir="rtl"] .dedication p, [dir="rtl"] .name-evo .ne-name, [dir="rtl"] .memory blockquote {
-  font-family: "Amiri", "Noto Naskh Arabic", var(--display);
+  font-family: "Cairo", "Noto Naskh Arabic", var(--display); font-weight: 700;
 }
+[dir="rtl"] .brand .mark { font-family: var(--display); }
 [dir="rtl"] .lang-switch { margin-left: 0; margin-right: auto; }
 [dir="rtl"] .lang-switch a, [dir="rtl"] .brand .sub, [dir="rtl"] .nav,
 [dir="rtl"] .stat .num { letter-spacing: 0; }
@@ -424,15 +426,18 @@ section { padding: 72px 0; }
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 860px) {
+/* Çok dilli + 8 öğeli nav: dar masaüstünde hamburger menüye geç */
+@media (max-width: 1180px) {
   .nav {
     display: none; position: absolute; top: 68px; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 0;
     background: var(--parchment); border-bottom: 1px solid var(--line); padding: 8px 16px 16px;
   }
   .nav.open { display: flex; }
-  .nav a { padding: 12px 8px; border-bottom: 1px solid var(--line); }
+  .nav a { padding: 12px 8px; border-bottom: 1px solid var(--line); white-space: normal; }
   .nav-toggle { display: inline-block; }
+}
+@media (max-width: 860px) {
   .grid-3, .grid-2, .gallery, .stats { grid-template-columns: 1fr 1fr; }
   .feature-row, .feature-row.rev { grid-template-columns: 1fr; }
   .footer .cols { grid-template-columns: 1fr; gap: 28px; }
