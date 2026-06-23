@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شكرًا لك — أرشيف قرية أولوكالة الرقمي</title>
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://ulukalekoyu.com/ar/tesekkurler.html">
+<meta name="theme-color" content="#a9542d">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container">
+    <a href="index.html" class="brand" style="text-decoration:none">
+      <span class="mark">Ulukale</span><span class="sub">أرشيف القرية</span>
+    </a>
+    <div class="lang-switch"><a href="/tesekkurler.html" hreflang="tr">TR</a><a href="/en/tesekkurler.html" hreflang="en">EN</a><a href="/ar/tesekkurler.html" class="active" hreflang="ar">AR</a></div>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.querySelector('.nav').classList.toggle('open')"><svg class="ico" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <nav class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="tarih.html">التاريخ</a>
+      <a href="mimari.html">المباني التاريخية</a>
+      <a href="dut.html">التوت</a>
+      <a href="arsiv.html">أرشيف الصور</a>
+      <a href="hafiza.html">الذاكرة</a>
+      <a href="basin.html">الصحافة</a>
+      <a href="iletisim.html">اتصل بنا</a>
+    </nav>
+  </div>
+</header>
+
+<section style="min-height:60vh; display:flex; align-items:center;">
+  <div class="container narrow" style="text-align:center;">
+    <svg viewBox="0 0 24 24" style="width:64px;height:64px;fill:var(--kerpic);margin:0 auto 8px;display:block;"><path d="M12 21s-7.5-4.7-9.7-9.2C.9 8.6 2.4 5 6 5c2 0 3.2 1.1 4 2.3C10.8 6.1 12 5 14 5c3.6 0 5.1 3.6 3.7 6.8C19.5 16.3 12 21 12 21z"/></svg>
+    <h1 style="font-size:clamp(2rem,5vw,3rem); margin:0 0 16px;">شكرًا لك</h1>
+    <p style="color:var(--ink-soft); font-size:1.15rem; max-width:520px; margin:0 auto 28px;">
+      وصلتنا رسالتك. كل ما تضيفه إلى ذاكرة القرية ثمين — سنراجعه ونعود إليك في أقرب وقت.
+    </p>
+    <div class="btn-row" style="justify-content:center;">
+      <a href="index.html" class="btn btn-primary">العودة إلى الرئيسية</a>
+      <a href="arsiv.html" class="btn btn-outline">تصفّح الأرشيف</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="bottom" style="border:0; padding-top:0;">
+      <span>© <span id="yil"></span> ulukalekoyu.com — Ubeyd Gençer</span>
+      <span>إلى ذكرى ضياء غنجر <svg class="ico-heart" viewBox="0 0 24 24"><path d="M12 21s-7.5-4.7-9.7-9.2C.9 8.6 2.4 5 6 5c2 0 3.2 1.1 4 2.3C10.8 6.1 12 5 14 5c3.6 0 5.1 3.6 3.7 6.8C19.5 16.3 12 21 12 21z"/></svg></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('yil').textContent = new Date().getFullYear();</script>
+</body>
+</html>
