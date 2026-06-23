@@ -82,6 +82,19 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.2
   font-size: 1.1rem;
 }
 
+/* Dil değiştirici */
+.lang-switch { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+.lang-switch a {
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px; color: var(--ink-soft);
+  padding: 4px 8px; border-radius: var(--radius); text-decoration: none; line-height: 1;
+}
+.lang-switch a:hover { background: var(--parchment-2); color: var(--kerpic-dark); text-decoration: none; }
+.lang-switch a.active { color: var(--kerpic-dark); background: rgba(169,84,45,0.10); }
+.topbar .nav { margin-left: 0; }
+@media (max-width: 860px) {
+  .lang-switch { margin-left: auto; margin-right: 6px; }
+}
+
 /* ---------- Hero ---------- */
 .hero {
   position: relative;
