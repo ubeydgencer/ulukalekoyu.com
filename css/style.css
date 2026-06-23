@@ -290,8 +290,8 @@ section { padding: 72px 0; }
 }
 
 /* ---------- Dut motifi (dekoratif ayraç) ---------- */
-.dut-motif { text-align: center; margin: 6px 0 -8px; }
-.dut-motif svg { width: 86px; height: 86px; }
+.dut-motif { text-align: center; margin: 6px 0 -4px; }
+.dut-motif svg { width: 138px; height: auto; }
 
 /* ---------- Basın listesi ---------- */
 .press-list { display: grid; gap: 18px; }

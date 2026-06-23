@@ -116,18 +116,37 @@
 <section>
   <div class="container narrow prose">
     <div class="dut-motif">
-      <svg viewBox="0 0 100 100" aria-hidden="true">
-        <path d="M50 14 C36 16 30 30 46 38 C58 34 60 20 50 14 Z" fill="#6b7146"/>
-        <path d="M50 16 C49 24 47 32 46 38" fill="none" stroke="#566037" stroke-width="1.5"/>
-        <path d="M48 36 C49 44 50 48 50 52" fill="none" stroke="#6b7146" stroke-width="2.5"/>
-        <g fill="#b8893f">
-          <circle cx="50" cy="58" r="5"/><circle cx="44" cy="62" r="5"/><circle cx="56" cy="62" r="5"/>
-          <circle cx="47" cy="69" r="5"/><circle cx="53" cy="69" r="5"/><circle cx="50" cy="64" r="5"/>
-          <circle cx="50" cy="76" r="4.5"/><circle cx="44.5" cy="74" r="4"/><circle cx="55.5" cy="74" r="4"/>
-        </g>
-        <g fill="#a9542d" opacity="0.45">
-          <circle cx="44" cy="62" r="2"/><circle cx="53" cy="69" r="2"/><circle cx="50" cy="76" r="1.8"/>
-        </g>
+      <svg viewBox="0 0 150 110" aria-hidden="true">
+        <defs>
+          <g id="dutBerry">
+            <g fill="#fbf6ec" stroke="#c2ad80" stroke-width="1.1">
+              <circle cx="0" cy="-18" r="6.5"/><circle cx="-7" cy="-12" r="6.5"/><circle cx="7" cy="-11" r="6.5"/>
+              <circle cx="0" cy="-6" r="7"/><circle cx="-8" cy="0" r="6.5"/><circle cx="8" cy="1" r="6.5"/>
+              <circle cx="0" cy="5" r="7"/><circle cx="-6" cy="12" r="6"/><circle cx="7" cy="12" r="6"/>
+              <circle cx="0" cy="18" r="5.5"/>
+            </g>
+            <g fill="#ffffff" opacity="0.7"><circle cx="-3" cy="-15" r="1.8"/><circle cx="-9" cy="-2" r="1.5"/></g>
+            <g fill="#3a3026">
+              <ellipse cx="-2" cy="-16" rx="1.1" ry="0.7"/><ellipse cx="4" cy="-13" rx="1" ry="0.6"/>
+              <ellipse cx="-6" cy="-9" rx="1" ry="0.6"/><ellipse cx="5" cy="-4" rx="1.1" ry="0.7"/>
+              <ellipse cx="-7" cy="2" rx="1" ry="0.6"/><ellipse cx="2" cy="0" rx="1" ry="0.6"/>
+              <ellipse cx="6" cy="7" rx="1" ry="0.6"/><ellipse cx="-3" cy="10" rx="1" ry="0.6"/>
+              <ellipse cx="3" cy="14" rx="0.9" ry="0.6"/><ellipse cx="-5" cy="5" rx="0.9" ry="0.6"/>
+            </g>
+          </g>
+        </defs>
+        <!-- gölge -->
+        <ellipse cx="96" cy="95" rx="30" ry="5" fill="#2c241c" opacity="0.06"/>
+        <!-- yaprak -->
+        <path d="M30 26 C 8 37 9 65 35 73 C 51 61 50 34 30 26 Z" fill="#6b7146"/>
+        <path d="M31 29 C 33 45 34 60 35 71" fill="none" stroke="#8a9a59" stroke-width="1.4"/>
+        <path d="M32 40 L 21 37 M33 52 L 22 53 M33 35 L 42 31 M34 47 L 44 45" stroke="#8a9a59" stroke-width="1" opacity="0.7"/>
+        <!-- saplar -->
+        <path d="M92 84 C 95 92 104 93 110 89" fill="none" stroke="#8a9a59" stroke-width="2"/>
+        <!-- dut kümesi (3 adet) -->
+        <use href="#dutBerry" transform="translate(86,40) rotate(-15) scale(0.82)"/>
+        <use href="#dutBerry" transform="translate(114,58) rotate(20) scale(0.86)"/>
+        <use href="#dutBerry" transform="translate(90,72) rotate(-3) scale(0.98)"/>
       </svg>
     </div>
     <div class="section-head">
