@@ -4,8 +4,8 @@ import { ILETISIM } from '../data/iletisim';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = ILETISIM[lang];
-const success = localePath(lang, 'tesekkurler');
-const botLabel: Record<Lang, string> = { tr: 'Boş bırakın:', en: 'Leave blank:', ar: 'اتركه فارغًا:' };
+const successUrl = 'https://ulukalekoyu.com' + localePath(lang, 'tesekkurler');
+const subject: Record<Lang, string> = { tr: 'Ulukale Arşivi — İletişim Formu', en: 'Ulukale Archive — Contact Form', ar: 'أرشيف أولوكالة — نموذج التواصل' };
 ---
 <section class="page-hero">
   <div class="container">
@@ -17,11 +17,13 @@ const botLabel: Record<Lang, string> = { tr: 'Boş bırakın:', en: 'Leave blank
 <section>
   <div class="container contact-grid">
     <div>
-      <form class="form" name="iletisim" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action={success}>
-        <input type="hidden" name="form-name" value="iletisim" />
-        <p style="display:none"><label>{botLabel[lang]} <input name="bot-field" /></label></p>
+      <form class="form" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="beb78eae-2ca6-4316-9fba-d94f3b58cba6" />
+        <input type="hidden" name="redirect" value={successUrl} />
+        <input type="hidden" name="subject" value={subject[lang]} />
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
         <div class="field"><label for="ad">{t.fName}</label><input type="text" id="ad" name="ad" required /></div>
-        <div class="field"><label for="eposta">{t.fEmail}</label><input type="email" id="eposta" name="eposta" required /></div>
+        <div class="field"><label for="eposta">{t.fEmail}</label><input type="email" id="eposta" name="email" required /></div>
         <div class="field"><label for="konu">{t.fSubject}</label>
           <select id="konu" name="konu">{t.subjects.map((o) => <option>{o}</option>)}</select>
         </div>

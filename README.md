@@ -3,8 +3,9 @@
 Tunceli (Dersim) Çemişgezek ilçesine bağlı **Ulukale köyünün** tarihini, mimarisini
 ve hafızasını koruyan çok dilli (TR / EN / AR) web sitesi. `ulukalekoyu.com`.
 
-**Astro** ile derlenir; içerik **Sveltia CMS** paneliyle (`/admin`) kod yazmadan
-yönetilebilir. Panel kullanımı için **[KILAVUZ.md](KILAVUZ.md)** dosyasına bakın.
+**Astro** ile derlenir, **Cloudflare Pages**'te yayınlanır; içerik **Sveltia CMS**
+paneliyle (`/admin`) kod yazmadan yönetilebilir. Panel kullanımı ve kurulum için
+**[KILAVUZ.md](KILAVUZ.md)** dosyasına bakın.
 
 ## Diller
 - Türkçe — kök (`/`)
@@ -30,8 +31,8 @@ public/         Statik varlıklar (images, css, js, robots, sitemap, admin/)
 ## Teknoloji
 - **Astro 4** (statik çıktı, `dist/`).
 - Fontlar: Google Fonts (Fraunces + Lora; Arapça için Cairo).
-- Formlar: **Netlify Forms** (`hatira`, `iletisim`). Bildirim → `mubeyd@gmail.com`.
-- Panel: **Sveltia CMS** (git tabanlı, GitHub backend).
+- Formlar: **Web3Forms** → `mubeyd@gmail.com`.
+- Panel: **Sveltia CMS** (git tabanlı, GitHub backend, Cloudflare Worker OAuth).
 
 ## Komutlar
 ```bash
@@ -41,10 +42,10 @@ npm run build      # -> dist/
 npm run preview
 ```
 
-## Yayına alma — Netlify
+## Yayına alma — Cloudflare Pages
 `main` dalına her push otomatik deploy tetikler. Build command `npm run build`,
-publish directory `dist` (`netlify.toml` içinde tanımlı). Eski `.html` URL'leri
-yeni dizin URL'lerine `public/_redirects` ile 301 yönlendirilir.
+output directory `dist` (Cloudflare Pages panelinde tanımlı). Eski `.html` URL'leri
+`public/_redirects` ile 301 yönlendirilir; HTTP başlıkları `public/_headers`.
 
 ## Kaynaklar
 - Enver Çakar — *Osmanlı Döneminde Ulukale Köyü* (Fırat Üniv. Harput Araştırmaları Dergisi, 2018)

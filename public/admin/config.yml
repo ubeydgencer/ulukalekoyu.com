@@ -2,6 +2,10 @@ backend:
   name: github
   repo: ubeydgencer/ulukalekoyu.com
   branch: main
+  # GitHub girişi için OAuth aracısı (Cloudflare Worker).
+  # KILAVUZ.md Bölüm 5'teki adımlarla Worker'ı kurduktan sonra
+  # aşağıdaki adresi kendi Worker adresinle değiştir:
+  base_url: https://sveltia-cms-auth.UBEYD-WORKER.workers.dev
   commit_messages:
     create: "İçerik: {{collection}} eklendi ({{slug}})"
     update: "İçerik: {{collection}} güncellendi ({{slug}})"
