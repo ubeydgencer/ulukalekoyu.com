@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import FeribotBody from '../../components/FeribotBody.astro';
+import { FERIBOT } from '../../data/feribot';
+const lang = 'ar' as const;
+const t = FERIBOT[lang];
+---
+<Base lang={lang} page="feribot" title={t.metaTitle} description={t.metaDesc}>
+  <FeribotBody lang={lang} />
+</Base>

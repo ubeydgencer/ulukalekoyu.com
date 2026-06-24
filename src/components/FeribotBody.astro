@@ -1,0 +1,91 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { FERIBOT, FERIBOT_WORKER } from '../data/feribot';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = FERIBOT[lang];
+const labels = JSON.stringify({
+  next: t.nextLabel, belediye: t.belediye, ozel: t.ozel,
+  loading: t.loading, error: t.error, updated: t.updated,
+  pertek: t.pertekCol, elazig: t.elazigCol,
+});
+---
+<section class="page-hero">
+  <div class="container narrow">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p>{t.intro}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow">
+    <div id="feribot" data-worker={FERIBOT_WORKER} data-lang={lang} data-labels={labels}>
+      <p class="feribot-state note">{t.loading}</p>
+    </div>
+    <p class="note" style="margin-top:22px">{t.note}</p>
+  </div>
+</section>
+
+<style>
+  .feribot-next {
+    display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: baseline;
+    background: var(--parchment-2); border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 16px 20px; margin-bottom: 24px;
+  }
+  .feribot-next .lab { font-family: var(--serif); font-weight: 700; color: var(--kerpic-dark); }
+  .feribot-next b { font-size: 1.25rem; color: var(--kerpic-dark); font-family: var(--display); }
+  .feribot-tablo { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
+  .feribot-tablo th, .feribot-tablo td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: start; }
+  .feribot-tablo thead th { color: var(--ink-soft); font-size: 0.82rem; letter-spacing: 0.5px; text-transform: uppercase; }
+  .feribot-tablo td.time { font-family: var(--display); font-size: 1.05rem; color: var(--kerpic-dark); }
+  .feribot-tablo td.op { color: var(--ink-soft); font-size: 0.88rem; }
+  .feribot-tablo tr.soon { background: rgba(169,84,45,0.07); }
+  .feribot-updated { color: var(--ink-soft); font-size: 0.85rem; margin-top: 14px; }
+</style>
+
+<script>
+  const AR = '٠١٢٣٤٥٦٧٨٩';
+  const root = document.getElementById('feribot');
+  if (root) {
+    const lang = root.dataset.lang;
+    const L = JSON.parse(root.dataset.labels || '{}');
+    const ar = (s) => (lang === 'ar' ? String(s).replace(/[0-9]/g, (d) => AR[+d]) : String(s));
+    const toMin = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
+    const nextOf = (list, now) => list.find((t) => toMin(t) >= now) || list[0];
+
+    fetch(root.dataset.worker)
+      .then((r) => { if (!r.ok) throw new Error('http'); return r.json(); })
+      .then((d) => {
+        if (!d.rows || !d.rows.length) throw new Error('empty');
+        const now = new Date();
+        const cur = now.getHours() * 60 + now.getMinutes();
+        const np = nextOf(d.pertek, cur), ne = nextOf(d.elazig, cur);
+        const opLabel = (op) => (/zel/i.test(op || '') ? L.ozel : L.belediye);
+        const rows = d.rows.map((r) => {
+          const soon = r.pertek === np || r.elazig === ne;
+          return `<tr class="${soon ? 'soon' : ''}">
+            <td class="time">${r.pertek ? ar(r.pertek) : '—'}</td>
+            <td class="op">${opLabel(r.operator)}</td>
+            <td class="time">${r.elazig ? ar(r.elazig) : '—'}</td></tr>`;
+        }).join('');
+        const upd = d.updatedAt ? new Date(d.updatedAt).toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'ar' ? 'ar' : 'en-GB') : '';
+        root.innerHTML = `
+          <div class="feribot-next">
+            <span class="lab">${L.next}</span>
+            <span>${L.pertek}: <b>${ar(np)}</b></span>
+            <span>${L.elazig}: <b>${ar(ne)}</b></span>
+          </div>
+          <table class="feribot-tablo">
+            <thead><tr><th>${L.pertek}</th><th>${L.belediye}/${L.ozel}</th><th>${L.elazig}</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+          ${upd ? `<p class="feribot-updated">${L.updated}: ${ar(upd)}</p>` : ''}`;
+      })
+      .catch(() => {
+        const s = root.querySelector('.feribot-state');
+        if (s) s.textContent = L.error;
+      });
+  }
+</script>
