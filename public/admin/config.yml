@@ -21,7 +21,73 @@ site_url: https://ulukalekoyu.com
 display_url: https://ulukalekoyu.com
 logo_url: https://ulukalekoyu.com/icon-192.png
 
+# Çok dilli düzenleme: TR/EN/AR yan yana (tek dosyada)
+i18n:
+  structure: single_file
+  locales: [tr, en, ar]
+  default_locale: tr
+
 collections:
+  # ----------------------------------------------------------------
+  - name: pages
+    label: "Sayfalar"
+    label_singular: "Sayfa"
+    description: "Sitedeki sabit sayfaların metinleri. Her metni TR/EN/AR yan yana düzenlersiniz."
+    i18n: true
+    files:
+      - name: home
+        label: "Ana Sayfa"
+        file: src/content/pages/home.json
+        i18n: true
+        fields:
+          - name: meta
+            label: "SEO (sekme başlığı & açıklama)"
+            widget: object
+            i18n: true
+            fields:
+              - { name: title, label: "Tarayıcı başlığı", widget: string, i18n: true }
+              - { name: description, label: "Arama motoru açıklaması", widget: text, i18n: true }
+          - { name: heroEyebrow, label: "Üst etiket (konum)", widget: string, i18n: true }
+          - { name: heroH1, label: "Büyük başlık", widget: string, i18n: true }
+          - { name: heroLead, label: "Giriş cümlesi", widget: text, i18n: true }
+          - { name: btnHistory, label: "Buton 1 (Tarih)", widget: string, i18n: true }
+          - { name: btnMemory, label: "Buton 2 (Hatıra)", widget: string, i18n: true }
+          - name: stats
+            label: "İstatistikler (4 kutu)"
+            widget: list
+            i18n: true
+            fields:
+              - { name: num, label: "Sayı", widget: string, i18n: true }
+              - { name: lbl, label: "Etiket", widget: string, i18n: true }
+          - { name: introKicker, label: "Tanıtım: küçük başlık", widget: string, i18n: true }
+          - { name: introH2, label: "Tanıtım: başlık", widget: string, i18n: true }
+          - name: introP
+            label: "Tanıtım paragrafları"
+            widget: list
+            i18n: true
+            field: { name: p, label: "Paragraf", widget: text, i18n: true }
+          - { name: exploreKicker, label: "Keşfet: küçük başlık", widget: string, i18n: true }
+          - { name: exploreH2, label: "Keşfet: başlık", widget: string, i18n: true }
+          - { name: exploreSub, label: "Keşfet: alt metin", widget: string, i18n: true }
+          - name: cards
+            label: "Keşfet kartları"
+            widget: list
+            i18n: true
+            fields:
+              - name: key
+                label: "Bağlantı/ikon"
+                widget: select
+                i18n: true
+                options: [tarih, mimari, arsiv, hafiza, dut, iletisim]
+              - { name: h3, label: "Kart başlığı", widget: string, i18n: true }
+              - { name: p, label: "Kart metni", widget: text, i18n: true }
+          - { name: memoryQuote, label: "Alıntı", widget: text, i18n: true }
+          - { name: memoryCite, label: "Alıntı kaynağı", widget: string, i18n: true }
+          - { name: dedKicker, label: "İthaf: küçük başlık", widget: string, i18n: true }
+          - { name: dedText, label: "İthaf metni (HTML: <strong> kullanılabilir)", widget: text, i18n: true }
+          - { name: ctaH2, label: "Kapanış başlığı", widget: string, i18n: true }
+          - { name: ctaP, label: "Kapanış metni", widget: text, i18n: true }
+          - { name: ctaBtn, label: "Kapanış buton", widget: string, i18n: true }
   # ----------------------------------------------------------------
   - name: gallery
     label: "Fotoğraf Galerisi"
