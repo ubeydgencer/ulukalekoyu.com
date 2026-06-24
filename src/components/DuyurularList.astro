@@ -5,6 +5,8 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = BLOG_UI[lang];
 const base = localePath(lang, 'duyurular');
+const successUrl = 'https://ulukalekoyu.com' + localePath(lang, 'tesekkurler');
+const botLabel: Record<Lang, string> = { tr: 'Boş bırakın:', en: 'Leave blank:', ar: 'اتركه فارغًا:' };
 ---
 <section class="page-hero">
   <div class="container">
@@ -31,5 +33,27 @@ const base = localePath(lang, 'duyurular');
         ))}
       </div>
     )}
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container narrow">
+    <div class="section-head"><span class="kicker">{t.formKicker}</span><h2>{t.formH}</h2><p>{t.formP}</p></div>
+    <form class="form" method="POST" action="https://api.web3forms.com/submit">
+      <input type="hidden" name="access_key" value="beb78eae-2ca6-4316-9fba-d94f3b58cba6" />
+      <input type="hidden" name="redirect" value={successUrl} />
+      <input type="hidden" name="subject" value={t.subject} />
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="field"><label for="d-ad">{t.fName}</label><input type="text" id="d-ad" name="ad" required /></div>
+      <div class="field"><label for="d-iletisim">{t.fContact}</label><input type="text" id="d-iletisim" name="email" required /></div>
+      <div class="field"><label for="d-tur">{t.fType}</label>
+        <select id="d-tur" name="tur">{t.types.map((o) => <option>{o}</option>)}</select>
+      </div>
+      <div class="field"><label for="d-baslik">{t.fTitle}</label><input type="text" id="d-baslik" name="baslik" placeholder={t.fTitlePh} required /></div>
+      <div class="field"><label for="d-tarih">{t.fDate}</label><input type="text" id="d-tarih" name="tarih" /></div>
+      <div class="field"><label for="d-mesaj">{t.fMsg}</label><textarea id="d-mesaj" name="mesaj" required></textarea></div>
+      <button type="submit" class="btn btn-primary">{t.submit}</button>
+      <p class="note" style="margin-top:18px">{t.formNote}</p>
+    </form>
   </div>
 </section>

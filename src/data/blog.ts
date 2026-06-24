@@ -49,6 +49,9 @@ export function formatDate(iso: string, lang: Lang): string {
 export const BLOG_UI: Record<Lang, {
   metaTitle: string; metaDesc: string; crumb: string; kicker: string; h1: string; intro: string;
   home: string; empty: string; back: string; readMore: string;
+  formKicker: string; formH: string; formP: string; subject: string;
+  fName: string; fContact: string; fType: string; types: string[];
+  fTitle: string; fTitlePh: string; fDate: string; fMsg: string; submit: string; formNote: string;
 }> = {
   tr: {
     metaTitle: 'Duyurular — Ulukale Köyü Dijital Arşivi',
@@ -57,6 +60,14 @@ export const BLOG_UI: Record<Lang, {
     intro: 'Köye dair güncel gelişmeler, etkinlikler ve yazılar burada paylaşılır.',
     home: 'Ana Sayfa', empty: 'Henüz duyuru eklenmedi. İlk duyuru yakında burada olacak.',
     back: '← Tüm Duyurular', readMore: 'Devamını oku →',
+    formKicker: 'Duyurunu Paylaş', formH: 'Bir Duyuru Gönder',
+    formP: 'Düğün, nişan, etkinlik ya da vefat/taziye haberinizi buradan iletin. Gönderiler gözden geçirildikten sonra Duyurular sayfasında yayımlanır.',
+    subject: 'Ulukale Arşivi — Yeni Duyuru',
+    fName: 'Adınız Soyadınız', fContact: 'İletişim (e-posta veya telefon)',
+    fType: 'Duyuru türü', types: ['Düğün', 'Nişan', 'Etkinlik / Tören', 'Vefat / Taziye', 'Diğer'],
+    fTitle: 'Başlık', fTitlePh: 'Örn: Ahmet & Ayşe’nin düğünü', fDate: 'Tarih (varsa)',
+    fMsg: 'Duyuru metni / detaylar', submit: 'Duyuruyu Gönder',
+    formNote: 'Gönderdiğiniz duyuru gözden geçirilip uygun görülürse yayımlanır. İletişim bilginiz yayımlanmaz, yalnızca size ulaşmak için kullanılır.',
   },
   en: {
     metaTitle: 'Announcements — Ulukale Village Digital Archive',
@@ -65,6 +76,14 @@ export const BLOG_UI: Record<Lang, {
     intro: 'Current developments, events and posts about the village are shared here.',
     home: 'Home', empty: 'No announcements yet. The first one will be here soon.',
     back: '← All Announcements', readMore: 'Read more →',
+    formKicker: 'Share an Announcement', formH: 'Submit an Announcement',
+    formP: 'Send your wedding, engagement, event or memorial/condolence news here. Submissions are published on the Announcements page after review.',
+    subject: 'Ulukale Archive — New Announcement',
+    fName: 'Your full name', fContact: 'Contact (email or phone)',
+    fType: 'Announcement type', types: ['Wedding', 'Engagement', 'Event / Ceremony', 'Passing / Condolence', 'Other'],
+    fTitle: 'Title', fTitlePh: 'e.g. Wedding of Ahmet & Ayşe', fDate: 'Date (if any)',
+    fMsg: 'Announcement text / details', submit: 'Send Announcement',
+    formNote: 'Your announcement is published if approved after review. Your contact details are not published; they are used only to reach you.',
   },
   ar: {
     metaTitle: 'إعلانات — أرشيف قرية أولوكالة الرقمي',
@@ -73,5 +92,13 @@ export const BLOG_UI: Record<Lang, {
     intro: 'تُنشَر هنا المستجدّات والفعاليات والمقالات المتعلّقة بالقرية.',
     home: 'الرئيسية', empty: 'لا إعلانات بعد. سيظهر أوّلها هنا قريبًا.',
     back: '← كل الإعلانات', readMore: 'اقرأ المزيد ←',
+    formKicker: 'شارك إعلانًا', formH: 'أرسِل إعلانًا',
+    formP: 'أرسِل خبر زفافك أو خطوبتك أو فعاليّتك أو خبر الوفاة/التعزية من هنا. تُنشَر الإعلانات في صفحة الإعلانات بعد المراجعة.',
+    subject: 'أرشيف أولوكالة — إعلان جديد',
+    fName: 'الاسم الكامل', fContact: 'وسيلة التواصل (بريد أو هاتف)',
+    fType: 'نوع الإعلان', types: ['زفاف', 'خطوبة', 'فعالية / مناسبة', 'وفاة / تعزية', 'أخرى'],
+    fTitle: 'العنوان', fTitlePh: 'مثال: زفاف أحمد وعائشة', fDate: 'التاريخ (إن وُجد)',
+    fMsg: 'نص الإعلان / التفاصيل', submit: 'إرسال الإعلان',
+    formNote: 'يُنشَر إعلانك إن قُبل بعد المراجعة. لا تُنشَر معلومات التواصل؛ تُستخدم فقط للوصول إليك.',
   },
 };
