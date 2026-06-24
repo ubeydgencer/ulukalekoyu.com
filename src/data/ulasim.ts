@@ -13,10 +13,11 @@ export const ULASIM: Record<Lang, {
     facts: [
       'Çemişgezek ilçe merkezine: ~30 km',
       'Tunceli il merkezine: ~93 km',
+      'Elazığ\'a: Keban Gölü feribotla geçilir — Pertek ya da Çemişgezek hattı (saatler aşağıda)',
       'Rakım: 940 m · 39.025°N, 39.036°E',
       'En yakın havaalanları: Elazığ ve Tunceli',
     ],
-    roadH: 'Karayolu', roadP: 'Köye, Çemişgezek ilçe merkezinden karayoluyla ulaşılır. Elazığ tarafından gelenler, Keban Baraj Gölü\'nü Pertek–Elazığ feribotuyla geçerek Çemişgezek üzerinden köye varır.',
+    roadH: 'Karayolu', roadP: 'Köye Çemişgezek ilçe merkezinden karayoluyla ulaşılır. Elazığ tarafından gelirken Keban Baraj Gölü, tercihe göre Pertek ya da Çemişgezek feribotuyla geçilir; her iki hattın güncel kalkış saatleri aşağıda yer alır.',
     mapBtn: 'Haritada Aç',
   },
   en: {
@@ -28,10 +29,11 @@ export const ULASIM: Record<Lang, {
     facts: [
       'To Çemişgezek district centre: ~30 km',
       'To Tunceli city centre: ~93 km',
+      'To Elazığ: across Keban Lake by ferry — Pertek or Çemişgezek line (times below)',
       'Altitude: 940 m · 39.025°N, 39.036°E',
       'Nearest airports: Elazığ and Tunceli',
     ],
-    roadH: 'By road', roadP: 'The village is reached by road from the Çemişgezek district centre. Those coming from the Elazığ side cross the Keban Dam Lake by the Pertek–Elazığ ferry and reach the village via Çemişgezek.',
+    roadH: 'By road', roadP: 'The village is reached by road from the Çemişgezek district centre. Coming from the Elazığ side, you cross the Keban Dam Lake by the Pertek or Çemişgezek ferry as you prefer; the up-to-date departure times for both lines are shown below.',
     mapBtn: 'Open in Maps',
   },
   ar: {
@@ -43,10 +45,11 @@ export const ULASIM: Record<Lang, {
     facts: [
       'إلى مركز قضاء تشيميشكزك: ~30 كم',
       'إلى مركز ولاية تونجلي: ~93 كم',
+      'إلى إلازيغ: تُعبَر بحيرة كيبان بالعبّارة — خط برتك أو تشيميشكزك (المواعيد أدناه)',
       'الارتفاع: 940 م · 39.025°N, 39.036°E',
       'أقرب المطارات: إلازيغ وتونجلي',
     ],
-    roadH: 'برًّا', roadP: 'يُوصَل إلى القرية برًّا من مركز قضاء تشيميشكزك. ومن يأتون من جهة إلازيغ يعبرون بحيرة سدّ كيبان بعبّارة برتك–إلازيغ ويصلون القرية عبر تشيميشكزك.',
+    roadH: 'برًّا', roadP: 'يُوصَل إلى القرية برًّا من مركز قضاء تشيميشكزك. وعند القدوم من جهة إلازيغ تُعبَر بحيرة سدّ كيبان بعبّارة برتك أو تشيميشكزك حسب التفضيل؛ ومواعيد الإقلاع المحدّثة للخطّين مذكورة أدناه.',
     mapBtn: 'افتح في الخرائط',
   },
 };
