@@ -38,7 +38,7 @@ const subject: Record<Lang, string> = { tr: 'Ulukale Arşivi — İletişim Form
         <p set:html={t.locP} />
         <a href="https://www.google.com/maps/search/?api=1&query=39.025,39.036" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">{t.mapBtn}</a>
       </div>
-      <div class="info-card"><h3>{t.emailH}</h3><p>{t.emailP}</p></div>
+      <div class="info-card"><h3>{t.emailH}</h3><p set:html={t.emailP} /></div>
       <div class="info-card"><h3>{t.howH}</h3><p set:html={t.howList} /></div>
     </aside>
   </div>
