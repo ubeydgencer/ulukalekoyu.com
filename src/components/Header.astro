@@ -15,11 +15,6 @@ const navItems = [
     <a href={localePath(lang, 'index')} class="brand" style="text-decoration:none">
       <span class="mark">Ulukale</span><span class="sub">{BRAND_SUB[lang]}</span>
     </a>
-    <div class="lang-switch">
-      {LOCALES.map((l) => (
-        <a href={localePath(l, page)} hreflang={l} class={l === lang ? 'active' : undefined}>{langLabel[l]}</a>
-      ))}
-    </div>
     <button class="nav-toggle" aria-label={MENU_LABEL[lang]} onclick="document.querySelector('.nav').classList.toggle('open')">
       <svg class="ico" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -31,8 +26,8 @@ const navItems = [
   </div>
 </header>
 
-<!-- Masaüstünde sol kenarda dikey yüzen dil seçici (mobilde gizli; header'daki kullanılır) -->
-<div class="lang-float" aria-label={MENU_LABEL[lang]}>
+<!-- Tek dil seçici: sol kenarda dikey yüzen popup -->
+<div class="lang-float" aria-label="Dil / Language">
   {LOCALES.map((l) => (
     <a href={localePath(l, page)} hreflang={l} class={l === lang ? 'active' : undefined}>{langLabel[l]}</a>
   ))}
