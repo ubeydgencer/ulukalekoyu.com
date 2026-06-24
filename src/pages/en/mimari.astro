@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import MimariBody from '../../components/MimariBody.astro';
+import { MIMARI } from '../../data/mimari';
+const lang = 'en' as const;
+const t = MIMARI[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:t.h1,inLanguage:lang,mainEntityOfPage:'https://ulukalekoyu.com/en/mimari/'});
+---
+<Base lang={lang} page="mimari" title={t.metaTitle} description={t.metaDesc} ogImage=https://ulukalekoyu.com/images/turbe.jpg jsonld={jsonld}>
+  <MimariBody lang={lang} />
+</Base>

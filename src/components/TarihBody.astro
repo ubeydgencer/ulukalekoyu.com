@@ -1,0 +1,61 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { TARIH, NAME_EVO } from '../data/tarih';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = TARIH[lang];
+const contact: Record<Lang, string> = { tr: 'bizimle paylaşın', en: 'share it with us', ar: 'مشاركته معنا' };
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span><h1>{t.h1}</h1><p>{t.intro}</p>
+  </div>
+</section>
+
+<section class="section-tight alt-bg">
+  <div class="container narrow">
+    <div class="section-head" style="margin-bottom:14px"><span class="kicker">{t.nameK}</span><h2>{t.nameH}</h2><p>{t.nameIntro}</p></div>
+    <ul class="name-evo">
+      {NAME_EVO.map((n) => (
+        <li>
+          <span class="ne-date">{n.date[lang]}</span>
+          <span class="ne-name">{n.name}</span>
+          {n.note && <span class="ne-note">{n.note[lang]}</span>}
+        </li>
+      ))}
+    </ul>
+    <p style="color:var(--ink-soft); margin:0 0 14px;" set:html={t.namePara} />
+    <p class="note" style="margin:0;">{t.nameSrc} <a href="https://www.nisanyanyeradlari.com/?t=q&amp;y=Ulukale" target="_blank" rel="noopener">nisanyanyeradlari.com</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="timeline">
+      {t.timeline.map((it) => (
+        <div class="tl-item"><span class="tl-era">{it.era}</span><h3>{it.h3}</h3><p set:html={it.p} /></div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow prose">
+    <div class="section-head"><span class="kicker">{t.ottK}</span><h2>{t.ottH}</h2><p>{t.ottIntro}</p></div>
+    {t.ott.map((s) => (<><h3>{s.h3}</h3><p set:html={s.p} /></>))}
+    <p class="note" style="margin-top:8px;">{t.ottSrc} (<a href="https://web.firat.edu.tr/harput/dergii/dergi11/3.pdf" target="_blank" rel="noopener">PDF</a>)</p>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container narrow">
+    <div class="note" set:html={t.srcNote.replace(contact[lang], `<a href="${localePath(lang, 'iletisim')}">${contact[lang]}</a>`)} />
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta"><h2>{t.ctaH2}</h2><p>{t.ctaP}</p><a href={localePath(lang, 'hafiza')} class="btn btn-ghost">{t.ctaBtn}</a></div>
+  </div>
+</section>

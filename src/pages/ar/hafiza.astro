@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import HafizaBody from '../../components/HafizaBody.astro';
+import { HAFIZA } from '../../data/hafiza';
+const lang = 'ar' as const;
+const t = HAFIZA[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:t.h1,inLanguage:lang,mainEntityOfPage:'https://ulukalekoyu.com/ar/hafiza/'});
+---
+<Base lang={lang} page="hafiza" title={t.metaTitle} description={t.metaDesc} jsonld={jsonld}>
+  <HafizaBody lang={lang} />
+</Base>

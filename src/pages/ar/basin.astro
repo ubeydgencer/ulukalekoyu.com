@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import PressBody from '../../components/PressBody.astro';
+import { BASIN } from '../../data/basin';
+const lang = 'ar' as const;
+const t = BASIN[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:t.h1,inLanguage:lang,about:{'@type':'Place','@id':'https://ulukalekoyu.com/#place'},mainEntityOfPage:'https://ulukalekoyu.com/ar/basin/'});
+---
+<Base lang={lang} page="basin" title={t.metaTitle} description={t.metaDesc} ogType="website" jsonld={jsonld}>
+  <PressBody lang={lang} />
+</Base>

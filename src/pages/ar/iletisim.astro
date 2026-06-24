@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import IletisimBody from '../../components/IletisimBody.astro';
+import { ILETISIM } from '../../data/iletisim';
+const lang = 'ar' as const;
+const t = ILETISIM[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'ContactPage',name:t.h1,inLanguage:lang,mainEntityOfPage:'https://ulukalekoyu.com/ar/iletisim/'});
+---
+<Base lang={lang} page="iletisim" title={t.metaTitle} description={t.metaDesc} jsonld={jsonld}>
+  <IletisimBody lang={lang} />
+</Base>

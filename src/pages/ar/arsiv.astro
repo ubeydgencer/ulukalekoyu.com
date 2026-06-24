@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import ArsivBody from '../../components/ArsivBody.astro';
+import { ARSIV } from '../../data/arsiv';
+const lang = 'ar' as const;
+const t = ARSIV[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:t.h1,inLanguage:lang,mainEntityOfPage:'https://ulukalekoyu.com/ar/arsiv/'});
+---
+<Base lang={lang} page="arsiv" title={t.metaTitle} description={t.metaDesc} jsonld={jsonld}>
+  <ArsivBody lang={lang} />
+</Base>

@@ -1,0 +1,54 @@
+---
+import Gallery from './Gallery.astro';
+import { localePath, type Lang } from '../lib/i18n';
+import { ARSIV } from '../data/arsiv';
+import { PHOTOS } from '../data/gallery';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = ARSIV[lang];
+const eski = PHOTOS.filter((p) => p.group === 'eski');
+const phPhoto: Record<Lang, string> = { tr: 'Foto', en: 'Photo', ar: 'صورة' };
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p>{t.intro}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head"><span class="kicker">{t.s1k}</span><h2>{t.s1h}</h2><p>{t.s1p}</p></div>
+    <div class="gallery">
+      {eski.map((p) => (
+        <div class="frame" style={p.span2 ? 'grid-column: span 2; aspect-ratio: 16/9;' : undefined}>
+          <img src={p.src} alt={p.alt[lang]} /><div class="cap">{p.caption[lang]}</div>
+        </div>
+      ))}
+      <div class="frame"><div class="ph"><svg class="ico-ph" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="M21 16l-5-5L5 21"/></svg><br><small set:html={t.phPhoto} /></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container">
+    <div class="section-head"><span class="kicker">{t.s2k}</span><h2>{t.s2h}</h2><p>{t.s2p}</p></div>
+    <Gallery lang={lang} group="koyden" />
+    <p class="note" style="margin-top:24px" set:html={t.note.replace(
+      lang === 'tr' ? 'iletişime geçin' : lang === 'en' ? 'contact us' : 'التواصل معنا',
+      `<a href="${localePath(lang, 'iletisim')}">${lang === 'tr' ? 'iletişime geçin' : lang === 'en' ? 'contact us' : 'التواصل معنا'}</a>`
+    )} />
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta">
+      <h2>{t.ctaH2}</h2>
+      <p>{t.ctaP}</p>
+      <a href={localePath(lang, 'iletisim')} class="btn btn-ghost">{t.ctaBtn}</a>
+    </div>
+  </div>
+</section>

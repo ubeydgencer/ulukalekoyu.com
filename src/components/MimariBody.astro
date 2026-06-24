@@ -1,0 +1,68 @@
+---
+import Gallery from './Gallery.astro';
+import { localePath, type Lang } from '../lib/i18n';
+import { MIMARI, MIMARI_CARDS } from '../data/mimari';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = MIMARI[lang];
+const I: Record<string, string> = {
+  cami: '<path d="M4 21h16"/><path d="M6 21v-6a6 6 0 0 1 12 0v6"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/><path d="M12 6.6V5.2"/><path d="M11 4.2a1.4 1.4 0 1 0 1 2.3 1.7 1.7 0 1 1-1-2.3z"/>',
+  kilise: '<path d="M4 21h16"/><path d="M6 21V11l6-4 6 4v10"/><path d="M10 21v-5h4v5"/><path d="M12 7V3"/><path d="M10 4.5h4"/>',
+  turbe: '<path d="M4 21h16"/><path d="M6 21v-7a6 6 0 0 1 12 0v7"/><path d="M10 21v-5a2 2 0 0 1 4 0v5"/>',
+  cesme: '<path d="M5 21h14"/><path d="M7 21v-6a5 5 0 0 1 10 0v6"/><path d="M12 13v4"/><path d="M9.5 17h5"/>',
+  hamam: '<path d="M3 13h18v2a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M5 13V6.5A2.5 2.5 0 0 1 9 4.6"/><path d="M8 21l-1 1.5M16 21l1 1.5"/>',
+  degirmen: '<circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>',
+  kaya: '<path d="M3 20h18"/><path d="M4 20l6-12 4 7 2-3 4 8"/><path d="M9.5 20a2.5 2.5 0 0 1 5 0"/>',
+  ev: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  dutbahce: '<path d="M12 22v-6"/><path d="M12 16c-3.3 0-5.5-2.3-5.5-5.2C6.5 7.5 8.6 4.7 12 2.5c3.4 2.2 5.5 5 5.5 8.3C17.5 13.7 15.3 16 12 16z"/>',
+};
+const seeSources: Record<Lang, string> = { tr: 'kaynaklar', en: 'sources', ar: 'المصادر' };
+const addArchive: Record<Lang, string> = { tr: 'arşive ekleyebiliriz', en: 'add them to the archive', ar: 'إضافتها إلى الأرشيف' };
+const contact: Record<Lang, string> = { tr: 'bize ulaşın', en: 'contact us', ar: 'التواصل معنا' };
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p>{t.intro}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid grid-3">
+      {MIMARI_CARDS.map((card) => (
+        <div class="card">
+          <span class="icon"><svg class="ico" viewBox="0 0 24 24" set:html={I[card.icon]} /></span>
+          <h3>{card.h3[lang]}</h3>
+          <p>{card.p[lang]}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container">
+    <div class="section-head"><span class="kicker">{t.docK}</span><h2>{t.docH}</h2><p>{t.docP}</p></div>
+    <Gallery lang={lang} group="mimari" />
+    <div class="note" style="margin-top:28px" set:html={
+      t.docNote
+        .replace(seeSources[lang], `<a href="#kaynaklar">${seeSources[lang]}</a>`)
+        .replace(addArchive[lang], `<a href="${localePath(lang, 'iletisim')}">${addArchive[lang]}</a>`)
+    } />
+  </div>
+</section>
+
+<section id="kaynaklar" class="section-tight">
+  <div class="container narrow">
+    <div class="note">
+      <strong>{t.srcTitle}</strong>
+      <ul style="margin:10px 0 0;">
+        {t.srcList.map((s) => <li>{s}</li>)}
+      </ul>
+      <p style="margin:12px 0 0;" set:html={t.srcNote.replace(contact[lang], `<a href="${localePath(lang, 'iletisim')}">${contact[lang]}</a>`)} />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,11 @@
+---
+import Base from '../../layouts/Base.astro';
+import DutBody from '../../components/DutBody.astro';
+import { DUT } from '../../data/dut';
+const lang = 'ar' as const;
+const t = DUT[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'Article',headline:t.h1,inLanguage:lang,image:'https://ulukalekoyu.com/images/dut-beyaz.jpg',author:{'@type':'Person',name:'Ubeyd Gençer'},mainEntityOfPage:'https://ulukalekoyu.com/ar/dut/'});
+---
+<Base lang={lang} page="dut" title={t.metaTitle} description={t.metaDesc} ogType="article" ogImage="https://ulukalekoyu.com/images/dut-beyaz.jpg" jsonld={jsonld}>
+  <DutBody lang={lang} />
+</Base>

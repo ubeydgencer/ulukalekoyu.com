@@ -1,0 +1,16 @@
+---
+import { PHOTOS, type Photo } from '../data/gallery';
+import type { Lang } from '../lib/i18n';
+interface Props { lang: Lang; group: Photo['group']; }
+const { lang, group } = Astro.props;
+const items = PHOTOS.filter((p) => p.group === group);
+const photoLabel: Record<Lang, string> = { tr: 'Foto', en: 'Photo', ar: 'صورة' };
+---
+<div class="gallery">
+  {items.map((p) => (
+    <div class="frame" style={p.span2 ? 'grid-column: span 2; aspect-ratio: 16/9;' : undefined}>
+      <img src={p.src} alt={p.alt[lang]} />
+      <div class="cap">{p.caption[lang]}{p.source ? ` · ${photoLabel[lang]}: ${p.source}` : ''}</div>
+    </div>
+  ))}
+</div>

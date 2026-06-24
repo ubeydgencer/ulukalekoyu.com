@@ -1,0 +1,49 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { ILETISIM } from '../data/iletisim';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = ILETISIM[lang];
+const success = localePath(lang, 'tesekkurler');
+const botLabel: Record<Lang, string> = { tr: 'Boş bırakın:', en: 'Leave blank:', ar: 'اتركه فارغًا:' };
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span><h1>{t.h1}</h1><p>{t.intro}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container contact-grid">
+    <div>
+      <form class="form" name="iletisim" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action={success}>
+        <input type="hidden" name="form-name" value="iletisim" />
+        <p style="display:none"><label>{botLabel[lang]} <input name="bot-field" /></label></p>
+        <div class="field"><label for="ad">{t.fName}</label><input type="text" id="ad" name="ad" required /></div>
+        <div class="field"><label for="eposta">{t.fEmail}</label><input type="email" id="eposta" name="eposta" required /></div>
+        <div class="field"><label for="konu">{t.fSubject}</label>
+          <select id="konu" name="konu">{t.subjects.map((o) => <option>{o}</option>)}</select>
+        </div>
+        <div class="field"><label for="mesaj">{t.fMessage}</label><textarea id="mesaj" name="mesaj" required></textarea></div>
+        <button type="submit" class="btn btn-primary">{t.submit}</button>
+        <p class="note" style="margin-top:18px">{t.formNote}</p>
+      </form>
+    </div>
+    <aside class="contact-aside">
+      <div class="info-card">
+        <h3>{t.locH}</h3>
+        <p set:html={t.locP} />
+        <a href="https://www.google.com/maps/search/?api=1&query=39.025,39.036" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">{t.mapBtn}</a>
+      </div>
+      <div class="info-card"><h3>{t.emailH}</h3><p>{t.emailP}</p></div>
+      <div class="info-card"><h3>{t.howH}</h3><p set:html={t.howList} /></div>
+    </aside>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container narrow">
+    <div class="memory"><blockquote>{t.quote}</blockquote><cite>{t.cite}</cite></div>
+  </div>
+</section>

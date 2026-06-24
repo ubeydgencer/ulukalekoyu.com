@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import { localePath } from '../../lib/i18n';
+import { TESEKKUR } from '../../data/misc';
+const lang = 'ar' as const;
+const t = TESEKKUR[lang];
+---
+<Base lang={lang} page="tesekkurler" title={t.metaTitle} description={t.p} noindex={true}>
+  <section class="page-hero"><div class="container" style="text-align:center">
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p style="max-width:560px;margin-inline:auto">{t.p}</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px">
+      <a href={localePath(lang,'index')} class="btn btn-primary">{t.back}</a>
+      <a href={localePath(lang,'arsiv')} class="btn btn-ghost">{t.explore}</a>
+    </div>
+  </div></section>
+</Base>

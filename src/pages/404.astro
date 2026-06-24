@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { localePath } from '../lib/i18n';
+import { NOTFOUND } from '../data/misc';
+const lang = 'tr' as const;
+const t = NOTFOUND[lang];
+---
+<Base lang={lang} page="index" title={t.metaTitle} description={t.p} noindex={true}>
+  <section class="page-hero"><div class="container" style="text-align:center">
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p style="max-width:560px;margin-inline:auto">{t.p}</p>
+    <div style="margin-top:24px"><a href={localePath(lang,'index')} class="btn btn-primary">{t.back}</a></div>
+  </div></section>
+</Base>

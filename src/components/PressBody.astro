@@ -1,0 +1,49 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { PRESS } from '../data/press';
+import { BASIN } from '../data/basin';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = BASIN[lang];
+const sections = [
+  { id: 'history', k: t.s1k, h: t.s1h, p: t.s1p },
+  { id: 'dut', k: t.s2k, h: t.s2h, p: t.s2p },
+  { id: 'memory', k: t.s3k, h: t.s3h, p: t.s3p },
+] as const;
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{lang === 'tr' ? 'Ana Sayfa' : lang === 'en' ? 'Home' : 'الرئيسية'}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p>{t.intro}</p>
+  </div>
+</section>
+
+{sections.map((sec, i) => (
+  <section class={i === 1 ? 'alt-bg' : undefined}>
+    <div class="container narrow">
+      <div class="section-head">
+        <span class="kicker">{sec.k}</span>
+        <h2>{sec.h}</h2>
+        <p>{sec.p}</p>
+      </div>
+      <div class="press-list">
+        {PRESS.filter((it) => it.section === sec.id).map((it) => (
+          <a class="press-item" href={it.url} target="_blank" rel="noopener">
+            <div class="press-meta"><span class="press-outlet">{it.outlet[lang]}</span><span class="press-date">{it.date[lang]}</span></div>
+            <h3>{it.headline[lang]}</h3>
+            <p>{it.summary[lang]}</p>
+            <span class="read">{it.kind === 'gallery' ? t.readGallery : t.read}</span>
+          </a>
+        ))}
+      </div>
+      {sec.id === 'memory' && (
+        <div class="note" style="margin-top:24px" set:html={t.note.replace(
+          lang === 'tr' ? 'bize ulaşın' : lang === 'en' ? 'contact us' : 'التواصل معنا',
+          `<a href="${localePath(lang, 'iletisim')}">${lang === 'tr' ? 'bize ulaşın' : lang === 'en' ? 'contact us' : 'التواصل معنا'}</a>`
+        )} />
+      )}
+    </div>
+  </section>
+))}

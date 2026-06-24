@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import TarihBody from '../components/TarihBody.astro';
+import { TARIH } from '../data/tarih';
+const lang = 'tr' as const;
+const t = TARIH[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'Article',headline:t.h1,inLanguage:lang,image:'https://ulukalekoyu.com/images/koy-eski.jpg',author:{'@type':'Person',name:'Ubeyd Gençer'},mainEntityOfPage:'https://ulukalekoyu.com/tarih/'});
+---
+<Base lang={lang} page="tarih" title={t.metaTitle} description={t.metaDesc} ogType="article" jsonld={jsonld}>
+  <TarihBody lang={lang} />
+</Base>
