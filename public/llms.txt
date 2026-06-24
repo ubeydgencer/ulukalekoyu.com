@@ -48,6 +48,9 @@ kerpiç evler ve tarihî konaklar (sivil mimari), dut bahçeleri.
 - [Fotoğraf Arşivi](https://ulukalekoyu.com/arsiv/): Eski ve yeni fotoğraflar.
 - [Hafıza / Sözlü Tarih](https://ulukalekoyu.com/hafiza/): Anılar, hane hikâyeleri, gelenekler; katkı formu.
 - [Ulusal Basın](https://ulukalekoyu.com/basin/): Ulukale'nin ulusal basında yer aldığı haberlerin derlemesi (tarih, coğrafi işaretli dut, hafıza).
+- [Duyurular](https://ulukalekoyu.com/duyurular/): Köye dair güncel duyurular ve yazılar; düğün/nişan/etkinlik/vefat duyurusu gönderme formu.
+- [Ulaşım & Feribot Saatleri](https://ulukalekoyu.com/ulasim/): Köye ulaşım, konum/mesafeler ve Çemişgezek + Pertek–Elazığ feribot kalkış saatleri (otomatik güncel).
+- [Şehitlerimiz](https://ulukalekoyu.com/sehitlerimiz/): 9 Eylül 1994 Ulukale baskınında şehit düşen sivillerin anma sayfası; isimler, Şehitler Anıtı (2018) ve anma törenleri.
 - [İletişim](https://ulukalekoyu.com/iletisim/): Arşive katkı ve iletişim.
 
 ## Ekonomi: Ulukale Dutu

@@ -12,6 +12,7 @@ const PAGES: { key: string; freq: string; prio: number }[] = [
   { key: 'hafiza', freq: 'monthly', prio: 0.6 },
   { key: 'basin', freq: 'monthly', prio: 0.6 },
   { key: 'duyurular', freq: 'weekly', prio: 0.7 },
+  { key: 'ulasim', freq: 'monthly', prio: 0.6 },
   { key: 'iletisim', freq: 'yearly', prio: 0.4 },
 ];
 const today = new Date().toISOString().slice(0, 10);
