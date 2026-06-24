@@ -1,0 +1,92 @@
+backend:
+  name: github
+  repo: ubeydgencer/ulukalekoyu.com
+  branch: main
+  commit_messages:
+    create: "İçerik: {{collection}} eklendi ({{slug}})"
+    update: "İçerik: {{collection}} güncellendi ({{slug}})"
+    delete: "İçerik: {{collection}} silindi ({{slug}})"
+    uploadMedia: "Medya yüklendi: {{path}}"
+    deleteMedia: "Medya silindi: {{path}}"
+
+# Yüklenen fotoğraflar buraya gider; sitede /images/... olarak görünür
+media_folder: public/images
+public_folder: /images
+
+site_url: https://ulukalekoyu.com
+display_url: https://ulukalekoyu.com
+logo_url: https://ulukalekoyu.com/icon-192.png
+
+collections:
+  # ----------------------------------------------------------------
+  - name: gallery
+    label: "Fotoğraf Galerisi"
+    label_singular: "Fotoğraf"
+    description: "Arşiv, mimari ve dut sayfalarındaki fotoğraflar. Her fotoğrafın 3 dilde başlığı vardır."
+    folder: src/content/gallery
+    create: true
+    extension: json
+    format: json
+    slug: "{{group}}-{{caption_en | slugify}}"
+    summary: "[{{group}}] {{caption_tr}}"
+    sortable_fields: [group]
+    fields:
+      - name: group
+        label: "Hangi galeri?"
+        widget: select
+        hint: "Fotoğraf hangi sayfada görünsün?"
+        options:
+          - { label: "Arşiv — Eski Albümler", value: eski }
+          - { label: "Arşiv — Köyden Kareler", value: koyden }
+          - { label: "Mimari — Belgeleme", value: mimari }
+          - { label: "Dut — Hasattan Kareler", value: dut }
+      - { name: image, label: "Fotoğraf", widget: image, hint: "Bilgisayardan yükleyin ya da arşivden seçin." }
+      - { name: source, label: "Kaynak künyesi", widget: string, required: false, hint: "Ör. AA, NTV, Hürriyet. Boş bırakılırsa gösterilmez." }
+      - { name: span2, label: "Geniş göster (2 sütun)", widget: boolean, default: false, required: false }
+      - { name: caption_tr, label: "Başlık (Türkçe)", widget: string }
+      - { name: caption_en, label: "Başlık (English)", widget: string }
+      - { name: caption_ar, label: "Başlık (عربي)", widget: string }
+      - { name: alt_tr, label: "Alt metin / erişilebilirlik (TR)", widget: string, hint: "Görme engelliler ve arama motorları için kısa açıklama." }
+      - { name: alt_en, label: "Alt text (EN)", widget: string }
+      - { name: alt_ar, label: "النص البديل (AR)", widget: string }
+
+  # ----------------------------------------------------------------
+  - name: press
+    label: "Basın / Haberler"
+    label_singular: "Haber"
+    description: "Basın sayfasındaki haber kartları. Her haberin 3 dilde başlık ve özeti vardır."
+    folder: src/content/press
+    create: true
+    extension: json
+    format: json
+    slug: "{{section}}-{{headline_en | slugify}}"
+    summary: "[{{section}}] {{headline_tr}}"
+    sortable_fields: [section]
+    fields:
+      - name: section
+        label: "Bölüm"
+        widget: select
+        options:
+          - { label: "Tarih & Tarihî Doku", value: history }
+          - { label: "Dut (Coğrafi İşaret)", value: dut }
+          - { label: "Köyün Hafızası", value: memory }
+      - name: kind
+        label: "Tür"
+        widget: select
+        hint: "'Foto-galeri' seçilirse bağlantı yazısı 'Foto-galeriyi gör' olur."
+        options:
+          - { label: "Haber yazısı", value: article }
+          - { label: "Foto-galeri", value: gallery }
+      - { name: url, label: "Haberin bağlantısı (URL)", widget: string }
+      - { name: outlet_tr, label: "Kaynak adı (TR)", widget: string, hint: "Ör. Anadolu Ajansı" }
+      - { name: outlet_en, label: "Kaynak adı (EN)", widget: string }
+      - { name: outlet_ar, label: "Kaynak adı (AR)", widget: string }
+      - { name: date_tr, label: "Tarih (TR)", widget: string, hint: "Ör. 8 Ocak 2021" }
+      - { name: date_en, label: "Tarih (EN)", widget: string, hint: "Ör. 8 January 2021" }
+      - { name: date_ar, label: "Tarih (AR)", widget: string, hint: "Ör. 8 يناير 2021" }
+      - { name: headline_tr, label: "Başlık (Türkçe)", widget: string }
+      - { name: headline_en, label: "Başlık (English)", widget: string }
+      - { name: headline_ar, label: "Başlık (عربي)", widget: string }
+      - { name: summary_tr, label: "Özet (Türkçe)", widget: text }
+      - { name: summary_en, label: "Özet (English)", widget: text }
+      - { name: summary_ar, label: "Özet (عربي)", widget: text }

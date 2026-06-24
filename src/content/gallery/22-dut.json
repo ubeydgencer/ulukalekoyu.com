@@ -1,0 +1,12 @@
+{
+  "group": "dut",
+  "image": "/images/dut-bahce.jpg",
+  "span2": false,
+  "source": "NTV",
+  "alt_tr": "Ulukale dut bahçeleri, havadan görünüm",
+  "alt_en": "Ulukale mulberry orchards, aerial view",
+  "alt_ar": "بساتين توت أولوكالة من الجو",
+  "caption_tr": "Dut bahçeleri (havadan)",
+  "caption_en": "Mulberry orchards (aerial)",
+  "caption_ar": "بساتين التوت (جوًّا)"
+}
