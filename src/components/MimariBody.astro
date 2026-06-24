@@ -1,7 +1,7 @@
 ---
 import Gallery from './Gallery.astro';
 import { localePath, type Lang } from '../lib/i18n';
-import { MIMARI, MIMARI_CARDS } from '../data/mimari';
+import { MIMARI } from '../data/mimari';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = MIMARI[lang];
@@ -32,11 +32,11 @@ const contact: Record<Lang, string> = { tr: 'bize ulaşın', en: 'contact us', a
 <section>
   <div class="container">
     <div class="grid grid-3">
-      {MIMARI_CARDS.map((card) => (
+      {t.cards.map((card) => (
         <div class="card">
           <span class="icon"><svg class="ico" viewBox="0 0 24 24" set:html={I[card.icon]} /></span>
-          <h3>{card.h3[lang]}</h3>
-          <p>{card.p[lang]}</p>
+          <h3>{card.h3}</h3>
+          <p>{card.p}</p>
         </div>
       ))}
     </div>

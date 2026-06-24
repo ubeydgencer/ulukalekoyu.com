@@ -1,43 +1,5 @@
 import type { Lang } from '../lib/i18n';
+import data from '../content/pages/arsiv.json';
 
-export const ARSIV: Record<Lang, {
-  metaTitle: string; metaDesc: string;
-  crumb: string; kicker: string; h1: string; intro: string;
-  s1k: string; s1h: string; s1p: string; phPhoto: string;
-  s2k: string; s2h: string; s2p: string; note: string;
-  ctaH2: string; ctaP: string; ctaBtn: string; home: string;
-}> = {
-  tr: {
-    metaTitle: 'Fotoğraf Arşivi — Ulukale Köyü Dijital Arşivi',
-    metaDesc: 'Ulukale köyünün dünden bugüne fotoğraf arşivi. Eski albümlerden gelen kareler, tarihi yapılar ve köyün bugünkü hali.',
-    crumb: 'Fotoğraf Arşivi', kicker: 'Dünden Bugüne', h1: 'Fotoğraf Arşivi',
-    intro: 'Bir köyün hafızası en çok fotoğraflarda saklanır. Bu sayfa, eski albümlerden çıkan kareleri ve köyün bugünkü hâlini bir araya getiriyor. Boş çerçeveler, sizin paylaşacağınız fotoğraflarla dolacak.',
-    s1k: 'Tarihî Kareler', s1h: 'Eski Albümler', s1p: 'Köyün geçmişine ait fotoğraflar — düğünler, hasat, okul, mahalle... Elinizdeki eski kareler burada yaşamaya devam edebilir.',
-    phPhoto: 'Sizin eski<br>fotoğrafınız',
-    s2k: 'Yapılar ve Bugün', s2h: 'Köyden Kareler', s2p: 'Ayakta kalan tarihî yapılar ve bugünkü Ulukale. Terk edilmiş eski köy, her mevsim ayrı bir güzelliğe bürünüyor.',
-    note: 'Fotoğraflar akademik yayınlar ve ulusal basından (AA, Hürriyet, Haber7, NTV, Kültür Portalı, İstanbul Haber) derlenmiştir; her görselin altında kaynağı belirtilmiştir. Telif hakları kaynaklarına aittir; hak sahibi kaldırılmasını isterse iletişime geçin.',
-    ctaH2: 'Sandığınızdaki fotoğraf bu arşive ait', ctaP: 'Köye dair tek bir kareniz bile olsa, taranıp burada saklanabilir. Telefonla çekilmiş bir fotoğraf da, 50 yıllık siyah-beyaz bir kare de değerli.', ctaBtn: 'Fotoğraf Gönder', home: 'Ana Sayfa',
-  },
-  en: {
-    metaTitle: 'Photo Archive — Ulukale Village Digital Archive',
-    metaDesc: 'A photo archive of Ulukale village from past to present. Frames from old albums, historic buildings and the village today.',
-    crumb: 'Photo Archive', kicker: 'From Past to Present', h1: 'Photo Archive',
-    intro: "A village's memory is held above all in photographs. This page brings together frames from old albums and the village as it is today. The empty frames will fill with the photos you share.",
-    s1k: 'Historic Frames', s1h: 'Old Albums', s1p: 'Photographs from the village\'s past — weddings, harvest, school, the neighbourhood... Your old frames can live on here.',
-    phPhoto: 'Your old<br>photograph',
-    s2k: 'Buildings and Today', s2h: 'Frames from the Village', s2p: 'The surviving historic buildings and Ulukale today. The abandoned old village takes on a different beauty each season.',
-    note: 'Photographs are compiled from academic publications and national press (AA, Hürriyet, Haber7, NTV, Culture Portal, İstanbul Haber); the source is noted beneath each image. Copyright belongs to the sources; if a rights holder requests removal, please contact us.',
-    ctaH2: 'The photograph in your chest belongs to this archive', ctaP: 'Even a single frame of the village can be scanned and kept here. A photo taken on a phone is as valuable as a 50-year-old black-and-white one.', ctaBtn: 'Send a Photo', home: 'Home',
-  },
-  ar: {
-    metaTitle: 'أرشيف الصور — أرشيف قرية أولوكالة الرقمي',
-    metaDesc: 'أرشيف صور قرية أولوكالة من الماضي إلى الحاضر. لقطات من ألبومات قديمة، مبانٍ تاريخية، والقرية اليوم.',
-    crumb: 'أرشيف الصور', kicker: 'من الماضي إلى الحاضر', h1: 'أرشيف الصور',
-    intro: 'تُحفَظ ذاكرة القرية قبل كل شيء في الصور. تجمع هذه الصفحة لقطاتٍ من ألبومات قديمة والقرية كما هي اليوم. والإطارات الفارغة ستمتلئ بالصور التي تشاركها.',
-    s1k: 'لقطاتٌ تاريخية', s1h: 'ألبومات قديمة', s1p: 'صورٌ من ماضي القرية — أعراس، حصاد، مدرسة، الحيّ... لقطاتك القديمة يمكن أن تحيا هنا.',
-    phPhoto: 'صورتك<br>القديمة',
-    s2k: 'المباني واليوم', s2h: 'لقطاتٌ من القرية', s2p: 'المباني التاريخية الباقية وأولوكالة اليوم. القرية القديمة المهجورة تكتسي جمالًا مختلفًا في كل فصل.',
-    note: 'جُمعت الصور من منشورات أكاديمية ومن الصحافة الوطنية (AA، Hürriyet، Haber7، NTV، بوابة الثقافة، İstanbul Haber)؛ والمصدر مذكورٌ تحت كل صورة. حقوق النشر لأصحابها؛ وإن طلب صاحب الحق الإزالة فالرجاء التواصل معنا.',
-    ctaH2: 'الصورة في صندوقك تخصّ هذا الأرشيف', ctaP: 'حتى لقطةٌ واحدة من القرية يمكن مسحها ضوئيًا وحفظها هنا. صورةٌ التُقطت بالهاتف قيمتها كقيمة صورةٍ أبيض وأسود عمرها خمسون عامًا.', ctaBtn: 'أرسِل صورة', home: 'الرئيسية',
-  },
-};
+// İçerik panelden (Sveltia CMS → "Sayfalar") düzenlenir: src/content/pages/arsiv.json
+export const ARSIV = data as Record<Lang, typeof data.tr>;

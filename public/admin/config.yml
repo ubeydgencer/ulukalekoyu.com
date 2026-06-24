@@ -88,6 +88,296 @@ collections:
           - { name: ctaH2, label: "Kapanış başlığı", widget: string, i18n: true }
           - { name: ctaP, label: "Kapanış metni", widget: text, i18n: true }
           - { name: ctaBtn, label: "Kapanış buton", widget: string, i18n: true }
+      - name: dut
+        label: "Dut Sayfası"
+        file: src/content/pages/dut.json
+        i18n: true
+        fields:
+          - { name: metaTitle, label: "SEO başlık (tarayıcı sekmesi)", widget: string, i18n: true }
+          - { name: metaDesc, label: "SEO açıklama (arama motoru)", widget: text, i18n: true }
+          - { name: crumb, label: "Üst menüde görünen ad", widget: string, i18n: true }
+          - { name: kicker, label: "Küçük üst başlık", widget: string, i18n: true }
+          - { name: h1, label: "Sayfa başlığı", widget: string, i18n: true }
+          - { name: home, label: "“Ana Sayfa” link metni", widget: string, i18n: true }
+          - { name: intro, label: "Giriş metni", widget: text, i18n: true }
+          - name: stats
+            label: "İstatistikler"
+            widget: list
+            i18n: true
+            fields:
+                - { name: num, label: "Sayı", widget: string, i18n: true }
+                - { name: lbl, label: "Etiket", widget: string, i18n: true }
+          - { name: motifK, label: "Bölüm küçük başlık", widget: string, i18n: true }
+          - { name: motifH, label: "Bölüm başlığı", widget: string, i18n: true }
+          - name: introP
+            label: "Giriş paragrafları"
+            widget: list
+            i18n: true
+            field: { name: deger, label: "Madde", widget: text, i18n: true }
+          - { name: procK, label: "Süreç: küçük başlık", widget: string, i18n: true }
+          - { name: procH, label: "Süreç: başlık", widget: string, i18n: true }
+          - { name: procP, label: "Süreç: açıklama", widget: text, i18n: true }
+          - name: steps
+            label: "Süreç adımları"
+            widget: list
+            i18n: true
+            fields:
+                - { name: step, label: "Adım etiketi", widget: string, i18n: true }
+                - { name: h4, label: "Alt başlık", widget: string, i18n: true }
+                - { name: p, label: "Metin", widget: string, i18n: true }
+          - { name: muhtarQ, label: "Muhtar alıntısı", widget: text, i18n: true }
+          - { name: muhtarC, label: "Muhtar alıntı kaynağı", widget: string, i18n: true }
+          - { name: womenK, label: "Kadın emeği: küçük başlık", widget: string, i18n: true }
+          - { name: womenH, label: "Kadın emeği: başlık", widget: string, i18n: true }
+          - { name: womenP, label: "Kadın emeği: metin", widget: text, i18n: true }
+          - { name: q2, label: "Alıntı 2", widget: text, i18n: true }
+          - { name: c2, label: "Alıntı 2 kaynağı", widget: string, i18n: true }
+          - { name: q3, label: "Alıntı 3", widget: text, i18n: true }
+          - { name: c3, label: "Alıntı 3 kaynağı", widget: string, i18n: true }
+          - { name: econK, label: "Ekonomi: küçük başlık", widget: string, i18n: true }
+          - { name: econH, label: "Ekonomi: başlık", widget: string, i18n: true }
+          - name: cards
+            label: "Kartlar"
+            widget: list
+            i18n: true
+            fields:
+                - { name: h3, label: "Başlık", widget: string, i18n: true }
+                - { name: p, label: "Metin", widget: text, i18n: true }
+          - { name: giNote, label: "Coğrafi işaret notu", widget: text, i18n: true }
+          - { name: healthNote, label: "Sağlık notu", widget: text, i18n: true }
+          - { name: endemicQ, label: "Endemik alıntısı", widget: text, i18n: true }
+          - { name: endemicC, label: "Endemik alıntı kaynağı", widget: text, i18n: true }
+          - { name: sources, label: "Kaynaklar", widget: text, i18n: true }
+          - { name: galK, label: "Galeri: küçük başlık", widget: string, i18n: true }
+          - { name: galH, label: "Galeri: başlık", widget: string, i18n: true }
+          - { name: galP, label: "Galeri: açıklama", widget: text, i18n: true }
+          - { name: galNote, label: "Galeri notu", widget: text, i18n: true }
+          - { name: ctaH2, label: "Kapanış başlığı", widget: string, i18n: true }
+          - { name: ctaP, label: "Kapanış metni", widget: text, i18n: true }
+          - { name: ctaBtn, label: "Kapanış buton yazısı", widget: string, i18n: true }
+      - name: arsiv
+        label: "Arşiv Sayfası"
+        file: src/content/pages/arsiv.json
+        i18n: true
+        fields:
+          - { name: metaTitle, label: "SEO başlık (tarayıcı sekmesi)", widget: string, i18n: true }
+          - { name: metaDesc, label: "SEO açıklama (arama motoru)", widget: text, i18n: true }
+          - { name: crumb, label: "Üst menüde görünen ad", widget: string, i18n: true }
+          - { name: kicker, label: "Küçük üst başlık", widget: string, i18n: true }
+          - { name: h1, label: "Sayfa başlığı", widget: string, i18n: true }
+          - { name: intro, label: "Giriş metni", widget: text, i18n: true }
+          - { name: s1k, label: "Bölüm 1: küçük başlık", widget: string, i18n: true }
+          - { name: s1h, label: "Bölüm 1: başlık", widget: string, i18n: true }
+          - { name: s1p, label: "Bölüm 1: metin", widget: text, i18n: true }
+          - { name: phPhoto, label: "Boş çerçeve yazısı", widget: text, i18n: true }
+          - { name: s2k, label: "Bölüm 2: küçük başlık", widget: string, i18n: true }
+          - { name: s2h, label: "Bölüm 2: başlık", widget: string, i18n: true }
+          - { name: s2p, label: "Bölüm 2: metin", widget: text, i18n: true }
+          - { name: note, label: "Not", widget: text, i18n: true }
+          - { name: ctaH2, label: "Kapanış başlığı", widget: string, i18n: true }
+          - { name: ctaP, label: "Kapanış metni", widget: text, i18n: true }
+          - { name: ctaBtn, label: "Kapanış buton yazısı", widget: string, i18n: true }
+          - { name: home, label: "“Ana Sayfa” link metni", widget: string, i18n: true }
+      - name: iletisim
+        label: "İletişim Sayfası"
+        file: src/content/pages/iletisim.json
+        i18n: true
+        fields:
+          - { name: metaTitle, label: "SEO başlık (tarayıcı sekmesi)", widget: string, i18n: true }
+          - { name: metaDesc, label: "SEO açıklama (arama motoru)", widget: text, i18n: true }
+          - { name: crumb, label: "Üst menüde görünen ad", widget: string, i18n: true }
+          - { name: kicker, label: "Küçük üst başlık", widget: string, i18n: true }
+          - { name: h1, label: "Sayfa başlığı", widget: string, i18n: true }
+          - { name: home, label: "“Ana Sayfa” link metni", widget: string, i18n: true }
+          - { name: intro, label: "Giriş metni", widget: text, i18n: true }
+          - { name: fName, label: "Form: ad alanı", widget: string, i18n: true }
+          - { name: fEmail, label: "Form: e-posta alanı", widget: string, i18n: true }
+          - { name: fSubject, label: "Form: konu alanı", widget: string, i18n: true }
+          - name: subjects
+            label: "Konu seçenekleri"
+            widget: list
+            i18n: true
+            field: { name: deger, label: "Madde", widget: string, i18n: true }
+          - { name: fMessage, label: "Form: mesaj alanı", widget: string, i18n: true }
+          - { name: submit, label: "Form: gönder butonu", widget: string, i18n: true }
+          - { name: formNote, label: "Form: alt not", widget: text, i18n: true }
+          - { name: locH, label: "Konum başlığı", widget: string, i18n: true }
+          - { name: locP, label: "Konum metni", widget: text, i18n: true }
+          - { name: mapBtn, label: "Harita butonu", widget: string, i18n: true }
+          - { name: emailH, label: "E-posta başlığı", widget: string, i18n: true }
+          - { name: emailP, label: "E-posta metni", widget: text, i18n: true }
+          - { name: howH, label: "Katkı başlığı", widget: string, i18n: true }
+          - { name: howList, label: "Katkı listesi", widget: text, i18n: true }
+          - { name: quote, label: "Alıntı", widget: text, i18n: true }
+          - { name: cite, label: "Alıntı kaynağı", widget: string, i18n: true }
+      - name: basin
+        label: "Basın Sayfası (başlıklar)"
+        file: src/content/pages/basin.json
+        i18n: true
+        fields:
+          - { name: metaTitle, label: "SEO başlık (tarayıcı sekmesi)", widget: string, i18n: true }
+          - { name: metaDesc, label: "SEO açıklama (arama motoru)", widget: text, i18n: true }
+          - { name: crumb, label: "Üst menüde görünen ad", widget: string, i18n: true }
+          - { name: kicker, label: "Küçük üst başlık", widget: string, i18n: true }
+          - { name: h1, label: "Sayfa başlığı", widget: string, i18n: true }
+          - { name: intro, label: "Giriş metni", widget: text, i18n: true }
+          - { name: s1k, label: "Bölüm 1: küçük başlık", widget: string, i18n: true }
+          - { name: s1h, label: "Bölüm 1: başlık", widget: string, i18n: true }
+          - { name: s1p, label: "Bölüm 1: metin", widget: text, i18n: true }
+          - { name: s2k, label: "Bölüm 2: küçük başlık", widget: string, i18n: true }
+          - { name: s2h, label: "Bölüm 2: başlık", widget: string, i18n: true }
+          - { name: s2p, label: "Bölüm 2: metin", widget: text, i18n: true }
+          - { name: s3k, label: "Bölüm 3: küçük başlık", widget: string, i18n: true }
+          - { name: s3h, label: "Bölüm 3: başlık", widget: string, i18n: true }
+          - { name: s3p, label: "Bölüm 3: metin", widget: text, i18n: true }
+          - { name: note, label: "Not", widget: text, i18n: true }
+          - { name: read, label: "“Haberi oku” yazısı", widget: string, i18n: true }
+          - { name: readGallery, label: "“Galeriyi gör” yazısı", widget: string, i18n: true }
+      - name: tarih
+        label: "Tarih Sayfası"
+        file: src/content/pages/tarih.json
+        i18n: true
+        fields:
+          - { name: metaTitle, label: "SEO başlık (tarayıcı sekmesi)", widget: string, i18n: true }
+          - { name: metaDesc, label: "SEO açıklama (arama motoru)", widget: text, i18n: true }
+          - { name: crumb, label: "Üst menüde görünen ad", widget: string, i18n: true }
+          - { name: kicker, label: "Küçük üst başlık", widget: string, i18n: true }
+          - { name: h1, label: "Sayfa başlığı", widget: string, i18n: true }
+          - { name: home, label: "“Ana Sayfa” link metni", widget: string, i18n: true }
+          - { name: intro, label: "Giriş metni", widget: text, i18n: true }
+          - { name: nameK, label: "İsim bölümü: küçük başlık", widget: string, i18n: true }
+          - { name: nameH, label: "İsim bölümü: başlık", widget: string, i18n: true }
+          - { name: nameIntro, label: "İsim bölümü: giriş", widget: text, i18n: true }
+          - { name: namePara, label: "İsim bölümü: paragraf (HTML)", widget: text, i18n: true }
+          - { name: nameSrc, label: "İsim bölümü: kaynak", widget: text, i18n: true }
+          - name: timeline
+            label: "Zaman çizelgesi"
+            widget: list
+            i18n: true
+            fields:
+                - { name: era, label: "Dönem", widget: string, i18n: true }
+                - { name: h3, label: "Başlık", widget: string, i18n: true }
+                - { name: p, label: "Metin", widget: text, i18n: true }
+          - { name: ottK, label: "Osmanlı: küçük başlık", widget: string, i18n: true }
+          - { name: ottH, label: "Osmanlı: başlık", widget: string, i18n: true }
+          - { name: ottIntro, label: "Osmanlı: giriş", widget: text, i18n: true }
+          - name: ott
+            label: "Osmanlı bölümü maddeleri"
+            widget: list
+            i18n: true
+            fields:
+                - { name: h3, label: "Başlık", widget: string, i18n: true }
+                - { name: p, label: "Metin", widget: text, i18n: true }
+          - { name: ottSrc, label: "Osmanlı: kaynak", widget: text, i18n: true }
+          - { name: srcNote, label: "Kaynak notu", widget: text, i18n: true }
+          - { name: ctaH2, label: "Kapanış başlığı", widget: string, i18n: true }
+          - { name: ctaP, label: "Kapanış metni", widget: text, i18n: true }
+          - { name: ctaBtn, label: "Kapanış buton yazısı", widget: string, i18n: true }
+          - name: nameEvo
+            label: "İsim evrimi listesi"
+            widget: list
+            i18n: true
+            fields:
+                - { name: date, label: "Dönem / tarih", widget: string, i18n: true }
+                - { name: name, label: "Ad", widget: string, i18n: true }
+                - { name: note, label: "Açıklama (opsiyonel)", widget: string, i18n: true }
+      - name: mimari
+        label: "Mimari Sayfası"
+        file: src/content/pages/mimari.json
+        i18n: true
+        fields:
+          - { name: metaTitle, label: "SEO başlık (tarayıcı sekmesi)", widget: string, i18n: true }
+          - { name: metaDesc, label: "SEO açıklama (arama motoru)", widget: text, i18n: true }
+          - { name: crumb, label: "Üst menüde görünen ad", widget: string, i18n: true }
+          - { name: kicker, label: "Küçük üst başlık", widget: string, i18n: true }
+          - { name: h1, label: "Sayfa başlığı", widget: string, i18n: true }
+          - { name: intro, label: "Giriş metni", widget: text, i18n: true }
+          - { name: docK, label: "Belgeleme: küçük başlık", widget: string, i18n: true }
+          - { name: docH, label: "Belgeleme: başlık", widget: string, i18n: true }
+          - { name: docP, label: "Belgeleme: açıklama", widget: text, i18n: true }
+          - { name: docNote, label: "Belgeleme notu", widget: text, i18n: true }
+          - { name: srcTitle, label: "Kaynaklar başlığı", widget: string, i18n: true }
+          - name: srcList
+            label: "Kaynak listesi"
+            widget: list
+            i18n: true
+            field: { name: deger, label: "Madde", widget: text, i18n: true }
+          - { name: srcNote, label: "Kaynak notu", widget: text, i18n: true }
+          - { name: home, label: "“Ana Sayfa” link metni", widget: string, i18n: true }
+          - name: cards
+            label: "Kartlar"
+            widget: list
+            i18n: true
+            fields:
+                - name: icon
+                  label: "İkon"
+                  widget: select
+                  i18n: true
+                  options: [cami, kilise, turbe, cesme, hamam, degirmen, kaya, ev, dutbahce]
+                - { name: h3, label: "Başlık", widget: string, i18n: true }
+                - { name: p, label: "Metin", widget: text, i18n: true }
+      - name: hafiza
+        label: "Hafıza Sayfası"
+        file: src/content/pages/hafiza.json
+        i18n: true
+        fields:
+          - { name: metaTitle, label: "SEO başlık (tarayıcı sekmesi)", widget: string, i18n: true }
+          - { name: metaDesc, label: "SEO açıklama (arama motoru)", widget: text, i18n: true }
+          - { name: crumb, label: "Üst menüde görünen ad", widget: string, i18n: true }
+          - { name: kicker, label: "Küçük üst başlık", widget: string, i18n: true }
+          - { name: h1, label: "Sayfa başlığı", widget: string, i18n: true }
+          - { name: home, label: "“Ana Sayfa” link metni", widget: string, i18n: true }
+          - { name: intro, label: "Giriş metni", widget: text, i18n: true }
+          - { name: quote, label: "Alıntı", widget: text, i18n: true }
+          - { name: cite, label: "Alıntı kaynağı", widget: string, i18n: true }
+          - { name: note, label: "Açıklama (opsiyonel)", widget: text, i18n: true }
+          - { name: cardsK, label: "Kartlar: küçük başlık", widget: string, i18n: true }
+          - { name: cardsH, label: "Kartlar: başlık", widget: string, i18n: true }
+          - { name: formK, label: "Form: küçük başlık", widget: string, i18n: true }
+          - { name: formH, label: "Form: başlık", widget: string, i18n: true }
+          - { name: formP, label: "Form: açıklama", widget: text, i18n: true }
+          - { name: fName, label: "Form: ad alanı", widget: string, i18n: true }
+          - { name: fNamePh, label: "Ad alanı ipucu", widget: string, i18n: true }
+          - { name: fConn, label: "Bağlantı alanı etiketi", widget: string, i18n: true }
+          - name: conn
+            label: "Bağlantı seçenekleri"
+            widget: list
+            i18n: true
+            field: { name: deger, label: "Madde", widget: string, i18n: true }
+          - { name: fTitle, label: "Başlık alanı etiketi", widget: string, i18n: true }
+          - { name: fTitlePh, label: "Başlık alanı ipucu", widget: string, i18n: true }
+          - { name: fMemory, label: "Hatıra alanı etiketi", widget: string, i18n: true }
+          - { name: fMemoryPh, label: "Hatıra alanı ipucu", widget: string, i18n: true }
+          - { name: fEmail, label: "Form: e-posta alanı", widget: string, i18n: true }
+          - { name: fEmailPh, label: "E-posta ipucu", widget: string, i18n: true }
+          - { name: submit, label: "Form: gönder butonu", widget: string, i18n: true }
+          - { name: formNote, label: "Form: alt not", widget: text, i18n: true }
+          - name: cards
+            label: "Kartlar"
+            widget: list
+            i18n: true
+            fields:
+                - name: icon
+                  label: "İkon"
+                  widget: select
+                  i18n: true
+                  options: [ev, muzik, bugday, tencere, okul, belge]
+                - { name: h3, label: "Başlık", widget: string, i18n: true }
+                - { name: p, label: "Metin", widget: text, i18n: true }
+      - name: footer
+        label: "Footer (alt bilgi)"
+        file: src/content/pages/footer.json
+        i18n: true
+        fields:
+          - { name: brand, label: "Site adı", widget: string, i18n: true }
+          - { name: desc, label: "Açıklama", widget: text, i18n: true }
+          - { name: archive, label: "‘Arşiv’ başlığı", widget: string, i18n: true }
+          - { name: contact, label: "‘İletişim’ başlığı", widget: string, i18n: true }
+          - { name: contribute, label: "‘Katkıda Bulun’ yazısı", widget: string, i18n: true }
+          - { name: ozelDut, label: "‘Ulukale Dutu’ link yazısı", widget: string, i18n: true }
+          - { name: ulusalBasin, label: "‘Ulusal Basın’ link yazısı", widget: string, i18n: true }
+          - { name: dedication, label: "İthaf yazısı", widget: string, i18n: true }
+          - { name: loc, label: "Konum", widget: string, i18n: true }
   # ----------------------------------------------------------------
   - name: gallery
     label: "Fotoğraf Galerisi"

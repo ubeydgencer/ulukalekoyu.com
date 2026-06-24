@@ -1,0 +1,299 @@
+{
+  "tr": {
+    "metaTitle": "Tarih — Ulukale Köyü Dijital Arşivi",
+    "metaDesc": "Ulukale köyünün Demir Çağı'ndan günümüze uzanan yaklaşık 3000 yıllık kesintisiz yerleşim tarihi: Helenistik-Roma, Ortaçağ ve Osmanlı dönemleri.",
+    "crumb": "Tarih",
+    "kicker": "Yaklaşık 3000 yıl",
+    "h1": "Üç Bin Yıllık Kesintisiz Hafıza",
+    "home": "Ana Sayfa",
+    "intro": "Ulukale'nin yerleşim tarihi Demir Çağı'nda başlar ve dönemsel bir kesintiye uğramadan günümüze ulaşır. Bu da köyü, bölgenin en eski ve en sürekli yaşanmış yerleşimlerinden biri yapar.",
+    "nameK": "Adın İzi",
+    "nameH": "Xuzanu'dan Ulukale'ye",
+    "nameIntro": "Köyün adı, yaklaşık 2800 yıllık belgeli bir geçmişe sahiptir. Tarihsel kayıtlarda izlenen biçimler:",
+    "namePara": "Yöre, tarihsel <strong>Sophene (Dzopk)</strong> bölgesinde yer alır ve <strong>9.–11. yüzyıllarda bir il/beylik merkezi</strong> olarak anılan Xozan ile özdeşleştirilir. Ermeni tarihçi Asoğik, Aziz Arisdakes (öl. 333) anlatısında <em>\"Dzopk diyarındaki Xozan kasabasında büyük bir kilise yapıldığını\"</em> aktarır; Urfalı Mateos da Xozan'dan söz eder. Bu kesintisiz isim zinciri, köyün üç bin yıla yaklaşan katmanlı geçmişinin en somut tanığıdır.",
+    "nameSrc": "Kaynak: Sevan Nişanyan — Nişanyan Yeradları (Index Anatolicus) / Türkiye'nin Ermeni Coğrafyası.",
+    "timeline": [
+      {
+        "era": "M.Ö. ~1200 – 550 · Demir Çağı",
+        "h3": "İlk yerleşimin izleri",
+        "p": "Arkeolojik yüzey araştırmaları, Ulukale'deki yerleşim başlangıcının Demir Çağı'na dayandığını gösteriyor. Yerin adı, <strong>MÖ 800 dolaylarında \"Xuzanu\"</strong> biçiminde kaydedilmiştir — yani köyün adı yaklaşık 2800 yıllık belgeli bir geçmişe sahiptir. Vadinin verimli toprağı ve dört dağın koruması, bu kadim yerleşimin temelini atar."
+      },
+      {
+        "era": "M.Ö. 4. yy – M.S. 4. yy · Helenistik & Roma",
+        "h3": "Kayaya oyulmuş bir mezar",
+        "p": "Helenistik ve Roma dönemleri, köyde bugün hâlâ görülebilen bir <strong>kaya mezarı</strong> ile temsil edilir. Bu dönemden kalan kimi mimari kalıntılar, Ulukale'nin Ortaçağ öncesine uzanan köklerini belgeler."
+      },
+      {
+        "era": "Geç Antik & Ortaçağ",
+        "h3": "Xozan: kaynaklara geçen bir kasaba",
+        "p": "Bu dönemde yöre, Ermeni kaynaklarında <strong>Xozan</strong> adıyla anılan bir kasabadır. Asoğik ve Urfalı Mateos gibi tarihçiler Xozan'dan ve burada yapılan büyük bir kiliseden söz eder. Köyde anıtsal bir kalıntı günümüze ulaşmasa da, bu kayıtlar yerleşimin Ortaçağ boyunca kesintisiz ve önemli olduğunu gösterir. Köyün bugün görülen tarihsel dokusu ise bir sonraki çağda somutlaşacaktır."
+      },
+      {
+        "era": "16. yüzyıl · Osmanlı Dönemi",
+        "h3": "Çemişgezek Sancağı'nın nahiye merkezi",
+        "p": "16. yüzyılda Ulukale, Çemişgezek Sancağı'na bağlı bir <strong>nahiye merkezi</strong> konumuna yükselir. Köyün bugün tanındığı tarihsel doku — türbe, çeşme, hamam, cami, kilise ve kerpiç sivil mimari — esas olarak bu dönemde hayat bulur. Farklı inanç ve kültürlerin bir arada izini taşıyan bu katmanlı miras, Ulukale'nin en belirgin özelliğidir."
+      },
+      {
+        "era": "19. – 20. yüzyıl",
+        "h3": "Köyün altın çağı ve dağılması",
+        "p": "Konaklar, değirmen ve dut bahçeleriyle canlı bir köy hayatı sürer. 20. yüzyılın ikinci yarısında ise göç, köyün yavaş yavaş sessizleşmesine yol açar. Geride toprak damlı kerpiç evler, ahşap pencereler ve bir zamanlar çocuk sesleriyle dolan okul kalır."
+      },
+      {
+        "era": "Bugün",
+        "h3": "Yaşayan bir açık hava müzesi",
+        "p": "Bugün büyük ölçüde terk edilmiş olan eski köy, fotoğrafçıların ve doğa tutkunlarının uğrak yeri. Köyden ayrılanlar zaman zaman geri dönüp eski evlerinin arasında geçmişi arıyor. Geçim hâlâ büyük ölçüde <strong>dut yetiştiriciliğine</strong> dayanıyor."
+      }
+    ],
+    "ottK": "Derinlemesine",
+    "ottH": "Osmanlı Dönemi'nde Ulukale",
+    "ottIntro": "Osmanlı arşiv belgelerine (tahrir ve nüfus defterleri) dayanan akademik bir incelemeye göre köyün idari, demografik ve ekonomik yapısı.",
+    "ott": [
+      {
+        "h3": "İsmin kökeni: \"Ulu Kal'a\"",
+        "p": "Ulukale adı Osmanlı belgelerinde <strong>\"Ulu Kal'a\"</strong> olarak geçer; \"çok büyük, yüce\" anlamındaki <em>ulu</em> sıfatı ile Arapça <em>kal'a</em> (kale) kelimesinden oluşur. Köy, adını yaslandığı sarp tepenin zirvesindeki kaleden alır — daha çok bir gözetleme kulesi niteliğindeki bu yapının harabesi bugün de durur. 1518 ve 1523 kayıtlarında köy <strong>\"Rabat\" (ribat)</strong> adıyla da anılır; bu, burada bir han bulunduğuna ve geçen tüccardan tamga (damga) vergisi alındığına işaret eder. 1541'den sonra ribat vasfını yitiren köy, yalnızca Ulukale adıyla anılır olur."
+      },
+      {
+        "h3": "İdari yapı: bir nahiye merkezi",
+        "p": "Çemişgezek, 1515'te Ulukale ile birlikte Osmanlı yönetimine girdi. Ulukale, Çemişgezek Sancağı'na bağlı <strong>Ulukale Nahiyesi'nin merkezi</strong>ydi. 16. yüzyıl başında (1518-1523) nahiye 10 köyden oluşuyordu; bunlardan biri Kürt, diğerleri gayrimüslim köyleriydi — köyün çok katmanlı kültürel dokusunun bir başka kanıtı. Müslüman Türk nüfusun köye yerleşmesi 1524-1540 yılları arasında gerçekleşti."
+      },
+      {
+        "h3": "Ekonomi: tarım, hayvancılık ve kasaba dokusu",
+        "p": "Ulukale, tarım ve hayvancılığın öne çıktığı tipik bir Anadolu yerleşmesiydi. Vergiye konu başlıca ürünler <strong>buğday, arpa, darı, üzüm ve pamuk</strong>tu; büyük-küçükbaş hayvancılığın yanı sıra arıcılık da yapılırdı. Köyü çevresindekilerden ayıran, bir kasabaya özgü yapılardı: tekstil ürünlerinin boyandığı bir <strong>boyahane</strong>, <strong>iki taş kapasiteli bir hububat değirmeni</strong> ve bir <strong>han</strong>. Bugün köyün başlıca geçim kaynağı olan <strong>dut</strong> ise Osmanlı döneminde henüz yaygın değildi; dutun ekonomiye damgasını vurması Cumhuriyet Dönemi'nde oldu. Köyde eskiden mevcut olan bağlar ise zamanla ortadan kalkmıştır."
+      },
+      {
+        "h3": "Ferruhşad Bey Türbesi",
+        "p": "Köyün en önemli yapılarından biri, <strong>Zilhicce 957 (Aralık 1550 / Ocak 1551)</strong> tarihinde tamamlanan Ferruhşad Bey Türbesi'dir. Sekizgen planlı, dış yüzeyi kesme taşla kaplı ve gövdesi kırmızı taştan üç şeritle hareketlendirilmiş bu yapı yakın zamanda restore edildi. Türbede yatan Ferruhşad Bey, Osmanlıların ilk Çemişgezek Sancakbeyi <strong>Pir Hüseyin Bey'in oğlu</strong> ve Mazgirt sancakbeyiydi. Kapısındaki Arapça kitabe 1997'de sökülüp çalınmış, 2017'de bulunarak Tunceli Kültür ve Turizm İl Müdürlüğü'ne teslim edilmiştir."
+      }
+    ],
+    "ottSrc": "Kaynak: Enver Çakar, \"Osmanlı Döneminde Ulukale Köyü\", Fırat Üniversitesi Harput Araştırmaları Dergisi, C. V, S. 2 (2018), Elazığ. Osmanlı tahrir ve nüfus defterlerine dayanır.",
+    "srcNote": "Bu sayfadaki tarihsel bilgiler büyük ölçüde Fırat Üniversitesi Sosyal Bilimler Dergisi'nde yayımlanan akademik çalışmaya ve Anadolu Ajansı haberine dayanmaktadır. Eksik veya hatalı gördüğünüz bilgileri lütfen bizimle paylaşın — arşivi birlikte doğru tutalım.",
+    "ctaH2": "Bu hikâyenin bir parçası mıydınız?",
+    "ctaP": "Dededen, nineden dinlediğiniz tarihler, eski tapular, köyün geçmişine dair her belge bu zaman çizelgesini zenginleştirir.",
+    "ctaBtn": "Hikâyeni Anlat",
+    "nameEvo": [
+      {
+        "date": "MÖ ~800",
+        "name": "Xuzanu",
+        "note": ""
+      },
+      {
+        "date": "610 · 961",
+        "name": "Xozanon",
+        "note": ""
+      },
+      {
+        "date": "1079 · 1163",
+        "name": "Xozan",
+        "note": "(Ermenice Խozán)"
+      },
+      {
+        "date": "1518",
+        "name": "Ulukale",
+        "note": "(Osmanlı belgelerinde \"Ulu Kal'a\")"
+      },
+      {
+        "date": "1912",
+        "name": "Bayezid Ulukale",
+        "note": ""
+      }
+    ]
+  },
+  "en": {
+    "metaTitle": "History — Ulukale Village Digital Archive",
+    "metaDesc": "The roughly 3,000-year continuous settlement history of Ulukale village, from the Iron Age to today: Hellenistic-Roman, medieval and Ottoman periods, and the name Xozan.",
+    "crumb": "History",
+    "kicker": "Roughly 3,000 years",
+    "h1": "Three Thousand Years of Unbroken Memory",
+    "home": "Home",
+    "intro": "Ulukale's settlement history begins in the Iron Age and reaches the present day without any periodic interruption. This makes the village one of the oldest and most continuously inhabited settlements in the region.",
+    "nameK": "The Trace of a Name",
+    "nameH": "From Xuzanu to Ulukale",
+    "nameIntro": "The village's name has a documented past of nearly 2,800 years. The forms traced in historical records:",
+    "namePara": "The area lies within the historical region of <strong>Sophene (Dzopk)</strong> and is identified with Xozan, mentioned as a <strong>provincial or principality centre in the 9th–11th centuries</strong>. The Armenian historian Asoghik, in his account of Saint Aristakes (d. 333), relates that \"a great church was built in the town of Xozan in the land of Dzopk\"; Matthew of Edessa also mentions Xozan. This unbroken chain of names is the most tangible witness to the village's many-layered past spanning nearly three thousand years.",
+    "nameSrc": "Source: Sevan Nişanyan — Nişanyan Yeradları (Index Anatolicus) / The Armenian Geography of Turkey.",
+    "timeline": [
+      {
+        "era": "c. 1200 – 550 BC · Iron Age",
+        "h3": "Traces of the first settlement",
+        "p": "Archaeological surface surveys show that settlement at Ulukale dates back to the Iron Age. The name of the place was recorded around <strong>800 BC as \"Xuzanu\"</strong> — meaning the village's name has a documented past of nearly 2,800 years. The valley's fertile soil and the protection of four mountains laid the foundation of this ancient settlement."
+      },
+      {
+        "era": "4th c. BC – 4th c. AD · Hellenistic & Roman",
+        "h3": "A tomb carved into rock",
+        "p": "The Hellenistic and Roman periods are represented by a <strong>rock-cut tomb</strong> still visible in the village today. Some architectural remains from this era document Ulukale's roots reaching back before the Middle Ages."
+      },
+      {
+        "era": "Late Antiquity & Middle Ages",
+        "h3": "Xozan: a town in the records",
+        "p": "In this period the area is a town known in Armenian sources as <strong>Xozan</strong>. Historians such as Asoghik and Matthew of Edessa mention Xozan and a great church built there. Although no monumental ruin from this time survives, these records show the settlement was continuous and significant throughout the Middle Ages. The historical fabric visible today would take shape in the following era."
+      },
+      {
+        "era": "16th century · Ottoman Period",
+        "h3": "Centre of the Çemişgezek Sanjak's district",
+        "p": "In the 16th century Ulukale rose to the position of a <strong>nahiye (sub-district) centre</strong> within the Çemişgezek Sanjak. The historical fabric for which the village is known today — tomb, fountain, bath, mosque, church and adobe vernacular architecture — chiefly came to life in this period. This layered heritage, bearing the trace of different faiths and cultures side by side, is Ulukale's most distinctive feature."
+      },
+      {
+        "era": "19th – 20th century",
+        "h3": "The village's golden age and dispersal",
+        "p": "A lively village life continued with mansions, a mill and mulberry orchards. In the second half of the 20th century, however, migration gradually quietened the village. Behind it remained adobe houses with earthen roofs, wooden windows, and a school that once echoed with children's voices."
+      },
+      {
+        "era": "Today",
+        "h3": "A living open-air museum",
+        "p": "Largely abandoned today, the old village is a destination for photographers and nature lovers. Those who left return from time to time, searching for the past among their old houses. Livelihood still depends largely on <strong>mulberry growing</strong>."
+      }
+    ],
+    "ottK": "In Depth",
+    "ottH": "Ulukale in the Ottoman Period",
+    "ottIntro": "The administrative, demographic and economic structure of the village according to an academic study based on Ottoman archival records (cadastral and population registers).",
+    "ott": [
+      {
+        "h3": "Origin of the name: \"Ulu Kal'a\"",
+        "p": "The name Ulukale appears in Ottoman documents as <strong>\"Ulu Kal'a\"</strong>; it is formed from the adjective <em>ulu</em> (\"great, lofty\") and the Arabic word <em>kal'a</em> (fortress). The village takes its name from the fortress built at the summit of the steep hill it leans against — the ruin of this structure, more of a watchtower in character, still stands today. In the records of 1518 and 1523 the village is also referred to as <strong>\"Rabat\" (ribat)</strong>; this points to the presence of an inn (han) here and to a <em>tamga</em> (stamp) tax levied on passing merchants. After 1541, having lost its ribat status, the village came to be known simply as Ulukale."
+      },
+      {
+        "h3": "Administration: a district centre",
+        "p": "Çemişgezek, together with Ulukale, came under Ottoman rule in 1515. Ulukale was the <strong>centre of the Ulukale nahiye</strong> within the Çemişgezek Sanjak. At the start of the 16th century (1518–1523) the nahiye consisted of 10 villages; one was Kurdish and the rest were non-Muslim villages — further evidence of the village's many-layered cultural fabric. The settlement of a Muslim Turkish population took place between 1524 and 1540."
+      },
+      {
+        "h3": "Economy: farming, livestock and a town fabric",
+        "p": "Ulukale was a typical Anatolian settlement in which agriculture and animal husbandry were prominent. The main taxed crops were <strong>wheat, barley, millet, grapes and cotton</strong>; alongside cattle and small livestock, beekeeping was also practised. What set the village apart from its neighbours were the buildings typical of a town: a <strong>dye-house (boyahane)</strong>, a <strong>two-stone grain mill</strong>, and an <strong>inn (han)</strong>. The <strong>mulberry</strong> that is the village's chief livelihood today was not yet widespread in the Ottoman period; it came to dominate the economy in the Republican era. The vineyards that once existed disappeared over time."
+      },
+      {
+        "h3": "The Ferruhşad Bey Tomb",
+        "p": "One of the village's most important buildings is the Ferruhşad Bey Tomb, completed in <strong>Dhul-Hijjah 957 (December 1550 / January 1551)</strong>. Octagonal in plan, faced with cut stone and articulated with three bands of red stone, the structure was recently restored. Ferruhşad Bey, who is buried here, was the <strong>son of Pir Hüseyin Bey</strong>, the first Ottoman governor of Çemişgezek, and himself the sanjak-bey of Mazgirt. The Arabic inscription above its door was removed and stolen in 1997, then recovered in 2017 and handed to the Tunceli Provincial Directorate of Culture and Tourism."
+      }
+    ],
+    "ottSrc": "Source: Enver Çakar, \"Ulukale Village During the Ottoman Period,\" Fırat University Journal of Harput Studies, Vol. V, No. 2 (2018), Elazığ. Based on Ottoman cadastral and population registers.",
+    "srcNote": "The historical information on this page draws largely on the academic study published in the Fırat University Journal of Social Sciences, and on Anadolu Agency reporting. If you notice anything missing or incorrect, please share it with us — let's keep the archive accurate together.",
+    "ctaH2": "Were you part of this story?",
+    "ctaP": "The histories you heard from grandparents, old deeds, any document about the village's past — all of it enriches this timeline.",
+    "ctaBtn": "Tell Your Story",
+    "nameEvo": [
+      {
+        "date": "c. 800 BC",
+        "name": "Xuzanu",
+        "note": ""
+      },
+      {
+        "date": "610 · 961",
+        "name": "Xozanon",
+        "note": ""
+      },
+      {
+        "date": "1079 · 1163",
+        "name": "Xozan",
+        "note": "(Armenian Խozán)"
+      },
+      {
+        "date": "1518",
+        "name": "Ulukale",
+        "note": "(\"Ulu Kal'a\" in Ottoman records)"
+      },
+      {
+        "date": "1912",
+        "name": "Bayezid Ulukale",
+        "note": ""
+      }
+    ]
+  },
+  "ar": {
+    "metaTitle": "التاريخ — أرشيف قرية أولوكالة الرقمي",
+    "metaDesc": "تاريخ استيطان قرية أولوكالة المتواصل لنحو 3000 عام، من العصر الحديدي إلى اليوم: العصور الهلنستية-الرومانية والوسطى والعثمانية، واسم خوزان.",
+    "crumb": "التاريخ",
+    "kicker": "نحو 3000 عام",
+    "h1": "ثلاثة آلاف عام من الذاكرة المتواصلة",
+    "home": "الرئيسية",
+    "intro": "يبدأ تاريخ استيطان أولوكالة في العصر الحديدي ويصل إلى يومنا دون انقطاعٍ زمني. وهذا ما يجعل القرية واحدة من أقدم المستوطنات وأكثرها استمرارية في المنطقة.",
+    "nameK": "أثر الاسم",
+    "nameH": "من «خوزانو» إلى «أولوكالة»",
+    "nameIntro": "لاسم القرية ماضٍ موثَّق يقارب 2800 عام. الصيغ المتتبَّعة في السجلات التاريخية:",
+    "namePara": "تقع المنطقة ضمن إقليم <strong>صوفين (Dzopk)</strong> التاريخي، وتُماهى مع «خوزان» المذكورة بوصفها <strong>مركز ولاية أو إمارة في القرنين التاسع والحادي عشر</strong>. ويروي المؤرّخ الأرمني آسوغيك، في حديثه عن القديس أريستاكيس (ت. 333)، أن «كنيسةً عظيمة بُنيت في بلدة خوزان بأرض صوفين»؛ كما يذكر متّى الرهاوي خوزان. وهذه السلسلة المتواصلة من الأسماء هي أوضح شاهد على ماضي القرية المتعدّد الطبقات الممتدّ لنحو ثلاثة آلاف عام.",
+    "nameSrc": "المصدر: سيفان نيشانيان — Nişanyan Yeradları (Index Anatolicus) / الجغرافيا الأرمنية لتركيا.",
+    "timeline": [
+      {
+        "era": "~1200 – 550 ق.م · العصر الحديدي",
+        "h3": "آثار أوّل استيطان",
+        "p": "تُظهر المسوحات الأثرية أن استيطان أولوكالة يعود إلى العصر الحديدي. وقد دُوِّن اسم المكان نحو <strong>800 ق.م بصيغة «Xuzanu»</strong> — أي إن لاسم القرية ماضيًا موثّقًا يقارب 2800 عام. وقد أرست تربة الوادي الخصبة وحماية الجبال الأربعة أساس هذا الاستيطان العريق."
+      },
+      {
+        "era": "القرن 4 ق.م – القرن 4 م · الهلنستي والروماني",
+        "h3": "قبرٌ منحوت في الصخر",
+        "p": "يمثّل العصران الهلنستي والروماني <strong>قبرٌ منحوت في الصخر</strong> ما يزال ظاهرًا في القرية اليوم. وتوثّق بعض البقايا المعمارية من هذه الحقبة جذور أولوكالة الممتدّة إلى ما قبل العصور الوسطى."
+      },
+      {
+        "era": "أواخر العصور القديمة والوسطى",
+        "h3": "خوزان: بلدةٌ في السجلات",
+        "p": "في هذه الحقبة كانت المنطقة بلدةً تُعرف في المصادر الأرمنية باسم <strong>خوزان</strong>. ويذكر مؤرّخون كآسوغيك ومتّى الرهاوي خوزان وكنيسةً عظيمة بُنيت فيها. ومع أن لا أثرًا ضخمًا بقي من هذا الزمن، فإن هذه السجلات تدلّ على أن الاستيطان كان متواصلًا ومهمًّا طوال العصور الوسطى. أما النسيج التاريخي المرئي اليوم فقد تشكّل في الحقبة التالية."
+      },
+      {
+        "era": "القرن السادس عشر · العصر العثماني",
+        "h3": "مركز ناحية سنجق تشيميشكزك",
+        "p": "في القرن السادس عشر ارتقت أولوكالة إلى مرتبة <strong>مركز ناحية</strong> ضمن سنجق تشيميشكزك. وقد تشكّل في هذه الحقبة بشكل أساسي النسيج التاريخي الذي تُعرف به القرية اليوم — المقام والنافورة والحمّام والمسجد والكنيسة والعمارة الطينية. وهذا الإرث المتعدّد الطبقات، الحامل لأثر أديان وثقافات مختلفة جنبًا إلى جنب، هو أبرز ما يميّز أولوكالة."
+      },
+      {
+        "era": "القرن 19 – 20",
+        "h3": "عصر القرية الذهبي وتشتّتها",
+        "p": "استمرّت حياةٌ قروية نابضة بالقصور والطاحونة وبساتين التوت. لكن في النصف الثاني من القرن العشرين هدّأت الهجرةُ القرية تدريجيًا. وبقي خلفها بيوتٌ طينية بسطوح ترابية، ونوافذ خشبية، ومدرسةٌ كانت يومًا تصدح بأصوات الأطفال."
+      },
+      {
+        "era": "اليوم",
+        "h3": "متحفٌ حيّ في الهواء الطلق",
+        "p": "القرية القديمة المهجورة اليوم وجهةٌ للمصوّرين ومحبّي الطبيعة. ومن غادروها يعودون من حينٍ لآخر باحثين عن الماضي بين بيوتهم القديمة. وما يزال الرزق يعتمد إلى حدّ كبير على <strong>زراعة التوت</strong>."
+      }
+    ],
+    "ottK": "بتعمّق",
+    "ottH": "أولوكالة في العصر العثماني",
+    "ottIntro": "البنية الإدارية والديموغرافية والاقتصادية للقرية وفق دراسة أكاديمية تستند إلى السجلات الأرشيفية العثمانية (دفاتر التحرير والنفوس).",
+    "ott": [
+      {
+        "h3": "أصل الاسم: «أولو قلعة»",
+        "p": "يَرِد اسم أولوكالة في الوثائق العثمانية بصيغة <strong>«أولو قلعة»</strong>؛ وهو مركّب من الصفة <em>أولو</em> (\"عظيم، شامخ\") والكلمة العربية <em>قلعة</em>. تأخذ القرية اسمها من القلعة المبنية على قمّة التلّ الشديد الانحدار الذي تستند إليه — وما تزال أطلال هذا البناء، الأقرب إلى برج مراقبة، قائمةً اليوم. وفي سجلّي 1518 و1523 تُذكر القرية أيضًا باسم <strong>«رَباط» (رِباط)</strong>؛ ويشير ذلك إلى وجود خان هنا، وإلى ضريبة «تمغا» كانت تُجبى من التجّار المارّين. وبعد 1541، إذ فقدت صفة الرِّباط، صارت تُعرف بأولوكالة فحسب."
+      },
+      {
+        "h3": "الإدارة: مركز ناحية",
+        "p": "دخلت تشيميشكزك، ومعها أولوكالة، تحت الحكم العثماني عام 1515. وكانت أولوكالة <strong>مركز ناحية أولوكالة</strong> ضمن سنجق تشيميشكزك. في مطلع القرن السادس عشر (1518–1523) تألّفت الناحية من 10 قرى؛ واحدة كردية والباقي قرى غير مسلمة — وهذا دليلٌ آخر على النسيج الثقافي المتعدّد الطبقات. وجرى استيطان السكان الأتراك المسلمين بين عامي 1524 و1540."
+      },
+      {
+        "h3": "الاقتصاد: زراعةٌ ورعيٌ ونسيج بلدة",
+        "p": "كانت أولوكالة مستوطنةً أناضولية نموذجية يبرز فيها الزرع والرعي. وكانت المحاصيل الخاضعة للضريبة أساسًا <strong>القمح والشعير والدُّخن والعنب والقطن</strong>؛ وإلى جانب الماشية كان يُمارَس تربية النحل. وما ميّز القرية عن جاراتها مبانٍ تخصّ البلدات: <strong>مصبغة</strong>، و<strong>طاحونة حبوب بحجرين</strong>، و<strong>خان</strong>. أما <strong>التوت</strong> الذي هو مصدر رزق القرية الأول اليوم فلم يكن منتشرًا بعد في العصر العثماني؛ وإنما هيمن على الاقتصاد في العهد الجمهوري. وقد اندثرت بمرور الزمن الكروم التي كانت موجودة."
+      },
+      {
+        "h3": "مقام فرّوخ شاد بك",
+        "p": "من أهمّ مباني القرية مقام فرّوخ شاد بك، الذي اكتمل في <strong>ذي الحجة 957هـ (ديسمبر 1550 / يناير 1551)</strong>. وهو بناءٌ مثمّن الأضلاع، مكسوٌّ بالحجر المنحوت، تتخلّله ثلاثة أشرطة من الحجر الأحمر، وقد رُمّم حديثًا. وفرّوخ شاد بك المدفون فيه هو <strong>ابن بير حسين بك</strong>، أوّل حاكم عثماني لتشيميشكزك، وهو نفسه سنجق بك مزكرت. أما النقش العربي فوق بابه فقد قُلِع وسُرق عام 1997، ثم عُثر عليه عام 2017 وسُلِّم إلى مديرية الثقافة والسياحة بولاية تونجلي."
+      }
+    ],
+    "ottSrc": "المصدر: أنور تشاكار، «قرية أولوكالة في العصر العثماني»، مجلة فرات لدراسات خاربوت، المجلد الخامس، العدد 2 (2018)، إلازيغ. استنادًا إلى دفاتر التحرير والنفوس العثمانية.",
+    "srcNote": "تستند المعلومات التاريخية في هذه الصفحة إلى حدّ كبير إلى دراسة أكاديمية منشورة في مجلة فرات للعلوم الاجتماعية، وإلى تقارير وكالة الأناضول. إن لاحظت نقصًا أو خطأً فالرجاء مشاركته معنا — لنُبقِ الأرشيف دقيقًا معًا.",
+    "ctaH2": "هل كنتَ جزءًا من هذه القصة؟",
+    "ctaP": "الحكايات التي سمعتها من الأجداد، السندات القديمة، أيّ وثيقة عن ماضي القرية — كلّها تُثري هذا الخطّ الزمني.",
+    "ctaBtn": "احكِ قصّتك",
+    "nameEvo": [
+      {
+        "date": "~800 ق.م",
+        "name": "Xuzanu",
+        "note": ""
+      },
+      {
+        "date": "610 · 961",
+        "name": "Xozanon",
+        "note": ""
+      },
+      {
+        "date": "1079 · 1163",
+        "name": "Xozan",
+        "note": "(بالأرمنية Խozán)"
+      },
+      {
+        "date": "1518",
+        "name": "Ulukale",
+        "note": "(«أولو قلعة» في السجلات العثمانية)"
+      },
+      {
+        "date": "1912",
+        "name": "Bayezid Ulukale",
+        "note": ""
+      }
+    ]
+  }
+}

@@ -46,21 +46,12 @@ export const BRAND_SUB: Record<Lang, string> = {
   tr: 'Köy Arşivi', en: 'Village Archive', ar: 'أرشيف القرية',
 };
 
-// Footer metinleri
-export const FOOTER = {
-  brand: { tr: 'Ulukale Köyü Dijital Arşivi', en: 'Ulukale Village Digital Archive', ar: 'أرشيف قرية أولوكالة الرقمي' } as Record<Lang, string>,
-  desc: {
-    tr: 'Çemişgezek (Dersim/Tunceli) Ulukale köyünün tarihini, mimarisini ve hafızasını gelecek kuşaklara aktarmak için kurulmuş bağımsız bir gönüllü arşividir.',
-    en: 'An independent, volunteer archive created to pass on the history, architecture and memory of Ulukale village (Çemişgezek, Dersim/Tunceli) to future generations.',
-    ar: 'أرشيفٌ تطوّعيٌّ مستقل أُنشئ لنقل تاريخ قرية أولوكالة (تشيميشكزك، ديرسيم/تونجلي) وعمارتها وذاكرتها إلى الأجيال القادمة.',
-  } as Record<Lang, string>,
-  archive: { tr: 'Arşiv', en: 'Archive', ar: 'الأرشيف' } as Record<Lang, string>,
-  contact: { tr: 'İletişim', en: 'Contact', ar: 'اتصل بنا' } as Record<Lang, string>,
-  contribute: { tr: 'Katkıda Bulun', en: 'Contribute', ar: 'ساهِم معنا' } as Record<Lang, string>,
-  ozelDut: { tr: 'Ulukale Dutu', en: 'Ulukale Mulberry', ar: 'توت أولوكالة' } as Record<Lang, string>,
-  ulusalBasin: { tr: 'Ulusal Basın', en: 'Press', ar: 'الصحافة' } as Record<Lang, string>,
-  dedication: { tr: "Ziya Gençer'in aziz hatırasına", en: 'In memory of Ziya Gençer', ar: 'إلى ذكرى ضياء غنجر' } as Record<Lang, string>,
-  loc: { tr: 'Çemişgezek / Tunceli', en: 'Çemişgezek / Tunceli', ar: 'تشيميشكزك / تونجلي' } as Record<Lang, string>,
-};
+// Footer metinleri — panelden (Sveltia CMS → "Sayfalar → Footer") düzenlenir: src/content/pages/footer.json
+import footerData from '../content/pages/footer.json';
+type FooterKey = keyof (typeof footerData)['tr'];
+const FOOTER_KEYS = Object.keys(footerData.tr) as FooterKey[];
+export const FOOTER = Object.fromEntries(
+  FOOTER_KEYS.map((k) => [k, { tr: footerData.tr[k], en: footerData.en[k], ar: footerData.ar[k] }]),
+) as Record<FooterKey, Record<Lang, string>>;
 
 export const MENU_LABEL: Record<Lang, string> = { tr: 'Menü', en: 'Menu', ar: 'القائمة' };

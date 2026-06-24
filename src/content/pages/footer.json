@@ -1,0 +1,35 @@
+{
+  "tr": {
+    "brand": "Ulukale Köyü Dijital Arşivi",
+    "desc": "Çemişgezek (Dersim/Tunceli) Ulukale köyünün tarihini, mimarisini ve hafızasını gelecek kuşaklara aktarmak için kurulmuş bağımsız bir gönüllü arşividir.",
+    "archive": "Arşiv",
+    "contact": "İletişim",
+    "contribute": "Katkıda Bulun",
+    "ozelDut": "Ulukale Dutu",
+    "ulusalBasin": "Ulusal Basın",
+    "dedication": "Ziya Gençer'in aziz hatırasına",
+    "loc": "Çemişgezek / Tunceli"
+  },
+  "en": {
+    "brand": "Ulukale Village Digital Archive",
+    "desc": "An independent, volunteer archive created to pass on the history, architecture and memory of Ulukale village (Çemişgezek, Dersim/Tunceli) to future generations.",
+    "archive": "Archive",
+    "contact": "Contact",
+    "contribute": "Contribute",
+    "ozelDut": "Ulukale Mulberry",
+    "ulusalBasin": "Press",
+    "dedication": "In memory of Ziya Gençer",
+    "loc": "Çemişgezek / Tunceli"
+  },
+  "ar": {
+    "brand": "أرشيف قرية أولوكالة الرقمي",
+    "desc": "أرشيفٌ تطوّعيٌّ مستقل أُنشئ لنقل تاريخ قرية أولوكالة (تشيميشكزك، ديرسيم/تونجلي) وعمارتها وذاكرتها إلى الأجيال القادمة.",
+    "archive": "الأرشيف",
+    "contact": "اتصل بنا",
+    "contribute": "ساهِم معنا",
+    "ozelDut": "توت أولوكالة",
+    "ulusalBasin": "الصحافة",
+    "dedication": "إلى ذكرى ضياء غنجر",
+    "loc": "تشيميشكزك / تونجلي"
+  }
+}
