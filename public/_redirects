@@ -34,6 +34,7 @@
 /ar/iletisim.html      /ar/iletisim/    301
 /ar/tesekkurler.html   /ar/tesekkurler/ 301
 
-# --- Dile özgü 404 sayfaları (eşleşmeyen yollar için) ---
-/en/*                  /en/404/      404
-/ar/*                  /ar/404/      404
+# Not: Eşleşmeyen yollarda kök 404 sayfası gösterilir
+# (wrangler.jsonc -> assets.not_found_handling: "404-page").
+# Cloudflare Workers _redirects'i 404 durum kodunu desteklemediği için
+# dile özgü 404 yönlendirmesi kullanılmıyor.
