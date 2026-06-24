@@ -1,0 +1,86 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import type { HomeContent } from '../data/home';
+interface Props { lang: Lang; c: HomeContent; }
+const { lang, c } = Astro.props;
+const icons: Record<string, string> = {
+  tarih: '<path d="M3 12a9 9 0 1 0 2.6-6.3"/><path d="M3 4v4h4"/><path d="M12 8v4l3 2"/>',
+  mimari: '<path d="M4 21h16"/><path d="M5 21V10l7-5 7 5v11"/><path d="M9.5 21v-5h5v5"/><path d="M12 5V2.5"/>',
+  arsiv: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8.5 7l1.2-2h4.6l1.2 2"/><circle cx="12" cy="13.5" r="3.2"/>',
+  hafiza: '<path d="M20 11.5a7.5 7.5 0 0 1-10.7 6.8L4 19.5l1.3-4.2A7.5 7.5 0 1 1 20 11.5z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/>',
+  dut: '<path d="M12 22v-6"/><path d="M12 16c-3.3 0-5.5-2.3-5.5-5.2C6.5 7.5 8.6 4.7 12 2.5c3.4 2.2 5.5 5 5.5 8.3C17.5 13.7 15.3 16 12 16z"/>',
+  iletisim: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M4 7l8 6 8-6"/>',
+};
+const heart = 'M12 21s-7.5-4.7-9.7-9.2C.9 8.6 2.4 5 6 5c2 0 3.2 1.1 4 2.3C10.8 6.1 12 5 14 5c3.6 0 5.1 3.6 3.7 6.8C19.5 16.3 12 21 12 21z';
+---
+<section class="hero hero--photo">
+  <div class="container hero-inner">
+    <span class="eyebrow">{c.heroEyebrow}</span>
+    <h1>{c.heroH1}</h1>
+    <p class="lead">{c.heroLead}</p>
+    <div class="btn-row">
+      <a href={localePath(lang, 'tarih')} class="btn btn-primary">{c.btnHistory}</a>
+      <a href={localePath(lang, 'hafiza')} class="btn btn-ghost">{c.btnMemory}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight alt-bg">
+  <div class="container">
+    <div class="stats">
+      {c.stats.map((s) => <div class="stat"><div class="num">{s.num}</div><div class="lbl">{s.lbl}</div></div>)}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow prose">
+    <div class="section-head"><span class="kicker">{c.introKicker}</span><h2>{c.introH2}</h2></div>
+    {c.introP.map((p, i) => <p class={i === 0 ? 'drop' : undefined} set:html={p} />)}
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">{c.exploreKicker}</span><h2>{c.exploreH2}</h2><p>{c.exploreSub}</p>
+    </div>
+    <div class="grid grid-3">
+      {c.cards.map((card) => (
+        <a href={localePath(lang, card.key)} class="card" style="text-decoration:none">
+          <span class="icon"><svg class="ico" viewBox="0 0 24 24" set:html={icons[card.key]} /></span>
+          <h3>{card.h3}</h3>
+          <p>{card.p}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow">
+    <div class="memory">
+      <blockquote>{c.memoryQuote}</blockquote>
+      <cite>{c.memoryCite}</cite>
+    </div>
+  </div>
+</section>
+
+<section class="section-tight alt-bg">
+  <div class="container narrow">
+    <div class="dedication">
+      <span class="ded-kicker">{c.dedKicker}</span>
+      <p set:html={c.dedText + ` <svg class="ico-heart" viewBox="0 0 24 24"><path d="${heart}"/></svg>`} />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta">
+      <h2>{c.ctaH2}</h2>
+      <p>{c.ctaP}</p>
+      <a href={localePath(lang, 'iletisim')} class="btn btn-ghost">{c.ctaBtn}</a>
+    </div>
+  </div>
+</section>

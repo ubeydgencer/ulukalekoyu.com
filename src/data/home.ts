@@ -1,0 +1,104 @@
+import type { Lang } from '../lib/i18n';
+
+export interface HomeContent {
+  meta: { title: string; description: string };
+  heroEyebrow: string; heroH1: string; heroLead: string;
+  btnHistory: string; btnMemory: string;
+  stats: { num: string; lbl: string }[];
+  introKicker: string; introH2: string; introP: string[];
+  exploreKicker: string; exploreH2: string; exploreSub: string;
+  cards: { key: string; h3: string; p: string }[];
+  memoryQuote: string; memoryCite: string;
+  dedKicker: string; dedText: string; // dedText: ...<strong>Ziya Gençer</strong>...
+  ctaH2: string; ctaP: string; ctaBtn: string;
+}
+
+export const HOME: Record<Lang, HomeContent> = {
+  tr: {
+    meta: { title: 'Ulukale Köyü — Dijital Arşiv | Çemişgezek, Dersim', description: "Tunceli Çemişgezek'e bağlı Ulukale köyünün 3000 yıllık tarihini, mimarisini ve hafızasını koruyan dijital arşiv. Eski fotoğraflar, sözlü tarih ve yaşanmışlıklar." },
+    heroEyebrow: 'Çemişgezek · Dersim (Tunceli)', heroH1: 'Ulukale Köyü',
+    heroLead: "Demir Çağı'ndan bugüne, dört dağ arasında kesintisiz yaşamış bir köyün üç bin yıllık hafızası. Bu arşiv; taşı, türküsü ve insanını unutulmaktan korumak için kuruldu.",
+    btnHistory: 'Tarihe Yolculuk', btnMemory: 'Hatıranı Paylaş',
+    stats: [
+      { num: '~3000', lbl: 'yıllık yerleşim tarihi' }, { num: '940 m', lbl: 'rakım, dört dağ arası' },
+      { num: '16. yy', lbl: "Osmanlı'da nahiye merkezi" }, { num: '5', lbl: 'bağlı mezra' },
+    ],
+    introKicker: 'Burası Neresi?', introH2: 'Taşların hafızası olan köy',
+    introP: [
+      "Ulukale, Tunceli'nin Çemişgezek ilçesine bağlı, ilçe merkezine yaklaşık 30 kilometre uzaklıkta eski bir yerleşimdir. Dört dağ silsilesinin kucakladığı bu vadide hayat, arkeolojik bulgulara göre Demir Çağı'na kadar uzanır. Helenistik ve Roma dönemlerinden kalma bir kaya mezarı, köyün ne kadar eski olduğunun sessiz tanığıdır.",
+      "16. yüzyılda Çemişgezek Sancağı'na bağlı bir nahiye merkezi olan Ulukale; türbesi, çeşmesi, hamamı, camisi, kilisesi ve kerpiç sivil mimarisiyle çok katmanlı bir kültürün izini taşır. Bugün büyük ölçüde sessizleşmiş olsa da, terk edilmiş evlerin toprak damları ve ahşap pencereleri her mevsim bambaşka bir güzellikle ayakta durur.",
+      "Bu site, dağılmış bir köyün belleğini bir araya getirmeyi amaçlıyor: <strong>eski fotoğraflar, anlatılan hikâyeler, hane ve aile hatıraları, kaybolmaya yüz tutmuş yapıların belgelenmesi.</strong> Köyden bir taşınız, bir fotoğrafınız ya da bir anınız varsa — burası onun da yeri.",
+    ],
+    exploreKicker: 'Arşivi Keşfet', exploreH2: 'Hafızanın katmanları', exploreSub: "Ulukale'nin hikâyesini farklı pencerelerden okuyun.",
+    cards: [
+      { key: 'tarih', h3: 'Tarih', p: "Demir Çağı'ndan Osmanlı'ya, Osmanlı'dan bugüne kesintisiz üç bin yılın zaman çizelgesi." },
+      { key: 'mimari', h3: 'Tarihi Yapılar', p: 'Cami, türbe, çeşme, hamam, kilise, su değirmeni ve kerpiç konakların belgelenmesi.' },
+      { key: 'arsiv', h3: 'Fotoğraf Arşivi', p: 'Köyün dünden bugüne görüntüleri. Eski albümlerden gelen kareler burada toplanıyor.' },
+      { key: 'hafiza', h3: 'Sözlü Tarih', p: 'Köylülerin anlattığı hikâyeler, lakaplar, gelenekler ve yaşanmışlıklar.' },
+      { key: 'dut', h3: 'Ulukale Dutu', p: 'Vadiye özgü endemik, çekirdeksiz, coğrafi işaretli dut. Köyün başlıca geçim kaynağı ve dünyaya ihraç edilen değeri.' },
+      { key: 'iletisim', h3: 'Katkıda Bulun', p: 'Arşivi birlikte büyütelim. Fotoğraf, belge ve anılarınızı bizimle paylaşın.' },
+    ],
+    memoryQuote: '"Eski köy yerleşimi her mevsim çok doğal ve güzel görünüyor. Köyünden ayrılanlar zaman zaman geri dönüp eski evlerinin, okullarının arasında dolaşıyor; geçmiş günleri hatırlıyorlar."',
+    memoryCite: '— Ulukale\'yi ziyaret eden bir fotoğrafçının notu',
+    dedKicker: 'İthaf', dedText: "Bu arşiv, köyünü ve köklerini hiç unutmayan dedem <strong>Ziya Gençer</strong>'in aziz hatırasına adanmıştır.",
+    ctaH2: 'Bir köyün belleği hepimizin emanetidir', ctaP: 'Sandıkta duran bir fotoğraf, dededen kalan bir hikâye, eski bir tapu... Hepsi bu arşivin bir parçası olabilir. Ulukale\'nin hafızasını birlikte koruyalım.', ctaBtn: 'Arşive Katkı Yap',
+  },
+  en: {
+    meta: { title: 'Ulukale Village — Digital Archive | Çemişgezek, Dersim', description: 'A digital archive preserving the 3,000-year history, architecture and memory of Ulukale village in Çemişgezek, Tunceli (Dersim). Old photographs, oral history and lived memories.' },
+    heroEyebrow: 'Çemişgezek · Dersim (Tunceli)', heroH1: 'Ulukale Village',
+    heroLead: 'Three thousand years of memory of a village that has lived without interruption between four mountains, from the Iron Age to today. This archive was created to keep its stone, its songs and its people from being forgotten.',
+    btnHistory: 'Journey Through History', btnMemory: 'Share Your Memory',
+    stats: [
+      { num: '~3,000', lbl: 'years of settlement' }, { num: '940 m', lbl: 'altitude, among four mountains' },
+      { num: '16th c.', lbl: 'Ottoman district (nahiye) center' }, { num: '5', lbl: 'attached hamlets' },
+    ],
+    introKicker: 'Where Is This?', introH2: 'A village whose stones remember',
+    introP: [
+      'Ulukale is an old settlement in the Çemişgezek district of Tunceli, about 30 kilometres from the district centre. In this valley embraced by four mountain ranges, life reaches back — according to archaeological surveys — to the Iron Age. A rock-cut tomb from the Hellenistic and Roman periods stands as a silent witness to just how ancient the village is.',
+      'In the 16th century Ulukale was the centre of a nahiye (sub-district) within the Çemişgezek Sanjak; with its tomb, fountain, bath, mosque, church and adobe vernacular architecture it carries the trace of a many-layered culture. Though largely quiet today, the earthen roofs and wooden windows of its abandoned houses still stand, beautiful in a different way each season.',
+      'This site aims to bring together the memory of a scattered village: <strong>old photographs, told stories, household and family memories, and the documentation of buildings on the verge of disappearing.</strong> If you have a stone, a photograph or a memory from the village — this is its place too.',
+    ],
+    exploreKicker: 'Explore the Archive', exploreH2: 'Layers of memory', exploreSub: "Read the village's story through different windows.",
+    cards: [
+      { key: 'tarih', h3: 'History', p: 'A timeline of three thousand uninterrupted years — from the Iron Age to the Ottomans, and from the Ottomans to today.' },
+      { key: 'mimari', h3: 'Historic Buildings', p: 'Documenting the mosque, tomb, fountain, bath, church, water mill and stone mansions.' },
+      { key: 'arsiv', h3: 'Photo Archive', p: 'Images of the village from past to present. Frames from old albums gathered here.' },
+      { key: 'hafiza', h3: 'Oral History', p: 'Stories, nicknames, customs and lived experiences as told by the villagers.' },
+      { key: 'dut', h3: 'Ulukale Mulberry', p: "An endemic, seedless, geographically-indicated mulberry. The village's main livelihood, exported worldwide." },
+      { key: 'iletisim', h3: 'Contribute', p: "Let's grow the archive together. Share your photos, documents and memories with us." },
+    ],
+    memoryQuote: '"The old village settlement looks so natural and beautiful in every season. Those who left the village sometimes return and wander among their old houses and schools, remembering days gone by."',
+    memoryCite: '— Note from a photographer who visited Ulukale',
+    dedKicker: 'Dedication', dedText: 'This archive is dedicated to the cherished memory of my grandfather <strong>Ziya Gençer</strong>, who never forgot his village or his roots.',
+    ctaH2: "A village's memory is entrusted to all of us", ctaP: 'A photograph kept in a chest, a story from a grandfather, an old deed... all of it can become part of this archive. Let\'s preserve Ulukale\'s memory together.', ctaBtn: 'Contribute to the Archive',
+  },
+  ar: {
+    meta: { title: 'قرية أولوكالة — الأرشيف الرقمي | تشيميشكزك، ديرسيم', description: 'أرشيف رقمي يحفظ تاريخ قرية أولوكالة الممتدّ لثلاثة آلاف عام وعمارتها وذاكرتها، في تشيميشكزك بولاية تونجلي (ديرسيم). صور قديمة وتاريخ شفهي وذكريات معاشة.' },
+    heroEyebrow: 'تشيميشكزك · ديرسيم (تونجلي)', heroH1: 'قرية أولوكالة',
+    heroLead: 'ثلاثة آلاف عام من ذاكرة قرية عاشت دون انقطاع بين أربعة جبال، من العصر الحديدي إلى اليوم. أُنشئ هذا الأرشيف ليحفظ حجرها وأغانيها وأهلها من النسيان.',
+    btnHistory: 'رحلة في التاريخ', btnMemory: 'شارِك ذكراك',
+    stats: [
+      { num: '~٣٠٠٠', lbl: 'عام من الاستيطان' }, { num: '٩٤٠ م', lbl: 'ارتفاع، بين أربعة جبال' },
+      { num: 'القرن ١٦', lbl: 'مركز ناحية عثمانية' }, { num: '٥', lbl: 'مزارع تابعة' },
+    ],
+    introKicker: 'أين تقع؟', introH2: 'قريةٌ تتذكّر حجارتها',
+    introP: [
+      'أولوكالة مستوطنة قديمة في قضاء تشيميشكزك بولاية تونجلي، تبعد نحو ٣٠ كيلومترًا عن مركز القضاء. في هذا الوادي الذي تحتضنه أربع سلاسل جبلية، تعود الحياة — بحسب المسوحات الأثرية — إلى العصر الحديدي. ويقف قبرٌ منحوت في الصخر من العصرين الهلنستي والروماني شاهدًا صامتًا على قِدَم القرية.',
+      'في القرن السادس عشر كانت أولوكالة مركز ناحية ضمن سنجق تشيميشكزك؛ وبمقامها ونافورتها وحمّامها ومسجدها وكنيستها وعمارتها الطينية، تحمل أثر ثقافة متعدّدة الطبقات. ورغم هدوئها اليوم، ما زالت السطوح الترابية والنوافذ الخشبية لبيوتها المهجورة قائمة، جميلةً على نحوٍ مختلف في كل فصل.',
+      'يهدف هذا الموقع إلى جمع ذاكرة قرية تبعثر أهلها: <strong>الصور القديمة، والحكايات المروية، وذكريات البيوت والعائلات، وتوثيق المباني المهدّدة بالاندثار.</strong> إن كان لديك حجرٌ أو صورةٌ أو ذكرى من القرية — فهذا مكانها أيضًا.',
+    ],
+    exploreKicker: 'استكشف الأرشيف', exploreH2: 'طبقات الذاكرة', exploreSub: 'اقرأ قصة القرية من نوافذ مختلفة.',
+    cards: [
+      { key: 'tarih', h3: 'التاريخ', p: 'خطٌّ زمني لثلاثة آلاف عام متواصلة — من العصر الحديدي إلى العثمانيين، ومن العثمانيين إلى اليوم.' },
+      { key: 'mimari', h3: 'المباني التاريخية', p: 'توثيق المسجد والمقام والنافورة والحمّام والكنيسة والطاحونة المائية والقصور الحجرية.' },
+      { key: 'arsiv', h3: 'أرشيف الصور', p: 'صور القرية من الماضي إلى الحاضر. لقطاتٌ من ألبومات قديمة جُمعت هنا.' },
+      { key: 'hafiza', h3: 'التاريخ الشفهي', p: 'حكايات وألقاب وعادات وتجارب معاشة كما يرويها أهل القرية.' },
+      { key: 'dut', h3: 'توت أولوكالة', p: 'توتٌ متوطّن بلا بذور، يحمل علامةً جغرافية. مصدر رزق القرية الأساسي، ويُصدَّر إلى العالم.' },
+      { key: 'iletisim', h3: 'ساهِم معنا', p: 'لنُنمِّ الأرشيف معًا. شارِك صورك ووثائقك وذكرياتك معنا.' },
+    ],
+    memoryQuote: '«تبدو المستوطنة القديمة طبيعيةً وجميلةً في كل فصل. ومن غادروا القرية يعودون أحيانًا ليتجوّلوا بين بيوتهم ومدارسهم القديمة، يتذكّرون أيامًا مضت.»',
+    memoryCite: '— ملاحظة من مصوّر زار أولوكالة',
+    dedKicker: 'إهداء', dedText: 'هذا الأرشيف مُهدًى إلى الذكرى العزيزة لجدّي <strong>ضياء غنجر</strong>، الذي لم ينسَ قريته ولا جذوره قطّ.',
+    ctaH2: 'ذاكرة القرية أمانةٌ في أعناقنا جميعًا', ctaP: 'صورةٌ محفوظة في صندوق، حكايةٌ من جدّ، سندٌ قديم... كلّها قد تصبح جزءًا من هذا الأرشيف. لنحفظ ذاكرة أولوكالة معًا.', ctaBtn: 'ساهِم في الأرشيف',
+  },
+};

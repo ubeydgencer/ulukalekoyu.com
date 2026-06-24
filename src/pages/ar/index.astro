@@ -1,0 +1,18 @@
+---
+import Base from '../../layouts/Base.astro';
+import HomeBody from '../../components/HomeBody.astro';
+import { HOME } from '../../data/home';
+const lang = 'ar' as const;
+const c = HOME[lang];
+const jsonld = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebSite', '@id': 'https://ulukalekoyu.com/#website', url: 'https://ulukalekoyu.com/ar/', name: 'أرشيف قرية أولوكالة الرقمي', inLanguage: 'ar', publisher: { '@id': 'https://ulukalekoyu.com/#org' } },
+    { '@type': 'Organization', '@id': 'https://ulukalekoyu.com/#org', name: 'أرشيف قرية أولوكالة الرقمي', url: 'https://ulukalekoyu.com/ar/', logo: 'https://ulukalekoyu.com/icon-512.png', founder: { '@type': 'Person', name: 'Ubeyd Gençer' } },
+    { '@type': ['Place', 'TouristAttraction'], '@id': 'https://ulukalekoyu.com/#place', name: 'قرية أولوكالة', image: 'https://ulukalekoyu.com/images/koy-eski.jpg', url: 'https://ulukalekoyu.com/ar/', isAccessibleForFree: true, geo: { '@type': 'GeoCoordinates', latitude: 39.025, longitude: 39.036, elevation: '940' }, address: { '@type': 'PostalAddress', addressLocality: 'Çemişgezek', addressRegion: 'Tunceli', addressCountry: 'TR' } },
+  ],
+});
+---
+<Base lang={lang} page="index" title={c.meta.title} description={c.meta.description} ogType="website" jsonld={jsonld}>
+  <HomeBody lang={lang} c={c} />
+</Base>
