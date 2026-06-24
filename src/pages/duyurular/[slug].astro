@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import DuyuruPost from '../../components/DuyuruPost.astro';
+import { POSTS, BLOG_UI } from '../../data/blog';
+export function getStaticPaths() {
+  return POSTS.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+const lang = 'tr' as const;
+const { post } = Astro.props;
+const t = BLOG_UI[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'BlogPosting',headline:post.title[lang],datePublished:post.date,inLanguage:lang,author:{'@type':'Organization',name:'Ulukale Köyü Dijital Arşivi'}});
+---
+<Base lang={lang} page="duyurular" subPath={post.slug + '/'} title={post.title[lang] + ' — ' + t.crumb} description={post.summary[lang]} ogType="article" ogImage={post.cover ? 'https://ulukalekoyu.com' + post.cover : undefined} jsonld={jsonld}>
+  <DuyuruPost lang={lang} post={post} />
+</Base>

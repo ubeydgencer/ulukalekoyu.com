@@ -1,0 +1,36 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { BLOG_UI, formatDate, type Post } from '../data/blog';
+import { marked } from 'marked';
+interface Props { lang: Lang; post: Post; }
+const { lang, post } = Astro.props;
+const t = BLOG_UI[lang];
+const html = marked.parse(post.body[lang] || '', { async: false }) as string;
+---
+<article class="page-hero">
+  <div class="container narrow">
+    <div class="crumbs">
+      <a href={localePath(lang, 'index')}>{t.home}</a> · <a href={localePath(lang, 'duyurular')}>{t.crumb}</a>
+    </div>
+    <span class="kicker">{formatDate(post.date, lang)}</span>
+    <h1>{post.title[lang]}</h1>
+  </div>
+</article>
+
+{post.cover && (
+  <section class="section-tight">
+    <div class="container narrow">
+      <div class="frame" style="aspect-ratio:16/9"><img src={post.cover} alt={post.title[lang]} /></div>
+    </div>
+  </section>
+)}
+
+<section>
+  <div class="container narrow prose" set:html={html} />
+</section>
+
+<section class="section-tight">
+  <div class="container narrow">
+    <a href={localePath(lang, 'duyurular')} class="btn btn-ghost">{t.back}</a>
+  </div>
+</section>

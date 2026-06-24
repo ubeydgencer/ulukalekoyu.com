@@ -1,0 +1,11 @@
+---
+import Base from '../../../layouts/Base.astro';
+import DuyurularList from '../../../components/DuyurularList.astro';
+import { BLOG_UI } from '../../../data/blog';
+const lang = 'en' as const;
+const t = BLOG_UI[lang];
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:t.h1,inLanguage:lang,mainEntityOfPage:'https://ulukalekoyu.com/en/duyurular/'});
+---
+<Base lang={lang} page="duyurular" title={t.metaTitle} description={t.metaDesc} jsonld={jsonld}>
+  <DuyurularList lang={lang} />
+</Base>

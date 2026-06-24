@@ -1,0 +1,35 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { POSTS, BLOG_UI, formatDate } from '../data/blog';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = BLOG_UI[lang];
+const base = localePath(lang, 'duyurular');
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p>{t.intro}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow">
+    {POSTS.length === 0 ? (
+      <p class="note">{t.empty}</p>
+    ) : (
+      <div class="press-list">
+        {POSTS.map((p) => (
+          <a class="press-item" href={`${base}${p.slug}/`}>
+            <div class="press-meta"><span class="press-date">{formatDate(p.date, lang)}</span></div>
+            <h3>{p.title[lang]}</h3>
+            <p>{p.summary[lang]}</p>
+            <span class="read">{t.readMore}</span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>

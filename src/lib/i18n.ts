@@ -14,6 +14,7 @@ export const PAGE_FILE: Record<string, string> = {
   arsiv: 'arsiv',
   hafiza: 'hafiza',
   basin: 'basin',
+  duyurular: 'duyurular',
   iletisim: 'iletisim',
 };
 
@@ -38,6 +39,7 @@ export const NAV: { key: string; label: Record<Lang, string> }[] = [
   { key: 'arsiv',    label: { tr: 'Fotoğraf Arşivi', en: 'Photo Archive',     ar: 'أرشيف الصور' } },
   { key: 'hafiza',   label: { tr: 'Hafıza',          en: 'Memory',            ar: 'الذاكرة' } },
   { key: 'basin',    label: { tr: 'Basın',           en: 'Press',             ar: 'الصحافة' } },
+  { key: 'duyurular',label: { tr: 'Duyurular',       en: 'Announcements',     ar: 'إعلانات' } },
   { key: 'iletisim', label: { tr: 'İletişim',        en: 'Contact',           ar: 'اتصل بنا' } },
 ];
 

@@ -379,6 +379,30 @@ collections:
           - { name: dedication, label: "İthaf yazısı", widget: string, i18n: true }
           - { name: loc, label: "Konum", widget: string, i18n: true }
   # ----------------------------------------------------------------
+  - name: blog
+    label: "Duyurular"
+    label_singular: "Duyuru"
+    description: "Köye dair duyurular ve yazılar. Tarihe göre sıralanır, üç dilde yazılır."
+    folder: src/content/blog
+    create: true
+    extension: json
+    format: json
+    slug: "{{year}}-{{month}}-{{day}}-{{title_tr | slugify}}"
+    summary: "{{title_tr}}"
+    sortable_fields: [date]
+    fields:
+      - { name: date, label: "Tarih", widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { name: cover, label: "Kapak görseli (opsiyonel)", widget: image, required: false }
+      - { name: title_tr, label: "Başlık (Türkçe)", widget: string }
+      - { name: title_en, label: "Başlık (English)", widget: string }
+      - { name: title_ar, label: "Başlık (عربي)", widget: string }
+      - { name: summary_tr, label: "Özet (TR)", widget: text }
+      - { name: summary_en, label: "Özet (EN)", widget: text }
+      - { name: summary_ar, label: "Özet (AR)", widget: text }
+      - { name: body_tr, label: "İçerik (TR)", widget: markdown }
+      - { name: body_en, label: "İçerik (EN)", widget: markdown }
+      - { name: body_ar, label: "İçerik (AR)", widget: markdown }
+  # ----------------------------------------------------------------
   - name: gallery
     label: "Fotoğraf Galerisi"
     label_singular: "Fotoğraf"

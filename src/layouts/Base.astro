@@ -14,15 +14,16 @@ interface Props {
   ogType?: string;
   noindex?: boolean;
   jsonld?: string;
+  subPath?: string; // sayfa altında alt yol (ör. duyuru slug'ı) — canonical/hreflang için
 }
 const {
   lang, page, title, description = '',
   ogTitle = title, ogDescription = description,
   ogImage = 'https://ulukalekoyu.com/images/koy-eski.jpg',
-  ogType = 'website', noindex = false, jsonld,
+  ogType = 'website', noindex = false, jsonld, subPath = '',
 } = Astro.props;
 
-const canonical = localeUrl(lang, page);
+const canonical = localeUrl(lang, page) + subPath;
 const siteName: Record<Lang, string> = {
   tr: 'Ulukale Köyü Dijital Arşivi',
   en: 'Ulukale Village Digital Archive',
@@ -50,8 +51,8 @@ const fontHref = lang === 'ar'
 <meta name="author" content="Ubeyd Gençer" />
 <meta name="robots" content={noindex ? 'noindex' : 'index, follow, max-image-preview:large'} />
 <link rel="canonical" href={canonical} />
-{LOCALES.map((l) => <link rel="alternate" hreflang={l} href={localeUrl(l, page)} />)}
-<link rel="alternate" hreflang="x-default" href={localeUrl('tr', page)} />
+{LOCALES.map((l) => <link rel="alternate" hreflang={l} href={localeUrl(l, page) + subPath} />)}
+<link rel="alternate" hreflang="x-default" href={localeUrl('tr', page) + subPath} />
 <meta name="theme-color" content="#a9542d" />
 
 <meta property="og:site_name" content={siteName[lang]} />
