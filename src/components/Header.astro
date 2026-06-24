@@ -30,3 +30,10 @@ const navItems = [
     </nav>
   </div>
 </header>
+
+<!-- Masaüstünde sol kenarda dikey yüzen dil seçici (mobilde gizli; header'daki kullanılır) -->
+<div class="lang-float" aria-label={MENU_LABEL[lang]}>
+  {LOCALES.map((l) => (
+    <a href={localePath(l, page)} hreflang={l} class={l === lang ? 'active' : undefined}>{langLabel[l]}</a>
+  ))}
+</div>

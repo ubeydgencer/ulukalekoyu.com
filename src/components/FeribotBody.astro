@@ -1,26 +1,17 @@
 ---
-import { localePath, type Lang } from '../lib/i18n';
+import { type Lang } from '../lib/i18n';
 import { FERIBOT, FERIBOT_WORKER } from '../data/feribot';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = FERIBOT[lang];
 const labels = JSON.stringify({
-  next: t.nextLabel, belediye: t.belediye, ozel: t.ozel,
+  next: t.nextLabel, operator: t.operatorCol, belediye: t.belediye, ozel: t.ozel,
   loading: t.loading, error: t.error, updated: t.updated,
-  pertek: t.pertekCol, elazig: t.elazigCol,
 });
 ---
-<section class="page-hero">
+<section class="alt-bg" id="feribot-saatleri">
   <div class="container narrow">
-    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
-    <span class="kicker">{t.kicker}</span>
-    <h1>{t.h1}</h1>
-    <p>{t.intro}</p>
-  </div>
-</section>
-
-<section>
-  <div class="container narrow">
+    <div class="section-head"><span class="kicker">{t.kicker}</span><h2>{t.h1}</h2><p>{t.intro}</p></div>
     <div id="feribot" data-worker={FERIBOT_WORKER} data-lang={lang} data-labels={labels}>
       <p class="feribot-state note">{t.loading}</p>
     </div>
@@ -29,20 +20,22 @@ const labels = JSON.stringify({
 </section>
 
 <style>
+  .feribot-route { margin-bottom: 34px; }
+  .feribot-route > h3 { font-family: var(--display); font-size: 1.5rem; color: var(--kerpic-dark); margin: 0 0 12px; }
   .feribot-next {
-    display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: baseline;
+    display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline;
     background: var(--parchment-2); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 16px 20px; margin-bottom: 24px;
+    padding: 14px 18px; margin-bottom: 16px;
   }
   .feribot-next .lab { font-family: var(--serif); font-weight: 700; color: var(--kerpic-dark); }
-  .feribot-next b { font-size: 1.25rem; color: var(--kerpic-dark); font-family: var(--display); }
+  .feribot-next b { font-size: 1.2rem; color: var(--kerpic-dark); font-family: var(--display); }
   .feribot-tablo { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
-  .feribot-tablo th, .feribot-tablo td { padding: 10px 14px; border-bottom: 1px solid var(--line); text-align: start; }
+  .feribot-tablo th, .feribot-tablo td { padding: 9px 14px; border-bottom: 1px solid var(--line); text-align: start; }
   .feribot-tablo thead th { color: var(--ink-soft); font-size: 0.82rem; letter-spacing: 0.5px; text-transform: uppercase; }
   .feribot-tablo td.time { font-family: var(--display); font-size: 1.05rem; color: var(--kerpic-dark); }
-  .feribot-tablo td.op { color: var(--ink-soft); font-size: 0.88rem; }
-  .feribot-tablo tr.soon { background: rgba(169,84,45,0.07); }
-  .feribot-updated { color: var(--ink-soft); font-size: 0.85rem; margin-top: 14px; }
+  .feribot-tablo td.op { color: var(--ink-soft); font-size: 0.86rem; }
+  .feribot-tablo tr.soon { background: rgba(169,84,45,0.08); }
+  .feribot-updated { color: var(--ink-soft); font-size: 0.85rem; margin-top: 6px; }
 </style>
 
 <script>
@@ -51,37 +44,43 @@ const labels = JSON.stringify({
   if (root) {
     const lang = root.dataset.lang;
     const L = JSON.parse(root.dataset.labels || '{}');
+    const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
     const ar = (s) => (lang === 'ar' ? String(s).replace(/[0-9]/g, (d) => AR[+d]) : String(s));
     const toMin = (t) => { const [h, m] = t.split(':').map(Number); return h * 60 + m; };
     const nextOf = (list, now) => list.find((t) => toMin(t) >= now) || list[0];
+    const opLabel = (op) => (/zel/i.test(op || '') ? L.ozel : L.belediye);
 
     fetch(root.dataset.worker)
       .then((r) => { if (!r.ok) throw new Error('http'); return r.json(); })
       .then((d) => {
-        if (!d.rows || !d.rows.length) throw new Error('empty');
+        if (!d.routes || !d.routes.length) throw new Error('empty');
         const now = new Date();
         const cur = now.getHours() * 60 + now.getMinutes();
-        const np = nextOf(d.pertek, cur), ne = nextOf(d.elazig, cur);
-        const opLabel = (op) => (/zel/i.test(op || '') ? L.ozel : L.belediye);
-        const rows = d.rows.map((r) => {
-          const soon = r.pertek === np || r.elazig === ne;
-          return `<tr class="${soon ? 'soon' : ''}">
-            <td class="time">${r.pertek ? ar(r.pertek) : '—'}</td>
-            <td class="op">${opLabel(r.operator)}</td>
-            <td class="time">${r.elazig ? ar(r.elazig) : '—'}</td></tr>`;
+        const html = d.routes.map((rt) => {
+          const n1 = rt.side1Times.length ? nextOf(rt.side1Times, cur) : '';
+          const n2 = rt.side2Times.length ? nextOf(rt.side2Times, cur) : '';
+          const body = rt.rows.map((r) => {
+            const soon = (r.from && r.from === n1) || (r.to && r.to === n2);
+            return `<tr class="${soon ? 'soon' : ''}">
+              <td class="time">${r.from ? ar(r.from) : '—'}</td>
+              ${rt.hasOperator ? `<td class="op">${esc(opLabel(r.operator))}</td>` : ''}
+              <td class="time">${r.to ? ar(r.to) : '—'}</td></tr>`;
+          }).join('');
+          return `<div class="feribot-route">
+            <h3>${esc(rt.side1)} ↔ ${esc(rt.side2)}</h3>
+            <div class="feribot-next">
+              <span class="lab">${L.next}</span>
+              ${n1 ? `<span>${esc(rt.side1)}: <b>${ar(n1)}</b></span>` : ''}
+              ${n2 ? `<span>${esc(rt.side2)}: <b>${ar(n2)}</b></span>` : ''}
+            </div>
+            <table class="feribot-tablo">
+              <thead><tr><th>${esc(rt.side1)}</th>${rt.hasOperator ? `<th>${L.operator}</th>` : ''}<th>${esc(rt.side2)}</th></tr></thead>
+              <tbody>${body}</tbody>
+            </table>
+          </div>`;
         }).join('');
         const upd = d.updatedAt ? new Date(d.updatedAt).toLocaleDateString(lang === 'tr' ? 'tr-TR' : lang === 'ar' ? 'ar' : 'en-GB') : '';
-        root.innerHTML = `
-          <div class="feribot-next">
-            <span class="lab">${L.next}</span>
-            <span>${L.pertek}: <b>${ar(np)}</b></span>
-            <span>${L.elazig}: <b>${ar(ne)}</b></span>
-          </div>
-          <table class="feribot-tablo">
-            <thead><tr><th>${L.pertek}</th><th>${L.belediye}/${L.ozel}</th><th>${L.elazig}</th></tr></thead>
-            <tbody>${rows}</tbody>
-          </table>
-          ${upd ? `<p class="feribot-updated">${L.updated}: ${ar(upd)}</p>` : ''}`;
+        root.innerHTML = html + (upd ? `<p class="feribot-updated">${L.updated}: ${ar(upd)}</p>` : '');
       })
       .catch(() => {
         const s = root.querySelector('.feribot-state');

@@ -1,0 +1,36 @@
+---
+import FeribotBody from './FeribotBody.astro';
+import { localePath, type Lang } from '../lib/i18n';
+import { ULASIM } from '../data/ulasim';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = ULASIM[lang];
+---
+<section class="page-hero">
+  <div class="container narrow">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p>{t.intro}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow">
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>{t.factsH}</h3>
+        <ul style="margin:0 0 16px; padding-inline-start:18px; color:var(--ink-soft); line-height:1.9;">
+          {t.facts.map((f) => <li>{f}</li>)}
+        </ul>
+        <a href="https://www.google.com/maps/search/?api=1&query=39.025,39.036" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">{t.mapBtn}</a>
+      </div>
+      <div class="card">
+        <h3>{t.roadH}</h3>
+        <p>{t.roadP}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<FeribotBody lang={lang} />

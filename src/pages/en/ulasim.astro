@@ -1,0 +1,10 @@
+---
+import Base from '../../layouts/Base.astro';
+import UlasimBody from '../../components/UlasimBody.astro';
+import { ULASIM } from '../../data/ulasim';
+const lang = 'en' as const;
+const t = ULASIM[lang];
+---
+<Base lang={lang} page="ulasim" title={t.metaTitle} description={t.metaDesc}>
+  <UlasimBody lang={lang} />
+</Base>
