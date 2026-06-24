@@ -19,27 +19,47 @@ const labels = JSON.stringify({
   </div>
 </section>
 
-<style>
-  .feribot-route { margin-bottom: 34px; }
-  .feribot-route > h3 { font-family: var(--display); font-size: 1.5rem; color: var(--kerpic-dark); margin: 0 0 12px; }
-  .feribot-next {
-    display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline;
-    background: var(--parchment-2); border: 1px solid var(--line); border-radius: var(--radius);
-    padding: 14px 18px; margin-bottom: 16px;
+<style is:global>
+  .ferry-card {
+    border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    margin-bottom: 28px; background: #fffdfa; box-shadow: 0 2px 10px rgba(58, 48, 38, 0.05);
   }
-  .feribot-next .lab { font-family: var(--serif); font-weight: 700; color: var(--kerpic-dark); }
-  .feribot-next b { font-size: 1.2rem; color: var(--kerpic-dark); font-family: var(--display); }
-  .feribot-tablo { width: 100%; border-collapse: collapse; font-size: 0.98rem; }
-  .feribot-tablo th, .feribot-tablo td { padding: 9px 14px; border-bottom: 1px solid var(--line); text-align: start; }
-  .feribot-tablo thead th { color: var(--ink-soft); font-size: 0.82rem; letter-spacing: 0.5px; text-transform: uppercase; }
-  .feribot-tablo td.time { font-family: var(--display); font-size: 1.05rem; color: var(--kerpic-dark); }
-  .feribot-tablo td.op { color: var(--ink-soft); font-size: 0.86rem; }
-  .feribot-tablo tr.soon { background: rgba(169,84,45,0.08); }
-  .feribot-updated { color: var(--ink-soft); font-size: 0.85rem; margin-top: 6px; }
+  .ferry-card__head {
+    display: flex; align-items: center; gap: 10px; padding: 14px 22px;
+    background: var(--kerpic-dark);
+  }
+  .ferry-card__head svg { width: 22px; height: 22px; stroke: #f4ecdd; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .ferry-card__head h3 { margin: 0; font-family: var(--display); font-size: 1.25rem; color: #f7efe2; font-weight: 600; }
+  .ferry-next {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px;
+    padding: 14px 22px; background: var(--parchment-2); border-bottom: 1px solid var(--line);
+  }
+  .ferry-next__label { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 1.2px; color: var(--ink-soft); margin-inline-end: 4px; }
+  .ferry-next__item { display: flex; align-items: baseline; gap: 7px; }
+  .ferry-next__item span { color: var(--ink-soft); font-size: 0.9rem; }
+  .ferry-next__item b { font-family: var(--display); font-size: 1.35rem; color: var(--kerpic-dark); }
+  .ferry-table { width: 100%; border-collapse: collapse; }
+  .ferry-table th {
+    padding: 11px 22px; text-align: start; font-size: 0.72rem; letter-spacing: 1px;
+    text-transform: uppercase; color: var(--ink-soft); border-bottom: 2px solid var(--line); white-space: nowrap;
+  }
+  .ferry-table th.mid { text-align: center; }
+  .ferry-table td { padding: 9px 22px; border-bottom: 1px solid rgba(214, 199, 169, 0.5); }
+  .ferry-table tbody tr:nth-child(even) { background: rgba(122, 90, 56, 0.025); }
+  .ferry-table tbody tr:last-child td { border-bottom: none; }
+  .ferry-table td.time { font-family: var(--display); font-size: 1.06rem; color: var(--ink); }
+  .ferry-table td.op { color: var(--ink-soft); font-size: 0.82rem; text-align: center; }
+  .ferry-table tr.soon { background: rgba(169, 84, 45, 0.10) !important; }
+  .ferry-table tr.soon td.time { color: var(--kerpic-dark); font-weight: 700; }
+  .feribot-updated { color: var(--ink-soft); font-size: 0.85rem; margin-top: 4px; }
+  @media (max-width: 520px) {
+    .ferry-card__head, .ferry-next, .ferry-table th, .ferry-table td { padding-inline: 16px; }
+  }
 </style>
 
 <script>
   const AR = '٠١٢٣٤٥٦٧٨٩';
+  const BOAT = '<svg viewBox="0 0 24 24"><path d="M3 14l1.5 5.5a2 2 0 0 0 1.9 1.5h11.2a2 2 0 0 0 1.9-1.5L22 14"/><path d="M4 14l8-2.5L20 14"/><path d="M12 11.5V5l5 2.5"/><path d="M12 5H8"/></svg>';
   const root = document.getElementById('feribot');
   if (root) {
     const lang = root.dataset.lang;
@@ -66,15 +86,19 @@ const labels = JSON.stringify({
               ${rt.hasOperator ? `<td class="op">${esc(opLabel(r.operator))}</td>` : ''}
               <td class="time">${r.to ? ar(r.to) : '—'}</td></tr>`;
           }).join('');
-          return `<div class="feribot-route">
-            <h3>${esc(rt.side1)} ↔ ${esc(rt.side2)}</h3>
-            <div class="feribot-next">
-              <span class="lab">${L.next}</span>
-              ${n1 ? `<span>${esc(rt.side1)}: <b>${ar(n1)}</b></span>` : ''}
-              ${n2 ? `<span>${esc(rt.side2)}: <b>${ar(n2)}</b></span>` : ''}
+          return `<div class="ferry-card">
+            <div class="ferry-card__head">${BOAT}<h3>${esc(rt.side1)} ↔ ${esc(rt.side2)}</h3></div>
+            <div class="ferry-next">
+              <span class="ferry-next__label">${L.next}</span>
+              ${n1 ? `<span class="ferry-next__item"><span>${esc(rt.side1)}</span><b>${ar(n1)}</b></span>` : ''}
+              ${n2 ? `<span class="ferry-next__item"><span>${esc(rt.side2)}</span><b>${ar(n2)}</b></span>` : ''}
             </div>
-            <table class="feribot-tablo">
-              <thead><tr><th>${esc(rt.side1)}</th>${rt.hasOperator ? `<th>${L.operator}</th>` : ''}<th>${esc(rt.side2)}</th></tr></thead>
+            <table class="ferry-table">
+              <thead><tr>
+                <th>${esc(rt.side1)} →</th>
+                ${rt.hasOperator ? `<th class="mid">${L.operator}</th>` : ''}
+                <th>${esc(rt.side2)} →</th>
+              </tr></thead>
               <tbody>${body}</tbody>
             </table>
           </div>`;
