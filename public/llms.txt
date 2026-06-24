@@ -42,13 +42,13 @@ kerpiç evler ve tarihî konaklar (sivil mimari), dut bahçeleri.
 ## Sayfalar
 
 - [Ana Sayfa](https://ulukalekoyu.com/): Köyün genel tanıtımı ve arşive giriş.
-- [Tarih](https://ulukalekoyu.com/tarih.html): Demir Çağı'ndan bugüne zaman çizelgesi.
-- [Tarihi Yapılar](https://ulukalekoyu.com/mimari.html): Mimari eserlerin belgelenmesi ve fotoğrafları.
-- [Ulukale Dutu](https://ulukalekoyu.com/dut.html): Coğrafi işaretli endemik dut; özellikleri, hasat, ürünler, ekonomi, köylü sözleri.
-- [Fotoğraf Arşivi](https://ulukalekoyu.com/arsiv.html): Eski ve yeni fotoğraflar.
-- [Hafıza / Sözlü Tarih](https://ulukalekoyu.com/hafiza.html): Anılar, hane hikâyeleri, gelenekler; katkı formu.
-- [Ulusal Basın](https://ulukalekoyu.com/basin.html): Ulukale'nin ulusal basında yer aldığı haberlerin derlemesi (tarih, coğrafi işaretli dut, hafıza).
-- [İletişim](https://ulukalekoyu.com/iletisim.html): Arşive katkı ve iletişim.
+- [Tarih](https://ulukalekoyu.com/tarih/): Demir Çağı'ndan bugüne zaman çizelgesi.
+- [Tarihi Yapılar](https://ulukalekoyu.com/mimari/): Mimari eserlerin belgelenmesi ve fotoğrafları.
+- [Ulukale Dutu](https://ulukalekoyu.com/dut/): Coğrafi işaretli endemik dut; özellikleri, hasat, ürünler, ekonomi, köylü sözleri.
+- [Fotoğraf Arşivi](https://ulukalekoyu.com/arsiv/): Eski ve yeni fotoğraflar.
+- [Hafıza / Sözlü Tarih](https://ulukalekoyu.com/hafiza/): Anılar, hane hikâyeleri, gelenekler; katkı formu.
+- [Ulusal Basın](https://ulukalekoyu.com/basin/): Ulukale'nin ulusal basında yer aldığı haberlerin derlemesi (tarih, coğrafi işaretli dut, hafıza).
+- [İletişim](https://ulukalekoyu.com/iletisim/): Arşive katkı ve iletişim.
 
 ## Ekonomi: Ulukale Dutu
 

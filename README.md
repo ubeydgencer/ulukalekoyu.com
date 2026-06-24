@@ -1,51 +1,53 @@
 # Ulukale Köyü — Dijital Arşiv
 
 Tunceli (Dersim) Çemişgezek ilçesine bağlı **Ulukale köyünün** tarihini, mimarisini
-ve hafızasını koruyan statik web sitesi. `ulukalekoyu.com` için hazırlanmıştır.
+ve hafızasını koruyan çok dilli (TR / EN / AR) web sitesi. `ulukalekoyu.com`.
 
-## Sayfalar
-| Dosya | İçerik |
-|-------|--------|
-| `index.html` | Ana sayfa — hero, köy özeti, bölümlere giriş |
-| `tarih.html` | Demir Çağı'ndan bugüne zaman çizelgesi |
-| `mimari.html` | Cami, türbe, çeşme, hamam, kilise, değirmen, kaya mezarı |
-| `arsiv.html` | Fotoğraf arşivi (eski kareler + köyün mevsimleri) |
-| `hafiza.html` | Sözlü tarih + hatıra paylaşım formu |
-| `iletisim.html` | İletişim ve katkı formu |
-| `css/style.css` | Tüm tasarım (toprak/kerpiç tonları, serif tipografi) |
+**Astro** ile derlenir; içerik **Sveltia CMS** paneliyle (`/admin`) kod yazmadan
+yönetilebilir. Panel kullanımı için **[KILAVUZ.md](KILAVUZ.md)** dosyasına bakın.
+
+## Diller
+- Türkçe — kök (`/`)
+- İngilizce — `/en/`
+- Arapça — `/ar/` (RTL, Cairo fontu, Arapça-Hint rakamları)
+
+## Sayfalar (her biri 3 dilde)
+`index` · `tarih` · `mimari` · `dut` · `arsiv` · `hafiza` · `basin` · `iletisim`
+· `tesekkurler` · `404`
+
+## Mimari
+```
+src/
+  pages/        İnce sayfa dosyaları (tr kök, en/, ar/)
+  layouts/      Base.astro (head, SEO, hreflang, JSON-LD, GA)
+  components/   Header, Footer, *Body, Gallery
+  data/         Sayfa metinleri (TR/EN/AR) — *.ts
+  content/      Panelden yönetilen içerik — press/*.json, gallery/*.json
+  lib/i18n.ts   Diller, yollar, menü
+public/         Statik varlıklar (images, css, js, robots, sitemap, admin/)
+```
 
 ## Teknoloji
-- **Bağımlılık yok.** Saf HTML + CSS. Build adımı gerektirmez.
-- Fontlar: Google Fonts (Fraunces + Lora).
-- Formlar: **Netlify Forms** ile çalışır (`data-netlify="true"`). Gönderimler
-  Netlify panelindeki **Forms** sekmesinde toplanır; e-posta bildirimi için
-  panelden Form notifications eklenebilir. Form sonrası `/tesekkurler` sayfasına yönlenir.
+- **Astro 4** (statik çıktı, `dist/`).
+- Fontlar: Google Fonts (Fraunces + Lora; Arapça için Cairo).
+- Formlar: **Netlify Forms** (`hatira`, `iletisim`). Bildirim → `mubeyd@gmail.com`.
+- Panel: **Sveltia CMS** (git tabanlı, GitHub backend).
 
-## Yerelde çalıştırma
-Çift tıklayıp tarayıcıda açabilirsiniz. Ya da basit bir sunucu ile:
+## Komutlar
 ```bash
-cd ulukalekoyu.com
-python3 -m http.server 8000   # http://localhost:8000
+npm install
+npm run dev        # http://localhost:4321
+npm run build      # -> dist/
+npm run preview
 ```
-> Not: Netlify Forms yalnızca Netlify'da yayındayken çalışır; yerelde form
-> gönderimi test edilemez (sayfa yine de açılır).
 
-## Yayına alma — Netlify (GitHub bağlı)
-Bu proje GitHub'a bağlıdır; `main` dalına her push otomatik deploy tetikler.
-```bash
-git add -A && git commit -m "değişiklik" && git push
-```
-İlk kurulum: Netlify panelinde **Add new site → Import from Git → GitHub** ile
-`ulukalekoyu.com` reposu seçilir. Build command boş, publish directory `.`.
-Sonra **Domain settings**'ten `ulukalekoyu.com` özel alan adı bağlanır.
-
-## Yapılacaklar / içerik eklenecek yerler
-- [ ] Gerçek fotoğraflar (`arsiv.html` ve `mimari.html` içindeki `.frame` çerçeveleri)
-- [ ] Toplanan sözlü tarih hikâyelerinin `hafiza.html`'e işlenmesi
-- [ ] Yapıların güncel durum/konum kayıtları
-- [ ] (İsteğe bağlı) sosyal medya / paylaşım görseli (og:image)
+## Yayına alma — Netlify
+`main` dalına her push otomatik deploy tetikler. Build command `npm run build`,
+publish directory `dist` (`netlify.toml` içinde tanımlı). Eski `.html` URL'leri
+yeni dizin URL'lerine `public/_redirects` ile 301 yönlendirilir.
 
 ## Kaynaklar
-- Fırat Üniv. Sosyal Bilimler Dergisi — *Çemişgezek-Ulukale Köyü'nün Tarihsel Yerleşim Dokusu*
-- Anadolu Ajansı — *Tunceli'nin Ulukale köyü ziyaretçilerini tarihi yolculuğa çıkarıyor*
-- Wikipedia — *Ulukale, Çemişgezek*
+- Enver Çakar — *Osmanlı Döneminde Ulukale Köyü* (Fırat Üniv. Harput Araştırmaları Dergisi, 2018)
+- İ.Ü. Sanat Tarihi — *Çemişgezek'in Ulukale Köyündeki Mimari Eserler*
+- Sevan Nişanyan — *Nişanyan Yeradları* (Xozan)
+- Anadolu Ajansı, NTV, Hürriyet, Cumhuriyet vd. (basın derlemesi)

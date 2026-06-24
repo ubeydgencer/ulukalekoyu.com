@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ulukale">
-  <rect width="64" height="64" rx="12" fill="#a9542d"/>
-  <!-- Kerpiç kemer / 'U' motifi -->
-  <path d="M16 48 V30 a16 16 0 0 1 32 0 V48" fill="none" stroke="#f4ecdd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 48 H52" stroke="#f4ecdd" stroke-width="5" stroke-linecap="round"/>
-  <!-- iç niş -->
-  <path d="M26 48 V36 a6 6 0 0 1 12 0 V48" fill="#7f3c1d"/>
-</svg>

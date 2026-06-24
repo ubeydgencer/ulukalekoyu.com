@@ -1,8 +1,12 @@
 # Netlify yapılandırması — Ulukale Köyü Dijital Arşivi
-# Statik site: build adımı yok, dosyalar kök dizinde.
+# Astro ile derlenir; çıktı dist/ klasörüne yazılır.
 
 [build]
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
 
 # Güvenlik ve performans başlıkları
 [[headers]]
@@ -34,16 +38,15 @@
   [headers.values]
     Content-Type = "application/xml; charset=utf-8"
 
+# Yönetim paneli arama motorlarına kapalı
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 # netlify.app alt alan adını birincil domaine kalıcı yönlendir (301)
-# Böylece ulukale.netlify.app'e gelen herkes ulukalekoyu.com'a düşer.
 [[redirects]]
   from = "https://ulukale.netlify.app/*"
   to = "https://ulukalekoyu.com/:splat"
   status = 301
   force = true
-
-# Form gönderiminden sonra teşekkür sayfası
-[[redirects]]
-  from = "/tesekkurler"
-  to = "/tesekkurler.html"
-  status = 200

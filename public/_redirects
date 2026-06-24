@@ -1,0 +1,39 @@
+# Eski .html URL'lerinden yeni dizin URL'lerine kalıcı yönlendirme (301)
+# Böylece arama motorlarındaki ve dış sitelerdeki eski bağlantılar kırılmaz.
+
+# --- Türkçe (kök) ---
+/index.html            /             301
+/tarih.html            /tarih/       301
+/mimari.html           /mimari/      301
+/dut.html              /dut/         301
+/arsiv.html            /arsiv/       301
+/hafiza.html           /hafiza/      301
+/basin.html            /basin/       301
+/iletisim.html         /iletisim/    301
+/tesekkurler.html      /tesekkurler/ 301
+
+# --- İngilizce ---
+/en/index.html         /en/             301
+/en/tarih.html         /en/tarih/       301
+/en/mimari.html        /en/mimari/      301
+/en/dut.html           /en/dut/         301
+/en/arsiv.html         /en/arsiv/       301
+/en/hafiza.html        /en/hafiza/      301
+/en/basin.html         /en/basin/       301
+/en/iletisim.html      /en/iletisim/    301
+/en/tesekkurler.html   /en/tesekkurler/ 301
+
+# --- Arapça ---
+/ar/index.html         /ar/             301
+/ar/tarih.html         /ar/tarih/       301
+/ar/mimari.html        /ar/mimari/      301
+/ar/dut.html           /ar/dut/         301
+/ar/arsiv.html         /ar/arsiv/       301
+/ar/hafiza.html        /ar/hafiza/      301
+/ar/basin.html         /ar/basin/       301
+/ar/iletisim.html      /ar/iletisim/    301
+/ar/tesekkurler.html   /ar/tesekkurler/ 301
+
+# --- Dile özgü 404 sayfaları (eşleşmeyen yollar için) ---
+/en/*                  /en/404/      404
+/ar/*                  /ar/404/      404
