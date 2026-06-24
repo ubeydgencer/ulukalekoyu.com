@@ -1,141 +1,100 @@
 # Ulukale Köyü Dijital Arşivi — Yönetim Kılavuzu
 
-Bu site **Astro** ile derlenir, **Cloudflare Pages**'te yayınlanır ve içeriğinin
-bir kısmı **Sveltia CMS** paneliyle (kod yazmadan) güncellenebilir. Panel git
-tabanlıdır: yaptığınız her değişiklik GitHub deposuna kaydedilir, Cloudflare
-otomatik olarak yeni sürümü yayına alır.
+Site **Astro** ile derlenir, **Cloudflare Workers** üzerinde `ulukalekoyu.com`'da
+yayınlanır. İçeriğin büyük kısmı **Sveltia CMS** paneliyle (kod yazmadan)
+güncellenebilir. Panel git tabanlıdır: her değişiklik GitHub'a kaydedilir,
+Cloudflare otomatik olarak yeni sürümü yayına alır (~1-2 dk).
 
-- **Barındırma:** Cloudflare Pages (ücretsiz, build kredisi derdi yok)
-- **Formlar:** Web3Forms → gönderiler **mubeyd@gmail.com**'a mail olur
 - **Panel:** https://ulukalekoyu.com/admin
+- **Formlar:** Web3Forms → gönderiler **mubeyd@gmail.com**'a mail olur
 
 ---
 
-## 1. Panele giriş
+## 1. Panele giriş (Access Token ile)
 
-Adres: **https://ulukalekoyu.com/admin** → **"Login with GitHub"**.
+`https://ulukalekoyu.com/admin` → açılışta **iki buton** olur:
 
-> İlk kullanımdan önce Bölüm 5'teki tek seferlik GitHub girişi kurulumunu yapın.
+- 🟦 **"Sign In with GitHub"** → KULLANMA (ayrı bir OAuth sunucusu gerektirir, kurulmadı)
+- ⬜ **"Sign In Using Access Token"** → **BUNU KULLAN**
 
----
+**Token nasıl alınır (bir kez):**
+1. https://github.com/settings/tokens/new?scopes=repo&description=Ulukale%20CMS
+   (ya da Fine-grained token → repo: `ulukalekoyu.com`, Contents: Read and write)
+2. Aşağı in → **Generate token** → kopyala
+3. Panelde **"Sign In Using Access Token"** → yapıştır → gir
 
-## 2. Fotoğraf eklemek / düzenlemek
-
-1. Sol menüden **"Fotoğraf Galerisi"** → **"New Fotoğraf"**.
-2. Alanlar:
-   - **Hangi galeri?** — *Arşiv — Eski Albümler*, *Arşiv — Köyden Kareler*,
-     *Mimari — Belgeleme* ya da *Dut — Hasattan Kareler*.
-   - **Fotoğraf** — Bilgisayardan yükleyin veya arşivden seçin.
-   - **Kaynak künyesi** — Basından alındıysa kaynağı yazın (ör. `AA`, `NTV`),
-     kendi fotoğrafınızsa boş bırakın.
-   - **Geniş göster** — Genelde kapalı kalsın.
-   - **Başlık (TR/EN/AR)** ve **Alt metin (TR/EN/AR)**.
-3. **Save → Publish.** Birkaç dakikada yayında.
+> ⚠️ Token'ı kimseyle paylaşma; sadece Sveltia ekranına yapıştır (tarayıcında saklanır).
 
 ---
 
-## 3. Haber (basın) eklemek / düzenlemek
+## 2. Panelde neler var?
 
-1. Sol menüden **"Basın / Haberler"** → **"New Haber"**.
-2. **Bölüm** (Tarih / Dut / Köyün Hafızası), **Tür** (Haber yazısı / Foto-galeri),
-   **URL**, ve 3 dilde **Kaynak / Tarih / Başlık / Özet**.
-3. **Save → Publish.**
+| Koleksiyon | Ne işe yarar |
+|-----------|--------------|
+| **Sayfalar** | Tüm sabit sayfaların metinleri (Ana Sayfa, Tarih, Dut, Mimari, Arşiv, Hafıza, İletişim, Basın, Footer). Her metin **TR/EN/AR yan yana**. |
+| **Duyurular** | Köye dair tarihli yazılar/duyurular (blog). Markdown + kapak görseli. |
+| **Özel Sayfalar** | Panelden **sıfırdan yeni sayfa** oluştur; istersen menüye ekle. |
+| **Fotoğraf Galerisi** | Arşiv/Mimari/Dut sayfalarındaki fotoğraflar (3 dilde başlık + kaynak). |
+| **Basın / Haberler** | Basın sayfasındaki haber kartları. |
 
----
-
-## 4. Değişiklik nasıl yayına çıkar?
-
-- Panelde **Publish** → değişiklik GitHub'a kaydedilir.
-- **Cloudflare Pages** bunu görüp siteyi otomatik derler ve yayına alır (~1–2 dk).
-- Cloudflare'in ücretsiz planında aylık build limiti çok yüksektir; Netlify'daki
-  kredi sıkıntısı burada yoktur.
+Her değişiklikte sağ üstten **Save → Publish**. ~1-2 dakikada sitede görünür.
 
 ---
 
-## 5. TEK SEFERLİK KURULUM — GitHub girişi (Cloudflare Worker ile)
+## 3. Sık yapılacaklar
 
-Panelin GitHub'a giriş yapabilmesi için bir OAuth aracısı gerekir. Site Cloudflare'de
-olduğu için bunu küçük bir **Cloudflare Worker** (`sveltia-cms-auth`) ile kurarız.
+**Yeni duyuru eklemek:** Duyurular → New → tarih, başlık/özet/içerik (3 dil), (ops.) kapak → Publish.
 
-**a) GitHub OAuth uygulaması oluşturun**
-1. GitHub → **Settings → Developer settings → OAuth Apps → New OAuth App**.
-2. Doldurun:
-   - **Application name:** `Ulukale Arşivi CMS`
-   - **Homepage URL:** `https://ulukalekoyu.com`
-   - **Authorization callback URL:** `https://sveltia-cms-auth.<KULLANICI>.workers.dev/callback`
-     *(Worker adresini bir sonraki adımda alacaksınız; oluşturduktan sonra bu alanı güncelleyin.)*
-3. **Client ID** ve **Client Secret**'i not alın.
+**Fotoğraf eklemek:** Fotoğraf Galerisi → New → galeri seç, görseli yükle, kaynak künyesi, 3 dilde başlık → Publish.
 
-**b) Worker'ı dağıtın**
-1. Cloudflare → **Workers & Pages → Create** → `sveltia/sveltia-cms-auth` deposunu
-   kullanın (GitHub'daki "Deploy to Cloudflare" düğmesi en kolayı).
-2. Worker'a ortam değişkenlerini (Settings → Variables / Secrets) ekleyin:
-   - `GITHUB_CLIENT_ID` = (yukarıdaki Client ID)
-   - `GITHUB_CLIENT_SECRET` = (yukarıdaki Client Secret)
-   - `ALLOWED_DOMAINS` = `ulukalekoyu.com`
-3. Worker adresini kopyalayın (ör. `https://sveltia-cms-auth.ubeyd.workers.dev`).
-4. GitHub OAuth uygulamasındaki **callback URL**'i bu adres + `/callback` olacak
-   şekilde güncelleyin.
+**Yeni sayfa eklemek:** Özel Sayfalar → New → **URL adı** (örn. `tarihce`, küçük harf-tire), "Üst menüde göster", menü/başlık/içerik (3 dil, markdown) → Publish. Adres: `ulukalekoyu.com/tarihce/`.
 
-**c) Panele tanıtın**
-`public/admin/config.yml` dosyasındaki `base_url` satırını Worker adresinizle
-değiştirin (şu an `https://sveltia-cms-auth.UBEYD-WORKER.workers.dev` yazıyor).
-Kaydedip push edin; artık `/admin`'de **"Login with GitHub"** çalışır.
+**Sayfa metni düzenlemek:** Sayfalar → ilgili sayfa → metni 3 dilde düzenle → Publish.
+
+**Görsel eklemek (markdown içine):** İçerik alanında görseli yükle ya da `![açıklama](/images/dosya.jpg)` yaz. Dosyalar `public/images/` altına gider.
 
 ---
 
-## 6. Panelden düzenlenenler ve düzenlenmeyenler
+## 4. Özel sayfalardaki görseller (ör. Şehitler sayfası)
 
-**Panelden (kod yazmadan):** Galeri fotoğrafları (`/arsiv/`, `/mimari/`, `/dut/`)
-ve haberler (`/basin/`).
-
-**Şimdilik kod tarafında (benden/geliştiriciden isteyin):** Sayfa metinleri
-(ana sayfa, tarih, dut anlatısı, mimari kartlar…), tasarım, menü, diller.
-İstenirse bu metinler de panele taşınabilir.
+Şehitler anma sayfasındaki anıt görseli `public/images/sehitlik-aniti.jpg`
+dosyasıdır. Değiştirmek için bu dosyanın üzerine yeni görseli aynı adla kaydet
+(panelden Özel Sayfalar → ilgili sayfa → içerikteki görseli de değiştirebilirsin).
 
 ---
 
-## 7. Formlar (Hafıza & İletişim) — Web3Forms
+## 5. Feribot saatleri (otomatik)
 
-`/hafiza/` ve `/iletisim/` formları **Web3Forms** ile çalışır. Gönderiler doğrudan
-**mubeyd@gmail.com** adresine e-posta olarak gelir; gönderim sonrası kullanıcı
-`/tesekkurler/` sayfasına yönlenir.
-
-- Access key, formların içinde gömülüdür (`public` bilgidir, sakıncası yoktur).
-- Değiştirmek gerekirse: `src/components/HafizaBody.astro` ve `IletisimBody.astro`
-  içindeki `access_key` değeri.
-- Ücretsiz plan sınırı aşılırsa web3forms.com hesabından yükseltebilirsiniz.
+`/ulasim/` sayfasındaki feribot tablosu **otomatik**tir; ayrı bir Cloudflare
+Worker (`feribot-api.ubeyd.workers.dev`) her gece **Çemişgezek ve Pertek
+belediyelerinin** sayfalarından saatleri çeker. Elle bir şey yapman gerekmez.
+- Kod: `feribot-worker/` (kurulum: `feribot-worker/README.md`).
+- Saatler yanlışsa kaynak belediyenin sayfası değişmiş olabilir; söyle, parser'ı güncelleyeyim.
 
 ---
 
-## 8. Cloudflare Pages kurulumu (tek seferlik)
+## 6. Formlar
 
-1. Cloudflare → **Workers & Pages → Create → Pages → Connect to Git**.
-2. `ubeydgencer/ulukalekoyu.com` deposunu seçin.
-3. Ayarlar:
-   - **Framework preset:** Astro
-   - **Build command:** `npm run build`
-   - **Build output directory:** `dist`
-4. **Custom domains** → `ulukalekoyu.com` ekleyin (DNS zaten Cloudflare'de).
-5. Eski `.html` adresleri `public/_redirects` ile, başlıklar `public/_headers`
-   ile otomatik uygulanır.
+`/hafiza/` ve `/iletisim/` formları **Web3Forms** ile çalışır; gönderiler doğrudan
+**mubeyd@gmail.com**'a mail gelir, sonra `/tesekkurler/` sayfasına yönlenir.
 
 ---
 
-## 9. Geliştirici notları
+## 7. Geliştirici notları
 
 ```bash
-npm install        # bağımlılıkları kur
-npm run dev        # yerel geliştirme (http://localhost:4321)
-npm run build      # dist/ klasörüne üretim derlemesi
-npm run preview    # üretim derlemesini önizle
+npm install
+npm run dev        # http://localhost:4321
+npm run build      # -> dist/
+npm run preview
 ```
 
-- Panel içeriği: `src/content/press/*.json`, `src/content/gallery/*.json`.
-- Sayfa metinleri: `src/data/*.ts`. Panel yapılandırması: `public/admin/config.yml`.
-- Yönlendirme/başlık: `public/_redirects`, `public/_headers`.
-- Site haritası: `node scripts/gen-sitemap.mjs`.
+- Panel içeriği: `src/content/{pages,blog,custom,gallery,press}/*.json`.
+- Panel yapılandırması: `public/admin/config.yml`.
+- Yönlendirme/başlık: `public/_redirects`, `public/_headers`. Sitemap: `src/pages/sitemap.xml.ts`.
+- `main`'e push → Cloudflare otomatik build. Acil elle deploy: kökte
+  `CLOUDFLARE_API_TOKEN=... npx wrangler deploy`.
 
 > **Not (macOS/iCloud):** Masaüstü iCloud'a senkronluysa bazen `Dosya 2.ext`
-> biçiminde çakışma kopyaları oluşabiliyor. Bunlar git'e girmez ama derlemeyi
-> kirletebilir; görürseniz silin: `find . -name '* 2*' -not -path './node_modules/*' -delete`.
+> kopyaları oluşur; bunlar derlemeyi kirletebilir. Görürsen sil:
+> `find . -name '* 2*' -not -path './node_modules/*' -delete`

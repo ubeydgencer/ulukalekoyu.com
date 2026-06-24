@@ -38,3 +38,8 @@
 # (wrangler.jsonc -> assets.not_found_handling: "404-page").
 # Cloudflare Workers _redirects'i 404 durum kodunu desteklemediği için
 # dile özgü 404 yönlendirmesi kullanılmıyor.
+
+# Feribot sayfası Ulaşım'a taşındı
+/feribot/      /ulasim/      301
+/en/feribot/   /en/ulasim/   301
+/ar/feribot/   /ar/ulasim/   301
