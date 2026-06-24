@@ -1,0 +1,11 @@
+{
+  // Cloudflare Workers — statik asset olarak servis (Astro çıktısı dist/)
+  // Deploy: build (npm run build) -> dist/ -> `npx wrangler deploy` yükler.
+  "name": "ulukalekoyu",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist",
+    // Eşleşmeyen yollarda dist/404.html göster (_redirects'teki dile özgü 404'lerden sonra)
+    "not_found_handling": "404-page"
+  }
+}
