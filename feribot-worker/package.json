@@ -1,0 +1,6 @@
+{
+  "name": "feribot-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Pertek-Elazığ feribot saatleri scraper + API (Cloudflare Worker)"
+}

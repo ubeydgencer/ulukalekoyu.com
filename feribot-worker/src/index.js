@@ -13,7 +13,12 @@ const CORS = {
   'Cache-Control': 'public, max-age=600',
 };
 
-const isTime = (s) => /^\d{1,2}:\d{2}$/.test(s.trim());
+const isTime = (s) => /^\d{1,2}[.:]\d{2}$/.test(s.trim()); // 05.30 veya 05:30
+const norm = (s) => s.trim().replace('.', ':'); // çıktıyı 05:30 olarak normalize et
+const decode = (s) =>
+  s.replace(/&Ouml;/g, 'Ö').replace(/&ouml;/g, 'ö').replace(/&Uuml;/g, 'Ü').replace(/&uuml;/g, 'ü')
+    .replace(/&Ccedil;/g, 'Ç').replace(/&ccedil;/g, 'ç').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ').trim();
 
 // Kaynaktaki 3 sütunlu tabloyu HTMLRewriter ile akışta ayrıştırır
 async function scrape() {
@@ -23,30 +28,43 @@ async function scrape() {
   });
   if (!res.ok) throw new Error(`Kaynak yanıtı: ${res.status}`);
 
-  const cells = [];
-  let buf = '';
-  const rewriter = new HTMLRewriter().on('td', {
-    element(el) {
-      buf = '';
-      el.onEndTag(() => cells.push(buf.replace(/\s+/g, ' ').trim()));
-    },
-    text(t) {
-      buf += t.text;
-    },
-  });
-  // İçeriği tüketerek handler'ları çalıştır
-  await rewriter.transform(res).arrayBuffer();
-
-  // Hücreleri 3'erli grupla: [pertek, isletme, elazig]
+  // Tabloyu SATIR bazlı ayrıştır: her <tr> -> [pertek, işletme, elazığ]
   const rows = [];
-  for (let i = 0; i + 2 < cells.length; i += 3) {
-    const pertek = cells[i];
-    const operator = cells[i + 1];
-    const elazig = cells[i + 2];
-    if (isTime(pertek) || isTime(elazig)) {
-      rows.push({ pertek: isTime(pertek) ? pertek : '', operator, elazig: isTime(elazig) ? elazig : '' });
-    }
-  }
+  let curRow = null;
+  let cellBuf = null;
+  const rewriter = new HTMLRewriter()
+    .on('tr', {
+      element(el) {
+        const row = [];
+        curRow = row;
+        el.onEndTag(() => {
+          if (row.length === 3) {
+            const p = decode(row[0]);
+            const op = decode(row[1]);
+            const e = decode(row[2]);
+            if (isTime(p) || isTime(e)) {
+              rows.push({ pertek: isTime(p) ? norm(p) : '', operator: op, elazig: isTime(e) ? norm(e) : '' });
+            }
+          }
+          curRow = null;
+        });
+      },
+    })
+    .on('td', {
+      element(el) {
+        if (!curRow) return;
+        cellBuf = '';
+        const row = curRow;
+        el.onEndTag(() => {
+          row.push(cellBuf || '');
+          cellBuf = null;
+        });
+      },
+      text(t) {
+        if (cellBuf !== null) cellBuf += t.text;
+      },
+    });
+  await rewriter.transform(res).arrayBuffer();
 
   const pertek = rows.map((r) => r.pertek).filter(Boolean);
   const elazig = rows.map((r) => r.elazig).filter(Boolean);
