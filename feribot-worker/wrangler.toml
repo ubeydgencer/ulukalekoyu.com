@@ -1,0 +1,16 @@
+name = "feribot-api"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+
+# KV: çekilen saatleri saklamak için. id'yi aşağıdaki komutla oluşturup buraya yapıştır:
+#   npx wrangler kv namespace create FERIBOT_KV
+[[kv_namespaces]]
+binding = "FERIBOT_KV"
+id = "27b04e44aea341c98907323c1ecfd00b"
+
+# Zamanlanmış görev: her gece saat 03:00 (Türkiye, UTC+3) => 00:00 UTC
+[triggers]
+crons = ["0 0 * * *"]
+
+[observability]
+enabled = true

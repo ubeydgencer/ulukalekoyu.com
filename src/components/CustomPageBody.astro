@@ -1,0 +1,20 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { marked } from 'marked';
+import type { CustomPage } from '../data/custom';
+interface Props { lang: Lang; page: CustomPage; }
+const { lang, page } = Astro.props;
+const html = marked.parse(page.body[lang] || '', { async: false }) as string;
+const home: Record<Lang, string> = { tr: 'Ana Sayfa', en: 'Home', ar: 'الرئيسية' };
+---
+<section class="page-hero">
+  <div class="container narrow">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{home[lang]}</a> · {page.navLabel[lang] || page.title[lang]}</div>
+    <h1>{page.title[lang]}</h1>
+    {page.intro[lang] && <p>{page.intro[lang]}</p>}
+  </div>
+</section>
+
+<section>
+  <div class="container narrow prose" set:html={html} />
+</section>

@@ -1,8 +1,14 @@
 ---
 import { NAV, BRAND_SUB, MENU_LABEL, LOCALES, localePath, type Lang } from '../lib/i18n';
+import { NAV_CUSTOM } from '../data/custom';
 interface Props { lang: Lang; page: string; }
 const { lang, page } = Astro.props;
 const langLabel: Record<Lang, string> = { tr: 'TR', en: 'EN', ar: 'AR' };
+// Sabit menü + panelden eklenen özel sayfalar (menüde göster işaretli)
+const navItems = [
+  ...NAV.map((i) => ({ key: i.key, label: i.label })),
+  ...NAV_CUSTOM.map((p) => ({ key: p.slug, label: p.navLabel })),
+];
 ---
 <header class="topbar">
   <div class="container">
@@ -18,7 +24,7 @@ const langLabel: Record<Lang, string> = { tr: 'TR', en: 'EN', ar: 'AR' };
       <svg class="ico" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <nav class="nav">
-      {NAV.map((item) => (
+      {navItems.map((item) => (
         <a href={localePath(lang, item.key)} class={item.key === page ? 'active' : undefined}>{item.label[lang]}</a>
       ))}
     </nav>

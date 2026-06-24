@@ -1,5 +1,6 @@
 import { LOCALES, localeUrl } from '../lib/i18n';
 import { POSTS } from '../data/blog';
+import { CUSTOM, customPath } from '../data/custom';
 
 // Dinamik site haritası: sabit sayfalar + tüm duyurular (panelden eklenince otomatik girer)
 const PAGES: { key: string; freq: string; prio: number }[] = [
@@ -41,6 +42,14 @@ export function GET() {
       const prio = lang === 'tr' ? 0.6 : 0.5;
       const alternates = LOCALES.map((l) => ({ lang: l, href: localeUrl(l, 'duyurular') + post.slug + '/' }));
       body += urlEntry(localeUrl(lang, 'duyurular') + post.slug + '/', post.date, 'monthly', prio, alternates, post.cover ? 'https://ulukalekoyu.com' + post.cover : undefined);
+    }
+  }
+
+  for (const cp of CUSTOM) {
+    for (const lang of LOCALES) {
+      const prio = lang === 'tr' ? 0.6 : 0.5;
+      const alternates = LOCALES.map((l) => ({ lang: l, href: 'https://ulukalekoyu.com' + customPath(l, cp.slug) }));
+      body += urlEntry('https://ulukalekoyu.com' + customPath(lang, cp.slug), today, 'monthly', prio, alternates);
     }
   }
 

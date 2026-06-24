@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import CustomPageBody from '../../components/CustomPageBody.astro';
+import { CUSTOM } from '../../data/custom';
+export function getStaticPaths() {
+  return CUSTOM.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+const lang = 'ar' as const;
+const { page } = Astro.props;
+const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'WebPage',name:page.title[lang],inLanguage:lang,mainEntityOfPage:'https://ulukalekoyu.com'});
+---
+<Base lang={lang} page={page.slug} title={page.title[lang] + ' — Ulukale Köyü'} description={page.intro[lang] || page.title[lang]} jsonld={jsonld}>
+  <CustomPageBody lang={lang} page={page} />
+</Base>

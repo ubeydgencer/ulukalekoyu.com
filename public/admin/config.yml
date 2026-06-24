@@ -403,6 +403,33 @@ collections:
       - { name: body_en, label: "İçerik (EN)", widget: markdown }
       - { name: body_ar, label: "İçerik (AR)", widget: markdown }
   # ----------------------------------------------------------------
+  - name: custom
+    label: "Özel Sayfalar"
+    label_singular: "Sayfa"
+    description: "Panelden oluşturduğunuz ek sayfalar. İsterseniz üst menüye eklenir."
+    folder: src/content/custom
+    create: true
+    extension: json
+    format: json
+    slug: "{{slug}}"
+    summary: "{{title_tr}}"
+    fields:
+      - { name: slug, label: "URL adı (ör. ulasim)", widget: string, hint: "Adres: ulukalekoyu.com/<bu>/ — sadece küçük harf ve tire, boşluk yok." }
+      - { name: showInNav, label: "Üst menüde göster", widget: boolean, default: false }
+      - { name: order, label: "Menü sırası (küçük önce)", widget: number, default: 100, value_type: int, required: false }
+      - { name: navLabel_tr, label: "Menü adı (TR)", widget: string }
+      - { name: navLabel_en, label: "Menü adı (EN)", widget: string }
+      - { name: navLabel_ar, label: "Menü adı (AR)", widget: string }
+      - { name: title_tr, label: "Sayfa başlığı (TR)", widget: string }
+      - { name: title_en, label: "Sayfa başlığı (EN)", widget: string }
+      - { name: title_ar, label: "Sayfa başlığı (AR)", widget: string }
+      - { name: intro_tr, label: "Alt başlık (TR)", widget: string, required: false }
+      - { name: intro_en, label: "Alt başlık (EN)", widget: string, required: false }
+      - { name: intro_ar, label: "Alt başlık (AR)", widget: string, required: false }
+      - { name: body_tr, label: "İçerik (TR)", widget: markdown }
+      - { name: body_en, label: "İçerik (EN)", widget: markdown }
+      - { name: body_ar, label: "İçerik (AR)", widget: markdown }
+  # ----------------------------------------------------------------
   - name: gallery
     label: "Fotoğraf Galerisi"
     label_singular: "Fotoğraf"
