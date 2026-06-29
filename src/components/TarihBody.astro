@@ -1,9 +1,11 @@
 ---
 import { localePath, type Lang } from '../lib/i18n';
 import { TARIH } from '../data/tarih';
+import { SEHITLER } from '../data/sehitler';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = TARIH[lang];
+const sh = SEHITLER[lang];
 const contact: Record<Lang, string> = { tr: 'bizimle paylaşın', en: 'share it with us', ar: 'مشاركته معنا' };
 ---
 <section class="page-hero">
@@ -47,6 +49,40 @@ const contact: Record<Lang, string> = { tr: 'bizimle paylaşın', en: 'share it 
     <p class="note" style="margin-top:8px;">{t.ottSrc} (<a href="https://web.firat.edu.tr/harput/dergii/dergi11/3.pdf" target="_blank" rel="noopener">PDF</a>)</p>
   </div>
 </section>
+
+<section id="sehitler">
+  <div class="container narrow prose">
+    <div class="section-head"><span class="kicker">{sh.kicker}</span><h2>{sh.h2}</h2></div>
+    <p>{sh.intro}</p>
+    <figure class="sehit-fig">
+      <img src="/images/ulukale-sehitleri-portreler.jpg" alt={sh.portraitCap} loading="lazy" />
+      <figcaption>{sh.portraitCap}</figcaption>
+    </figure>
+    <h3>{sh.raidH}</h3>
+    <p>{sh.raidLead}</p>
+    <ul class="sehit-names">{sh.raidNames.map((n) => <li>{n}</li>)}</ul>
+    <p set:html={sh.othersP} />
+    <p>{sh.resistP}</p>
+    <h3>{sh.anitH}</h3>
+    <p set:html={sh.anitP} />
+    <figure class="sehit-fig">
+      <img src="/images/sehitlik-aniti.jpg" alt={sh.monumentCap} loading="lazy" />
+      <figcaption>{sh.monumentCap}</figcaption>
+    </figure>
+    <p style="font-style:italic; color:var(--kerpic-dark);">{sh.closing}</p>
+    <p class="note" style="margin-top:8px;">{sh.src}</p>
+  </div>
+</section>
+
+<style>
+  .sehit-fig { margin: 22px 0; }
+  .sehit-fig img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--line); display: block; }
+  .sehit-fig figcaption { color: var(--ink-soft); font-size: 0.88rem; margin-top: 8px; text-align: center; }
+  .sehit-names { list-style: none; padding: 0; margin: 12px 0 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 18px; }
+  .sehit-names li { padding: 6px 0 6px 16px; position: relative; color: var(--ink); }
+  .sehit-names li::before { content: ""; position: absolute; inset-inline-start: 0; top: 13px; width: 6px; height: 6px; border-radius: 50%; background: var(--kerpic); }
+  @media (max-width: 600px) { .sehit-names { grid-template-columns: 1fr; } }
+</style>
 
 <section class="alt-bg">
   <div class="container narrow">

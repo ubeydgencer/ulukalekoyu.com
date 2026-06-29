@@ -43,3 +43,8 @@
 /feribot/      /ulasim/      301
 /en/feribot/   /en/ulasim/   301
 /ar/feribot/   /ar/ulasim/   301
+
+# Şehitlerimiz içeriği Tarih sayfasına taşındı
+/sehitlerimiz/      /tarih/      301
+/en/sehitlerimiz/   /en/tarih/   301
+/ar/sehitlerimiz/   /ar/tarih/   301
