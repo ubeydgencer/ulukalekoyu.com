@@ -492,3 +492,6 @@ section { padding: 72px 0; }
 }
 .lang-float a:hover { background: var(--parchment-2); color: var(--kerpic-dark); text-decoration: none; }
 .lang-float a.active { color: var(--kerpic-dark); background: rgba(169, 84, 45, 0.14); }
+/* Dar ekranda yüzen bar gizlenir (header'daki .lang-head kullanılır).
+   Bu kural .lang-float tanımından SONRA gelmeli ki onu ezebilsin. */
+@media (max-width: 1180px) { .lang-float { display: none !important; } }
