@@ -83,8 +83,17 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.2
   font-size: 1.1rem;
 }
 
-/* Dil seçici header'da DEĞİL; sol-yüzen .lang-float kullanılır. Menü sağda. */
+/* Masaüstü: dil seçici header'da DEĞİL; sol-yüzen .lang-float kullanılır. Menü sağda. */
 .topbar .nav { margin-left: auto; }
+
+/* Header içi dil seçici: yalnızca dar ekranda (hamburger modunda) görünür */
+.lang-head { display: none; margin-left: auto; gap: 2px; align-items: center; }
+.lang-head a {
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.5px; color: var(--ink-soft);
+  padding: 6px 9px; border-radius: var(--radius); text-decoration: none; line-height: 1;
+}
+.lang-head a:hover { background: var(--parchment-2); color: var(--kerpic-dark); text-decoration: none; }
+.lang-head a.active { color: var(--kerpic-dark); background: rgba(169, 84, 45, 0.14); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -424,7 +433,10 @@ section { padding: 72px 0; }
   }
   .nav.open { display: flex; }
   .nav a { padding: 12px 8px; border-bottom: 1px solid var(--line); white-space: normal; }
-  .nav-toggle { display: inline-block; }
+  .nav-toggle { display: inline-block; margin-left: 8px; }
+  /* Yüzen dil barı içeriği kapatmasın: header'a taşı */
+  .lang-float { display: none; }
+  .lang-head { display: flex; }
 }
 @media (max-width: 860px) {
   .grid-3, .grid-2, .gallery, .stats { grid-template-columns: 1fr 1fr; }
