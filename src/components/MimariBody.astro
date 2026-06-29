@@ -6,6 +6,7 @@ interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = MIMARI[lang];
 const I: Record<string, string> = {
+  kale: '<path d="M3 21h18"/><path d="M5 21V7h2V5h2v2h2V5h2v2h2V5h2v2h2v14"/><path d="M10 21v-5h4v5"/>',
   cami: '<path d="M4 21h16"/><path d="M6 21v-6a6 6 0 0 1 12 0v6"/><path d="M10 21v-4a2 2 0 0 1 4 0v4"/><path d="M12 6.6V5.2"/><path d="M11 4.2a1.4 1.4 0 1 0 1 2.3 1.7 1.7 0 1 1-1-2.3z"/>',
   kilise: '<path d="M4 21h16"/><path d="M6 21V11l6-4 6 4v10"/><path d="M10 21v-5h4v5"/><path d="M12 7V3"/><path d="M10 4.5h4"/>',
   turbe: '<path d="M4 21h16"/><path d="M6 21v-7a6 6 0 0 1 12 0v7"/><path d="M10 21v-5a2 2 0 0 1 4 0v5"/>',

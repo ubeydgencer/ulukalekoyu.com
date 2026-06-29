@@ -14,11 +14,17 @@
     "srcList": [
       "İ. Ü. Journal of Art History — \"Çemişgezek'in Ulukale Köyündeki Mimari Eserler\"",
       "Enver Çakar — \"Osmanlı Döneminde Ulukale Köyü\", Fırat Üniv. Harput Araştırmaları Dergisi, C. V, S. 2 (2018)",
-      "T.C. Kültür Bakanlığı, Erzurum Kültür Varlıklarını Koruma Bölge Kurulu — tescil envanteri (1380 parsel)"
+      "T.C. Kültür Bakanlığı, Erzurum Kültür Varlıklarını Koruma Bölge Kurulu — tescil envanteri (1380 parsel)",
+      "Serkan Erdoğan & Korkmaz Şen — «Çemişgezek-Ulukale Köyü'nün Tarihsel Yerleşim Dokusu», Fırat Üniv. Sosyal Bilimler Dergisi, C. 29, S. 2 (2019)"
     ],
     "srcNote": "Fotoğraflar bu yayınlardan derlenmiştir; telif hakları ilgili yazar ve kurumlara aittir. Hak sahibi olarak kaldırılmasını isterseniz bize ulaşın.",
     "home": "Ana Sayfa",
     "cards": [
+      {
+        "icon": "kale",
+        "h3": "Ulukale Kalesi",
+        "p": "Köye adını veren sarp tepedeki kale (daha çok bir gözetleme kulesi). Yerleşim adını \"Ulu Kal'a\"dan alır; kalıntıları bugün de tepede durur."
+      },
       {
         "icon": "cami",
         "h3": "Cami",
@@ -26,8 +32,8 @@
       },
       {
         "icon": "kilise",
-        "h3": "Kilise",
-        "p": "Köyün çok inançlı geçmişinin tanığı. Cami ve kilisenin aynı yerleşimde yan yana var olması, Ulukale'nin kültürel katmanlılığını gösterir."
+        "h3": "Kilise (Surp Minas)",
+        "p": "Köyün çok inançlı geçmişinin tanığı Surp Minas Kilisesi; bugün tonozlu iç mekânıyla kalıntı hâlinde ayakta. Cami ve kilisenin yan yana var oluşu Ulukale'nin kültürel katmanlılığını gösterir."
       },
       {
         "icon": "turbe",
@@ -53,6 +59,16 @@
         "icon": "kaya",
         "h3": "Kaya Mezarı",
         "p": "Helenistik–Roma dönemine tarihlenen kaya mezarı, köyün antik geçmişinin en somut kanıtı. Kayaya oyulmuş bu yapı binlerce yıllık."
+      },
+      {
+        "icon": "kaya",
+        "h3": "Süt Pınarı Kutsal Alanı",
+        "p": "Kayaya oyulmuş libasyon (sıvı sunu) platformu ve nişler; Demir Çağı'na özgü kült izleri taşır. Köyün en eski katmanlarından."
+      },
+      {
+        "icon": "kaya",
+        "h3": "Kuyulu Alan ve Silolar",
+        "p": "Ana kayaya oyulmuş çok sayıda silo ve sarnıç; kadim depolama ve tarım kültürünün taşa işlenmiş izi."
       },
       {
         "icon": "ev",
@@ -81,11 +97,17 @@
     "srcList": [
       "Istanbul University, Journal of Art History — \"Architectural Works in Çemişgezek's Ulukale Village\"",
       "Enver Çakar — \"Ulukale Village During the Ottoman Period,\" Fırat University Journal of Harput Studies, Vol. V, No. 2 (2018)",
-      "Republic of Türkiye Ministry of Culture, Erzurum Regional Council for the Conservation of Cultural Heritage — registration inventory (parcel 1380)"
+      "Republic of Türkiye Ministry of Culture, Erzurum Regional Council for the Conservation of Cultural Heritage — registration inventory (parcel 1380)",
+      "Serkan Erdoğan & Korkmaz Şen — \"The Historical Settlement Pattern of Çemişgezek-Ulukale Village\", Fırat Univ. Journal of Social Sciences, Vol. 29, No. 2 (2019)"
     ],
     "srcNote": "The photographs are compiled from these publications; copyright belongs to the respective authors and institutions. If you are a rights holder and would like a photo removed, please contact us.",
     "home": "Home",
     "cards": [
+      {
+        "icon": "kale",
+        "h3": "Ulukale Castle",
+        "p": "The castle on the steep hill that gives the village its name (more of a watchtower). The settlement takes its name from \"Ulu Kal'a\"; its ruins still crown the hill."
+      },
       {
         "icon": "cami",
         "h3": "Mosque",
@@ -93,8 +115,8 @@
       },
       {
         "icon": "kilise",
-        "h3": "Church",
-        "p": "A witness to the village's multi-faith past. The presence of mosque and church side by side in the same settlement shows Ulukale's cultural layering."
+        "h3": "Church (Surp Minas)",
+        "p": "Surp Minas Church, a witness to the village's multi-faith past, survives as a ruin with its vaulted interior. Mosque and church side by side show Ulukale's cultural layering."
       },
       {
         "icon": "turbe",
@@ -120,6 +142,16 @@
         "icon": "kaya",
         "h3": "Rock-cut Tomb",
         "p": "Dated to the Hellenistic–Roman period, the rock-cut tomb is the most tangible proof of the village's ancient past. Carved into the rock, this structure is thousands of years old."
+      },
+      {
+        "icon": "kaya",
+        "h3": "Süt Pınarı Sacred Area",
+        "p": "A rock-cut libation platform with niches, bearing Iron Age cult features — one of the village's oldest layers."
+      },
+      {
+        "icon": "kaya",
+        "h3": "Pits & Silos (Kuyulu Alan)",
+        "p": "Numerous rock-cut silos and cisterns — the ancient storage and farming culture worked into stone."
       },
       {
         "icon": "ev",
@@ -148,11 +180,17 @@
     "srcList": [
       "جامعة إسطنبول، حولية تاريخ الفن — «الآثار المعمارية في قرية أولوكالة بتشيميشكزك»",
       "أنور تشاكار — «قرية أولوكالة في العصر العثماني»، مجلة فرات لدراسات خاربوت، المجلد الخامس، العدد 2 (2018)",
-      "وزارة الثقافة بالجمهورية التركية، مجلس أرضروم الإقليمي لحفظ التراث الثقافي — سجلّ التسجيل (القطعة 1380)"
+      "وزارة الثقافة بالجمهورية التركية، مجلس أرضروم الإقليمي لحفظ التراث الثقافي — سجلّ التسجيل (القطعة 1380)",
+      "سيركان إردوغان وقورقماز شِن — «النسيج التاريخي لقرية تشيميشكزك-أولوكالة»، مجلة فرات للعلوم الاجتماعية، المجلد 29، العدد 2 (2019)"
     ],
     "srcNote": "جُمعت الصور من هذه المنشورات؛ وحقوق النشر تعود إلى مؤلّفيها ومؤسّساتها. إن كنت صاحب الحق وترغب في إزالة صورة، فالرجاء التواصل معنا.",
     "home": "الرئيسية",
     "cards": [
+      {
+        "icon": "kale",
+        "h3": "قلعة أولوكالة",
+        "p": "القلعة على التلّ الشديد الانحدار التي منحت القرية اسمها (أقرب إلى برج مراقبة). تأخذ القرية اسمها من «أولو قلعة»؛ وما تزال أطلالها على التلّ."
+      },
       {
         "icon": "cami",
         "h3": "المسجد",
@@ -160,8 +198,8 @@
       },
       {
         "icon": "kilise",
-        "h3": "الكنيسة",
-        "p": "شاهدٌ على ماضي القرية المتعدّد الأديان. ووجود المسجد والكنيسة جنبًا إلى جنب في المستوطنة نفسها يُظهر تعدّد طبقات أولوكالة الثقافية."
+        "h3": "الكنيسة (سورب ميناس)",
+        "p": "كنيسة سورب ميناس، شاهدةٌ على ماضي القرية المتعدّد الأديان، باقيةٌ كأطلالٍ بفضائها الداخلي المعقود. ووجود المسجد والكنيسة جنبًا إلى جنب يُظهر تعدّد طبقات أولوكالة الثقافية."
       },
       {
         "icon": "turbe",
@@ -187,6 +225,16 @@
         "icon": "kaya",
         "h3": "القبر الصخري",
         "p": "يعود إلى العصر الهلنستي-الروماني، وهو أوضح دليل على ماضي القرية العريق. منحوتٌ في الصخر، عمره آلاف السنين."
+      },
+      {
+        "icon": "kaya",
+        "h3": "منطقة سوت بنار المقدّسة",
+        "p": "منصّة سكب منحوتة في الصخر مع حنيّات، تحمل سماتٍ طقسية من العصر الحديدي — من أقدم طبقات القرية."
+      },
+      {
+        "icon": "kaya",
+        "h3": "منطقة الآبار والصوامع",
+        "p": "صوامع وصهاريج عديدة منحوتة في الصخر الأمّ — أثرُ ثقافة التخزين والزراعة القديمة في الحجر."
       },
       {
         "icon": "ev",
