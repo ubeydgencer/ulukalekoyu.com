@@ -2,6 +2,7 @@
 import { localePath, type Lang } from '../lib/i18n';
 import { PRESS } from '../data/press';
 import { BASIN } from '../data/basin';
+import { VIDEOS } from '../data/videos';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = BASIN[lang];
@@ -10,6 +11,11 @@ const sections = [
   { id: 'dut', k: t.s2k, h: t.s2h, p: t.s2p },
   { id: 'memory', k: t.s3k, h: t.s3h, p: t.s3p },
 ] as const;
+const vid = {
+  k: lang === 'tr' ? 'Görüntülü' : lang === 'en' ? 'Watch' : 'فيديو',
+  h: lang === 'tr' ? 'Videolar & Belgeseller' : lang === 'en' ? 'Videos & Documentaries' : 'فيديوهات ووثائقيات',
+  p: lang === 'tr' ? "Ulukale'nin yer aldığı belgesel ve haber videoları." : lang === 'en' ? 'Documentary and news videos featuring Ulukale.' : 'وثائقيات وأخبار مصوّرة عن أولوكالة.',
+};
 ---
 <section class="page-hero">
   <div class="container">
@@ -47,3 +53,35 @@ const sections = [
     </div>
   </section>
 ))}
+
+{VIDEOS.length > 0 && (
+  <section class="alt-bg">
+    <div class="container narrow">
+      <div class="section-head"><span class="kicker">{vid.k}</span><h2>{vid.h}</h2><p>{vid.p}</p></div>
+      <div class="video-grid">
+        {VIDEOS.map((v) => (
+          <div class="video-item">
+            <div class="video-embed">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${v.youtubeId}`}
+                title={v.title[lang]} loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+            <div class="video-meta"><h3>{v.title[lang]}</h3><span class="press-outlet">{v.source}</span></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<style>
+  .video-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  .video-embed { position: relative; padding-top: 56.25%; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); background: #000; }
+  .video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .video-meta { margin-top: 12px; }
+  .video-meta h3 { margin: 0 0 4px; font-size: 1.08rem; color: var(--kerpic-dark); }
+  .video-meta .press-outlet { color: var(--ink-soft); font-size: 0.88rem; }
+  @media (max-width: 700px) { .video-grid { grid-template-columns: 1fr; gap: 22px; } }
+</style>

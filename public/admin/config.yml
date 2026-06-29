@@ -501,3 +501,23 @@ collections:
       - { name: summary_tr, label: "Özet (Türkçe)", widget: text }
       - { name: summary_en, label: "Özet (English)", widget: text }
       - { name: summary_ar, label: "Özet (عربي)", widget: text }
+
+  # ----------------------------------------------------------------
+  - name: videos
+    label: "Videolar"
+    label_singular: "Video"
+    description: "Basın sayfasındaki video/belgeseller. YouTube video kimliğiyle eklenir."
+    folder: src/content/videos
+    create: true
+    extension: json
+    format: json
+    slug: "{{order}}-{{youtubeId}}"
+    summary: "{{title_tr}}"
+    sortable_fields: [order]
+    fields:
+      - { name: youtubeId, label: "YouTube video kimliği", widget: string, hint: "URL'deki v= kısmı. Ör. youtube.com/watch?v=ABC123 → ABC123" }
+      - { name: source, label: "Kaynak / kanal", widget: string }
+      - { name: order, label: "Sıra (küçük önce)", widget: number, default: 100, value_type: int, required: false }
+      - { name: title_tr, label: "Başlık (Türkçe)", widget: string }
+      - { name: title_en, label: "Başlık (English)", widget: string }
+      - { name: title_ar, label: "Başlık (عربي)", widget: string }
