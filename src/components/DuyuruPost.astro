@@ -6,6 +6,15 @@ interface Props { lang: Lang; post: Post; }
 const { lang, post } = Astro.props;
 const t = BLOG_UI[lang];
 const html = marked.parse(post.body[lang] || '', { async: false }) as string;
+
+// Vefat duyurularının altında gösterilecek ayet (Bakara, 156)
+const AYET_AR = 'إِنَّا لِلَّٰهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ';
+const ayet: Record<Lang, { meal: string; ref: string }> = {
+  tr: { meal: 'Şüphesiz biz Allah’a aitiz ve şüphesiz O’na döneceğiz.', ref: 'Bakara sûresi, 156' },
+  en: { meal: 'Indeed, to Allah we belong and to Him we shall return.', ref: 'Sûrah al-Baqarah, 156' },
+  ar: { meal: '', ref: 'سورة البقرة، ١٥٦' },
+};
+const v = ayet[lang];
 ---
 <article class="page-hero">
   <div class="container narrow">
@@ -29,8 +38,35 @@ const html = marked.parse(post.body[lang] || '', { async: false }) as string;
   <div class="container narrow prose" set:html={html} />
 </section>
 
+{post.isVefat && (
+  <section class="section-tight">
+    <div class="container narrow">
+      <div class="ayet">
+        <p class="ayet-ar" lang="ar" dir="rtl">{AYET_AR}</p>
+        {v.meal && <p class="ayet-meal">{v.meal}</p>}
+        <p class="ayet-ref">{v.ref}</p>
+      </div>
+    </div>
+  </section>
+)}
+
 <section class="section-tight">
   <div class="container narrow">
     <a href={localePath(lang, 'duyurular')} class="btn btn-ghost">{t.back}</a>
   </div>
 </section>
+
+<style>
+  .ayet {
+    text-align: center;
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+  }
+  .ayet-ar {
+    font-family: "Noto Naskh Arabic", "Cairo", "Amiri", serif;
+    font-size: 1.6rem; line-height: 2.1; color: var(--kerpic-dark);
+    margin: 0 0 12px;
+  }
+  .ayet-meal { font-style: italic; color: var(--ink-soft); margin: 0 0 8px; }
+  .ayet-ref { font-size: 0.85rem; color: var(--ink-soft); margin: 0; letter-spacing: 0.3px; }
+</style>

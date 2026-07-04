@@ -8,13 +8,22 @@ export interface Post {
   title: L;
   summary: L;
   body: L;
+  isVefat: boolean;
 }
 
 interface RawPost {
-  date: string; cover?: string;
+  date: string; cover?: string; type?: string;
   title_tr: string; title_en: string; title_ar: string;
   summary_tr: string; summary_en: string; summary_ar: string;
   body_tr: string; body_en: string; body_ar: string;
+}
+
+// Vefat/taziye duyurusu mu? Panelde "type: vefat" ile işaretlenir;
+// işaretlenmese bile başlıktan (Vefat / In Memoriam / وفاة) yakalanır.
+function detectVefat(r: RawPost): boolean {
+  if ((r.type || '').toLowerCase() === 'vefat') return true;
+  const t = `${r.title_tr} ${r.title_en} ${r.title_ar}`.toLowerCase();
+  return /vefat|memoriam|taziye|وفاة|تعزية/.test(t);
 }
 
 // Duyurular panelden (Sveltia CMS → "Duyurular") yönetilir: src/content/blog/*.json
@@ -28,6 +37,7 @@ export const POSTS: Post[] = Object.entries(files)
     title: { tr: r.title_tr, en: r.title_en, ar: r.title_ar },
     summary: { tr: r.summary_tr, en: r.summary_en, ar: r.summary_ar },
     body: { tr: r.body_tr, en: r.body_en, ar: r.body_ar },
+    isVefat: detectVefat(r),
   }))
   .sort((a, b) => b.date.localeCompare(a.date));
 
