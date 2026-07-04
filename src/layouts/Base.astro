@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { LOCALES, DIR, HTML_LANG, OG_LOCALE, localeUrl, localePath, type Lang } from '../lib/i18n';
+import { ogCardUrl } from '../lib/og-cards';
 
 interface Props {
   lang: Lang;
@@ -20,9 +21,12 @@ const DEFAULT_OG = 'https://ulukalekoyu.com/images/og-default.jpg';
 const {
   lang, page, title, description = '',
   ogTitle = title, ogDescription = description,
-  ogImage = DEFAULT_OG,
+  ogImage: ogImageProp,
   ogType = 'website', noindex = false, jsonld, subPath = '',
 } = Astro.props;
+
+// Görsel önceliği: sayfaya özel üretilmiş kart > sayfanın verdiği kapak > varsayılan kart
+const ogImage = ogCardUrl(lang, page, subPath) ?? ogImageProp ?? DEFAULT_OG;
 
 const canonical = localeUrl(lang, page) + subPath;
 const siteName: Record<Lang, string> = {
@@ -30,11 +34,15 @@ const siteName: Record<Lang, string> = {
   en: 'Ulukale Village Digital Archive',
   ar: 'أرشيف قرية أولوكالة الرقمي',
 };
-// Varsayılan OG kartı 1200×630; boyutları yalnızca bu görsel için veririz.
-const usingDefaultOg = ogImage === DEFAULT_OG;
-const ogImageAlt = usingDefaultOg
-  ? { tr: 'Ulukale Köyü — eski köy yerleşimi', en: 'Ulukale village — the old settlement', ar: 'قرية أولوكالة — المستوطنة القديمة' }[lang]
-  : ogTitle;
+// Üretilen kartlar ve varsayılan kart 1200×630; boyut/tip etiketlerini bunlar için veririz.
+const ogGenerated = ogImage.includes('/og/') && ogImage.endsWith('.png');
+const ogIsCard = ogGenerated || ogImage === DEFAULT_OG;
+const ogImageType = ogImage.endsWith('.png') ? 'image/png' : 'image/jpeg';
+const ogImageAlt = ogGenerated
+  ? ogTitle
+  : ogImage === DEFAULT_OG
+    ? { tr: 'Ulukale Köyü — eski köy yerleşimi', en: 'Ulukale village — the old settlement', ar: 'قرية أولوكالة — المستوطنة القديمة' }[lang]
+    : ogTitle;
 const fontHref = lang === 'ar'
   ? 'https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:wght@400;600;700&display=swap'
   : 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap';
@@ -70,9 +78,9 @@ const fontHref = lang === 'ar'
 {ogDescription && <meta property="og:description" content={ogDescription} />}
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:alt" content={ogImageAlt} />
-{usingDefaultOg && <meta property="og:image:type" content="image/jpeg" />}
-{usingDefaultOg && <meta property="og:image:width" content="1200" />}
-{usingDefaultOg && <meta property="og:image:height" content="630" />}
+{ogIsCard && <meta property="og:image:type" content={ogImageType} />}
+{ogIsCard && <meta property="og:image:width" content="1200" />}
+{ogIsCard && <meta property="og:image:height" content="630" />}
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={ogTitle} />
 {ogDescription && <meta name="twitter:description" content={ogDescription} />}
