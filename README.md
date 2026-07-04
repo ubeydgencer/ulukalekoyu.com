@@ -41,6 +41,7 @@ feribot-worker/ Ayrı Cloudflare Worker: Çemişgezek + Pertek feribot saatleri 
 ## Teknoloji
 - **Astro 4** (statik çıktı `dist/`), markdown için `marked`.
 - Fontlar: Google Fonts (Fraunces + Lora; Arapça için Cairo).
+- **Sosyal paylaşım kartları:** her sayfa/dil için build sırasında 1200×630 özel OG kartı (`astro-og-canvas` + `canvaskit`; `src/pages/og/[...route].ts`, içerik `src/lib/og-cards.ts`, fontlar `src/fonts/`). Yeni duyurular otomatik kart alır. `.npmrc` → `legacy-peer-deps` (CI kurulumu için).
 - **Barındırma:** Cloudflare Workers statik asset (`wrangler.jsonc`), domain `ulukalekoyu.com`.
 - **CMS:** Sveltia CMS (`/admin`), GitHub backend, **Access Token (PAT)** ile giriş.
 - **Formlar:** Web3Forms → `mubeyd@gmail.com`.
