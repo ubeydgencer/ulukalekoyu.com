@@ -9,6 +9,10 @@ const navItems = [
   ...NAV.map((i) => ({ key: i.key, label: i.label })),
   ...NAV_CUSTOM.map((p) => ({ key: p.slug, label: p.navLabel })),
 ];
+// Masaüstünde "Tarih" ile "Tarihi Yapılar" tek menüde birleşir: Tarih altında açılan alt menüde durur
+const mimariItem = navItems.find((i) => i.key === 'mimari');
+const topNavItems = navItems.filter((i) => i.key !== 'mimari');
+const isTarihActive = page === 'tarih' || page === 'mimari';
 ---
 <header class="topbar">
   <div class="container">
@@ -24,7 +28,16 @@ const navItems = [
       <svg class="ico" viewBox="0 0 24 24" width="22" height="22"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
     <nav class="nav">
-      {navItems.map((item) => (
+      {topNavItems.map((item) => item.key === 'tarih' ? (
+        <div class={`nav-item has-sub${isTarihActive ? ' active' : ''}`}>
+          <a href={localePath(lang, 'tarih')} class={page === 'tarih' ? 'active' : undefined}>{item.label[lang]}</a>
+          {mimariItem && (
+            <div class="nav-sub">
+              <a href={localePath(lang, 'mimari')} class={page === 'mimari' ? 'active' : undefined}>{mimariItem.label[lang]}</a>
+            </div>
+          )}
+        </div>
+      ) : (
         <a href={localePath(lang, item.key)} class={item.key === page ? 'active' : undefined}>{item.label[lang]}</a>
       ))}
     </nav>

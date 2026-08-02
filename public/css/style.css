@@ -77,6 +77,23 @@ h1, h2, h3, h4 { font-family: var(--display); font-weight: 600; line-height: 1.2
 .nav a:hover { color: var(--kerpic-dark); background: var(--parchment-2); text-decoration: none; }
 .nav a.active { color: var(--kerpic-dark); font-weight: 600; }
 
+/* "Tarih" + "Tarihi Yapılar": masaüstünde tek öğe, üzerine gelince alt menü açılır */
+.nav-item { position: relative; display: inline-flex; align-items: center; }
+.nav-item.active > a { color: var(--kerpic-dark); font-weight: 600; }
+.nav-item > a::after {
+  content: ""; display: inline-block; width: 5px; height: 5px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg); margin-left: 6px; margin-bottom: 1px; opacity: .6;
+}
+.nav-sub {
+  display: none; position: absolute; top: 100%; left: 0; margin-top: 2px; min-width: 190px;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 8px 20px var(--shadow); padding: 4px; z-index: 10;
+}
+.nav-sub a { display: block; }
+.nav-item:hover .nav-sub, .nav-item:focus-within .nav-sub { display: block; }
+[dir="rtl"] .nav-sub { left: auto; right: 0; }
+
 .nav-toggle {
   display: none; background: none; border: 1px solid var(--line);
   border-radius: var(--radius); padding: 8px 10px; cursor: pointer; color: var(--ink);
@@ -434,6 +451,15 @@ section { padding: 72px 0; }
   .nav.open { display: flex; }
   .nav a { padding: 12px 8px; border-bottom: 1px solid var(--line); white-space: normal; }
   .nav-toggle { display: inline-block; margin-left: 8px; }
+  /* Dar ekranda "Tarih" + "Tarihi Yapılar" ayrı satır olarak kalır (hover yok) */
+  .nav-item { position: static; display: block; }
+  .nav-item > a::after { display: none; }
+  .nav-sub {
+    display: block; position: static; margin-top: 0; min-width: 0;
+    background: none; border: none; box-shadow: none; padding: 0;
+  }
+  .nav-sub a { padding-left: 22px; }
+  [dir="rtl"] .nav-sub a { padding-left: 8px; padding-right: 22px; }
   /* Yüzen dil barı içeriği kapatmasın: header'a taşı */
   .lang-float { display: none; }
   .lang-head { display: flex; }
