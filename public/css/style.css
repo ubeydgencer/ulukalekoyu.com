@@ -453,6 +453,7 @@ section { padding: 72px 0; }
   .nav-toggle { display: inline-block; margin-left: 8px; }
   /* Dar ekranda "Tarih" + "Tarihi Yapılar" ayrı satır olarak kalır (hover yok) */
   .nav-item { position: static; display: block; }
+  .nav-item > a { display: block; }
   .nav-item > a::after { display: none; }
   .nav-sub {
     display: block; position: static; margin-top: 0; min-width: 0;
