@@ -1,0 +1,54 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { LETTERS, wordsForSlug, SOZLUK_UI, type LetterInfo } from '../data/sozluk';
+import SozlukForm from './SozlukForm.astro';
+interface Props { lang: Lang; info: LetterInfo }
+const { lang, info } = Astro.props;
+const t = SOZLUK_UI[lang];
+const words = wordsForSlug(info.slug);
+const sozBase = localePath(lang, 'sozluk');
+const harfBase = sozBase + 'harf/';
+const idx = LETTERS.findIndex((l) => l.slug === info.slug);
+const prev = idx > 0 ? LETTERS[idx - 1] : null;
+const next = idx < LETTERS.length - 1 ? LETTERS[idx + 1] : null;
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · <a href={sozBase}>{t.crumb}</a> · {info.letter}</div>
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1} — {info.letter}</h1>
+    <p>{info.count} {t.wordsSuffix}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <nav class="alpha-strip" aria-label="A-Z">
+      {LETTERS.map((l) => (
+        <a href={`${harfBase}${l.slug}/`} class={l.slug === info.slug ? 'active' : undefined}>{l.letter}</a>
+      ))}
+    </nav>
+
+    <dl class="soz-list">
+      {words.map((w) => (
+        <div class="soz-row">
+          <dt>{w.k}</dt>
+          <dd>
+            {w.a
+              ? <span class="soz-mean">{w.a}</span>
+              : <a class="soz-add" href="#katki" data-word={w.k}>{t.addMeaning}</a>}
+            {w.e && <span class="soz-ex">{w.e}</span>}
+          </dd>
+        </div>
+      ))}
+    </dl>
+
+    <div class="letter-nav">
+      {prev ? <a href={`${harfBase}${prev.slug}/`}>← {prev.letter}</a> : <span></span>}
+      <a class="letter-nav-all" href={sozBase}>{t.backToIndex}</a>
+      {next ? <a href={`${harfBase}${next.slug}/`}>{next.letter} →</a> : <span></span>}
+    </div>
+  </div>
+</section>
+
+<SozlukForm lang={lang} prefill={`Sözlük — ${info.letter}`} />

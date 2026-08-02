@@ -1,0 +1,42 @@
+{
+  "groups": [
+    {
+      "title": "Elazığ / Harput Ağzı",
+      "links": [
+        { "label": "Kültür ve Turizm Bakanlığı — Harput Ağzı", "url": "https://elazig.ktb.gov.tr/TR-245816/harput-agzi.html" },
+        { "label": "Argoca — Elazığ Sözlüğü", "url": "https://www.argoca.com/Kategori:Elaz%C4%B1%C4%9F_s%C3%B6zl%C3%BC%C4%9F%C3%BC" },
+        { "label": "Elazığ İl Kültür ve Turizm Müdürlüğü", "url": "http://elazig.ktb.gov.tr/" }
+      ]
+    },
+    {
+      "title": "Erzurum Ağzı",
+      "links": [
+        { "label": "Erzurum İl Kültür ve Turizm Müdürlüğü", "url": "http://erzurum.ktb.gov.tr/" }
+      ]
+    },
+    {
+      "title": "Erzincan Ağzı",
+      "links": [
+        { "label": "Doğu Gazetesi — Erzincanlıların yöresel kelimeleri", "url": "https://www.dogugazetesi.com/erzincanlilarin-kendilerine-has-dilleri-yoresel-kelsmeler-ve-anlamlari" },
+        { "label": "Argoca — Erzincan Sözlüğü", "url": "https://www.argoca.com/Kategori:Erzincan_s%C3%B6zl%C3%BC%C4%9F%C3%BC" }
+      ]
+    },
+    {
+      "title": "Çemişgezek Ağzı",
+      "links": [
+        { "label": "Çemişgezek Ağzı Sözlüğü (cemisgezek.atspace.com)", "url": "http://cemisgezek.atspace.com/dictionary/language/accent.html" }
+      ]
+    },
+    {
+      "title": "Türk Dil Kurumu (TDK)",
+      "links": [
+        { "label": "Ferdi Güzel — Ağız araştırması (PDF)", "url": "https://tdk.gov.tr/wp-content/uploads/2012/09/22-FERD%C4%B0%20G%C3%9CZEL.pdf" },
+        { "label": "TDK e-Mağaza", "url": "https://emagaza-tdk.ayk.gov.tr/detay/923/yayin/" },
+        { "label": "TDK Belleten", "url": "https://tdkbelleten.gov.tr/tam-metin-pdf/420/tur" }
+      ]
+    }
+  ],
+  "note_tr": "“Leçek / laçik” (beyaz başörtüsü) geleneği üzerine: Bölge halkı kavgaya tutuştuğunda bir kadının başörtüsünü çıkarıp kavgacıların ortasına atmasıyla kavga durdurulur; o andan sonra kavgaya devam etmek ayıp sayılır. Başörtüsü namus anlamına gelir. Kaynak: “Barış Leçekleri” — Hüsamettin Turan.",
+  "note_en": "On the “leçek / laçik” (white headscarf) custom: when a dispute breaks out, a woman removes her headscarf and throws it between the quarrelers; from that moment continuing the fight is considered shameful, because the headscarf stands for honour. Source: “Barış Leçekleri” — Hüsamettin Turan.",
+  "note_ar": "حول عادة «لَچِك / لاچِك» (غطاء الرأس الأبيض): عند نشوب خصام، تنزع امرأة غطاء رأسها وتلقيه بين المتخاصمين، ومن تلك اللحظة يُعدّ استمرار الشجار عيبًا، لأن الغطاء رمز للشرف. المصدر: «Barış Leçekleri» — Hüsamettin Turan."
+}

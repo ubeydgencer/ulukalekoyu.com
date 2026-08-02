@@ -1,0 +1,88 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { LETTERS, DEYIMLER, DUALAR, BEDDUALAR, YERLER, KAYNAK, TOTAL_WORDS, SOZLUK_UI } from '../data/sozluk';
+import SozlukForm from './SozlukForm.astro';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = SOZLUK_UI[lang];
+const harfBase = localePath(lang, 'sozluk') + 'harf/';
+const note = lang === 'en' ? KAYNAK.note_en : lang === 'ar' ? KAYNAK.note_ar : KAYNAK.note_tr;
+---
+<section class="page-hero">
+  <div class="container">
+    <div class="crumbs"><a href={localePath(lang, 'index')}>{t.home}</a> · {t.crumb}</div>
+    <span class="kicker">{t.kicker}</span>
+    <h1>{t.h1}</h1>
+    <p>{t.intro}</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head"><span class="kicker">{t.azKicker}</span><h2>{t.azH}</h2><p>{t.azP}</p></div>
+    <div class="alpha-grid">
+      {LETTERS.map((l) => (
+        <a class="alpha-tile" href={`${harfBase}${l.slug}/`}>
+          <span class="alpha-letter">{l.letter}</span>
+          <span class="alpha-count">{l.count}</span>
+        </a>
+      ))}
+    </div>
+    <p class="alpha-total">{TOTAL_WORDS} {t.wordsSuffix}</p>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container narrow">
+    <div class="section-head"><span class="kicker">{t.deyKicker}</span><h2>{t.deyH}</h2><p>{t.deyP}</p></div>
+    <dl class="soz-list">
+      {DEYIMLER.map((d) => (
+        <div class="soz-row">
+          <dt>{d.d}</dt>
+          <dd>
+            {d.a
+              ? <span class="soz-mean">{d.a}</span>
+              : <a class="soz-add" href="#katki" data-word={d.d}>{t.addMeaning}</a>}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow">
+    <div class="section-head"><span class="kicker">{t.deyKicker}</span><h2>{t.duaH}</h2></div>
+    <ul class="soz-plain">{DUALAR.map((x) => <li>{x}</li>)}</ul>
+    <div class="section-head" style="margin-top:44px"><h2>{t.bedH}</h2></div>
+    <ul class="soz-plain">{BEDDUALAR.map((x) => <li>{x}</li>)}</ul>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container narrow">
+    <div class="section-head"><span class="kicker">{t.yerKicker}</span><h2>{t.yerH}</h2><p>{t.yerP}</p></div>
+    <ul class="soz-chips">{YERLER.map((y) => <li>{y}</li>)}</ul>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow">
+    <div class="section-head"><span class="kicker">{t.kayKicker}</span><h2>{t.kayH}</h2><p>{t.kayP}</p></div>
+    <div class="kaynak-groups">
+      {KAYNAK.groups.map((g) => (
+        <div class="kaynak-group">
+          <h3>{g.title}</h3>
+          <ul>
+            {g.links.map((li) => (
+              <li><a href={li.url} target="_blank" rel="noopener nofollow">{li.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p class="note" style="margin-top:24px">{note}</p>
+  </div>
+</section>
+
+<SozlukForm lang={lang} prefill="Sözlük — ana sayfa" />

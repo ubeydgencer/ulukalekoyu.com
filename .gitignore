@@ -18,3 +18,6 @@
 node_modules/
 dist/
 .astro/
+
+# Sözlük kaynak Excel (türetilmiş JSON src/content/sozluk/ içinde)
+*.xlsx

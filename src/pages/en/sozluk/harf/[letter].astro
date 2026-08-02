@@ -1,0 +1,16 @@
+---
+import Base from '../../../../layouts/Base.astro';
+import SozlukLetter from '../../../../components/SozlukLetter.astro';
+import { LETTERS, SOZLUK_UI } from '../../../../data/sozluk';
+export function getStaticPaths() {
+  return LETTERS.map((info) => ({ params: { letter: info.slug }, props: { info } }));
+}
+const lang = 'en' as const;
+const { info } = Astro.props;
+const t = SOZLUK_UI[lang];
+---
+<Base lang={lang} page="sozluk" subPath={`harf/${info.slug}/`}
+  title={`${t.h1} — ${info.letter} — ${t.crumb}`} description={t.letterMeta(info.letter)}
+  ogType="website" ogImage={`https://ulukalekoyu.com/og/${lang}/sozluk.png`}>
+  <SozlukLetter lang={lang} info={info} />
+</Base>

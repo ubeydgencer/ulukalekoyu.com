@@ -410,6 +410,83 @@ section { padding: 72px 0; }
 .crumbs { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 16px; }
 .crumbs a { color: var(--ink-soft); }
 
+/* ---------- Sözlük (dictionary) ---------- */
+/* A–Z harf ızgarası */
+.alpha-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 12px;
+}
+.alpha-tile {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 2px; padding: 16px 8px; background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); color: var(--ink); text-decoration: none;
+  transition: all .15s ease;
+}
+.alpha-tile:hover { border-color: var(--kerpic); background: var(--parchment-2); text-decoration: none; transform: translateY(-2px); }
+.alpha-letter { font-family: var(--display); font-size: 1.7rem; font-weight: 600; color: var(--kerpic-dark); line-height: 1; }
+.alpha-count { font-size: 0.78rem; color: var(--ink-soft); }
+.alpha-total { margin-top: 18px; color: var(--ink-soft); font-size: 0.9rem; text-align: center; }
+
+/* Harf sayfası: üstteki hızlı geçiş şeridi */
+.alpha-strip { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 30px; }
+.alpha-strip a {
+  min-width: 34px; text-align: center; padding: 6px 8px; border: 1px solid var(--line);
+  border-radius: var(--radius); color: var(--ink-soft); text-decoration: none;
+  font-family: var(--display); font-weight: 600; font-size: 0.95rem;
+}
+.alpha-strip a:hover { border-color: var(--kerpic); color: var(--kerpic-dark); text-decoration: none; }
+.alpha-strip a.active { background: var(--kerpic); border-color: var(--kerpic); color: #fff; }
+
+/* Kelime / deyim listesi */
+.soz-list { margin: 0; }
+.soz-row {
+  display: grid; grid-template-columns: minmax(180px, 1fr) 2fr; gap: 8px 28px;
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+}
+.soz-row dt { font-weight: 700; color: var(--kerpic-dark); font-size: 1.05rem; }
+.soz-row dd { margin: 0; color: var(--ink); }
+.soz-mean { display: block; }
+.soz-ex { display: block; margin-top: 4px; color: var(--ink-soft); font-style: italic; font-size: 0.95rem; }
+/* Anlamı eksik kelime: forma götüren buton */
+.soz-add {
+  display: inline-block; font-size: 0.85rem; font-weight: 600; color: var(--kerpic-dark);
+  background: var(--parchment-2); border: 1px dashed var(--kerpic); border-radius: 999px;
+  padding: 4px 12px; text-decoration: none; line-height: 1.3;
+}
+.soz-add:hover { background: var(--kerpic); color: #fff; border-style: solid; text-decoration: none; }
+
+/* Dualar / beddualar düz liste */
+.soz-plain { columns: 2; column-gap: 40px; list-style: none; padding: 0; margin: 0; }
+.soz-plain li { break-inside: avoid; padding: 7px 0; border-bottom: 1px solid var(--line); }
+
+/* Yer adları çip listesi */
+.soz-chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; padding: 0; margin: 0; }
+.soz-chips li {
+  background: var(--card); border: 1px solid var(--line); border-radius: 999px;
+  padding: 8px 16px; font-weight: 600; color: var(--kerpic-dark);
+}
+
+/* Kaynaklar */
+.kaynak-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 40px; }
+.kaynak-group h3 { font-size: 1.05rem; margin: 0 0 8px; color: var(--kerpic-dark); }
+.kaynak-group ul { list-style: none; padding: 0; margin: 0; }
+.kaynak-group li { padding: 4px 0; font-size: 0.95rem; }
+
+/* Harf sayfası alt gezinme */
+.letter-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 32px; }
+.letter-nav a { font-family: var(--display); font-weight: 600; color: var(--kerpic-dark); }
+.letter-nav-all { text-align: center; }
+
+@media (max-width: 600px) {
+  .soz-row { grid-template-columns: 1fr; gap: 4px; }
+  .soz-plain { columns: 1; }
+  .kaynak-groups { grid-template-columns: 1fr; }
+  .alpha-grid { grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); }
+}
+
+/* RTL: harf/örnek yönleri */
+[dir="rtl"] .soz-row dt, [dir="rtl"] .soz-row dd { text-align: right; }
+[dir="rtl"] .kaynak-group h3, [dir="rtl"] .kaynak-group li { text-align: right; }
+
 /* ---------- RTL (Arapça / sağdan-sola) ---------- */
 [dir="rtl"] body { font-family: "Cairo", "Noto Naskh Arabic", var(--serif); }
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4,

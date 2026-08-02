@@ -1,0 +1,39 @@
+---
+import { localePath, type Lang } from '../lib/i18n';
+import { SOZLUK_UI } from '../data/sozluk';
+interface Props { lang: Lang; prefill?: string }
+const { lang, prefill = '' } = Astro.props;
+const t = SOZLUK_UI[lang];
+const successUrl = 'https://ulukalekoyu.com' + localePath(lang, 'tesekkurler');
+---
+<section class="alt-bg" id="katki">
+  <div class="container narrow">
+    <div class="section-head"><span class="kicker">{t.formKicker}</span><h2>{t.formH}</h2><p>{t.formP}</p></div>
+    <form class="form" method="POST" action="https://api.web3forms.com/submit">
+      <input type="hidden" name="access_key" value="beb78eae-2ca6-4316-9fba-d94f3b58cba6" />
+      <input type="hidden" name="redirect" value={successUrl} />
+      <input type="hidden" name="subject" value={t.subject} />
+      {prefill && <input type="hidden" name="sayfa" value={prefill} />}
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="field"><label for="s-ad">{t.fName}</label><input type="text" id="s-ad" name="ad" /></div>
+      <div class="field"><label for="s-iletisim">{t.fContact}</label><input type="text" id="s-iletisim" name="email" /></div>
+      <div class="field"><label for="s-kelime">{t.fWord}</label><input type="text" id="s-kelime" name="kelime" placeholder={t.fWordPh} /></div>
+      <div class="field"><label for="s-mesaj">{t.fMsg}</label><textarea id="s-mesaj" name="mesaj" placeholder={t.fMsgPh} required></textarea></div>
+      <button type="submit" class="btn btn-primary">{t.submit}</button>
+      <p class="note" style="margin-top:18px">{t.formNote}</p>
+    </form>
+  </div>
+</section>
+
+<script>
+  // "Anlamını ekle" butonları: kelimeyi forma yazıp forma odaklan
+  document.addEventListener('click', (e) => {
+    const el = (e.target as HTMLElement)?.closest?.('.soz-add') as HTMLElement | null;
+    if (!el) return;
+    const word = el.getAttribute('data-word') || '';
+    const wf = document.getElementById('s-kelime') as HTMLInputElement | null;
+    const mf = document.getElementById('s-mesaj') as HTMLTextAreaElement | null;
+    if (wf) wf.value = word;
+    setTimeout(() => mf?.focus({ preventScroll: true }), 400);
+  });
+</script>

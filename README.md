@@ -16,8 +16,9 @@ Kullanım ve kurulum için **[KILAVUZ.md](KILAVUZ.md)**.
 Masaüstünde dil seçici sol kenarda dikey yüzen bir popup'tır; mobilde header'dadır.
 
 ## Sayfalar (her biri 3 dilde)
-`index` · `tarih` · `mimari` · `dut` · `arsiv` · `hafiza` · `basin` ·
-`duyurular` (blog) · `ulasim` (yol tarifi + canlı feribot saatleri) ·
+`index` · `tarih` · `mimari` · `dut` · `arsiv` · `hafiza` ·
+`sozluk` (Ulukale ağzı sözlüğü — her harf ayrı sayfa + deyimler/dualar/yer/kaynaklar + katkı formu) ·
+`basin` · `duyurular` (blog) · `ulasim` (yol tarifi + canlı feribot saatleri) ·
 `sehitlerimiz` (9 Eylül 1994 anma) · `iletisim` · `tesekkurler` · `404`
 
 ## Mimari
@@ -33,6 +34,7 @@ src/
                   gallery/*.json fotoğraflar
                   blog/*.json    duyurular
                   custom/*.json  panelden eklenen yeni sayfalar
+                  sozluk/*.json  Ulukale ağzı verisi (ULUKALE V6 .xlsx'ten üretildi)
   lib/i18n.ts   diller, yollar, menü, footer
 public/         Statik varlıklar (images, css, js, robots, llms, admin/), _redirects, _headers
 feribot-worker/ Ayrı Cloudflare Worker: Çemişgezek + Pertek feribot saatleri API'si

@@ -17,6 +17,7 @@ const PAGE_CARD: Record<string, Record<Lang, Card>> = {
   dut:       { tr: { t: 'Ulukale Dutu', d: TAGLINE.tr }, en: { t: 'Ulukale Mulberry', d: TAGLINE.en }, ar: { t: 'توت أولوكالة', d: TAGLINE.ar } },
   arsiv:     { tr: { t: 'Fotoğraf Arşivi', d: TAGLINE.tr }, en: { t: 'Photo Archive', d: TAGLINE.en }, ar: { t: 'أرشيف الصور', d: TAGLINE.ar } },
   hafiza:    { tr: { t: 'Sözlü Tarih & Hafıza', d: TAGLINE.tr }, en: { t: 'Oral History & Memory', d: TAGLINE.en }, ar: { t: 'التاريخ الشفهي والذاكرة', d: TAGLINE.ar } },
+  sozluk:    { tr: { t: 'Sözlük — Ulukale Ağzı', d: TAGLINE.tr }, en: { t: 'Dictionary — Ulukale Dialect', d: TAGLINE.en }, ar: { t: 'المعجم — لهجة أولوكالة', d: TAGLINE.ar } },
   basin:     { tr: { t: 'Basında Ulukale', d: TAGLINE.tr }, en: { t: 'Ulukale in the Press', d: TAGLINE.en }, ar: { t: 'أولوكالة في الإعلام', d: TAGLINE.ar } },
   duyurular: { tr: { t: 'Duyurular', d: TAGLINE.tr }, en: { t: 'Announcements', d: TAGLINE.en }, ar: { t: 'إعلانات', d: TAGLINE.ar } },
   ulasim:    { tr: { t: 'Ulaşım & Feribot', d: TAGLINE.tr }, en: { t: 'Getting There & Ferry', d: TAGLINE.en }, ar: { t: 'الوصول والعبّارة', d: TAGLINE.ar } },
