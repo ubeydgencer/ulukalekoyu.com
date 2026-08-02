@@ -47,6 +47,7 @@ kerpiç evler ve tarihî konaklar (sivil mimari), dut bahçeleri.
 - [Ulukale Dutu](https://ulukalekoyu.com/dut/): Coğrafi işaretli endemik dut; özellikleri, hasat, ürünler, ekonomi, köylü sözleri.
 - [Fotoğraf Arşivi](https://ulukalekoyu.com/arsiv/): Eski ve yeni fotoğraflar.
 - [Hafıza / Sözlü Tarih](https://ulukalekoyu.com/hafiza/): Anılar, hane hikâyeleri, gelenekler; katkı formu.
+- [Sözlük (Ulukale Ağzı)](https://ulukalekoyu.com/sozluk/): Ulukale köyünün yöresel ağzından derlenmiş 1341 kelime (anlamları ve örnek cümleleriyle), 75 deyim/tabir, 27 dua, 26 beddua ve yerel yer adları. Her harf ayrı sayfada (ör. /sozluk/harf/g/). Eksik/yanlış bildirimi için katkı formu içerir. Ulukale ağzı, Çemişgezek/Harput/Elazığ ve Erzurum-Erzincan ağızlarıyla karşılaştırılmıştır.
 - [Ulusal Basın](https://ulukalekoyu.com/basin/): Ulukale'nin ulusal basında yer aldığı haberlerin derlemesi (tarih, coğrafi işaretli dut, hafıza).
 - [Duyurular](https://ulukalekoyu.com/duyurular/): Köye dair güncel duyurular ve yazılar; düğün/nişan/etkinlik/vefat duyurusu gönderme formu.
 - [Ulaşım & Feribot Saatleri](https://ulukalekoyu.com/ulasim/): Köye ulaşım, konum/mesafeler ve Çemişgezek + Pertek–Elazığ feribot kalkış saatleri (otomatik güncel).

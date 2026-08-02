@@ -1,11 +1,10 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import SozlukBody from '../../../components/SozlukBody.astro';
-import { SOZLUK_UI } from '../../../data/sozluk';
+import { SOZLUK_UI, landingTitle, landingDesc, landingJsonLd } from '../../../data/sozluk';
 const lang = 'en' as const;
 const t = SOZLUK_UI[lang];
-const jsonld = JSON.stringify({'@context':'https://schema.org','@type':'CollectionPage',name:t.h1,inLanguage:lang,about:{'@type':'Place','@id':'https://ulukalekoyu.com/#place'},mainEntityOfPage:'https://ulukalekoyu.com/en/sozluk/'});
 ---
-<Base lang={lang} page="sozluk" title={t.metaTitle} description={t.metaDesc} ogType="website" jsonld={jsonld}>
+<Base lang={lang} page="sozluk" title={landingTitle(lang)} description={landingDesc(lang)} ogType="website" jsonld={landingJsonLd(lang)}>
   <SozlukBody lang={lang} />
 </Base>

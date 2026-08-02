@@ -1,4 +1,4 @@
-import type { Lang } from '../lib/i18n';
+import { localeUrl, type Lang } from '../lib/i18n';
 import sozlukData from '../content/sozluk/sozluk.json';
 import deyimlerData from '../content/sozluk/deyimler.json';
 import yerData from '../content/sozluk/yer.json';
@@ -170,3 +170,104 @@ export const SOZLUK_UI: Record<Lang, SozlukUI> = {
     botLabel: 'اتركه فارغًا:',
   },
 };
+
+// ============ SEO ============
+const SITE = 'https://ulukalekoyu.com';
+const REGION: Record<Lang, string> = {
+  tr: 'Çemişgezek (Tunceli / Dersim)',
+  en: 'Çemişgezek (Tunceli / Dersim)',
+  ar: 'تشيميشكزك (تونجلي / ديرسم)',
+};
+
+// Sözlük seti adı (DefinedTermSet.name)
+const SET_NAME: Record<Lang, string> = {
+  tr: 'Ulukale Ağzı Sözlüğü',
+  en: 'Ulukale Dialect Dictionary',
+  ar: 'معجم لهجة أولوكالة',
+};
+
+export function landingTitle(lang: Lang): string {
+  return {
+    tr: 'Ulukale Ağzı Sözlüğü — Yöresel Kelimeler ve Deyimler · Çemişgezek',
+    en: 'Ulukale Dialect Dictionary — Local Words & Idioms · Çemişgezek',
+    ar: 'معجم لهجة أولوكالة — كلمات وتعابير محلية · تشيميشكزك',
+  }[lang];
+}
+export function landingDesc(lang: Lang): string {
+  const w = TOTAL_WORDS, d = DEYIMLER.length;
+  return {
+    tr: `Ulukale (${REGION.tr}) köyünün yöresel ağzından derlenen ${w} kelime, ${d} deyim, dualar, beddualar ve yer adları — anlamları ve örnek cümleleriyle A’dan Z’ye sözlük.`,
+    en: `${w} words, ${d} idioms, blessings, curses and place names from the local dialect of Ulukale (${REGION.en}) — an A–Z dictionary with meanings and example sentences.`,
+    ar: `${w} كلمة و${d} تعبيرًا وأدعية ودعوات وأسماء أماكن من لهجة قرية أولوكالة (${REGION.ar}) — معجم من الألف إلى الياء مع المعاني وأمثلة.`,
+  }[lang];
+}
+export function letterTitle(lang: Lang, letter: string): string {
+  return {
+    tr: `${letter} harfi — Ulukale Ağzı Sözlüğü`,
+    en: `Letter ${letter} — Ulukale Dialect Dictionary`,
+    ar: `حرف ${letter} — معجم لهجة أولوكالة`,
+  }[lang];
+}
+export function letterDesc(lang: Lang, letter: string, count: number): string {
+  return {
+    tr: `${letter} harfiyle başlayan ${count} Ulukale ağzı kelimesi — anlamları ve örnek cümleleriyle. ${REGION.tr} yöresel ağzı sözlüğü.`,
+    en: `${count} Ulukale dialect words beginning with “${letter}”, with meanings and example sentences. Local dictionary of ${REGION.en}.`,
+    ar: `${count} كلمة من لهجة أولوكالة تبدأ بحرف «${letter}»، مع معانيها وأمثلة. معجم ${REGION.ar} المحلي.`,
+  }[lang];
+}
+
+const HOME_NAME: Record<Lang, string> = { tr: 'Ana Sayfa', en: 'Home', ar: 'الرئيسية' };
+const CRUMB_NAME: Record<Lang, string> = { tr: 'Sözlük', en: 'Dictionary', ar: 'المعجم' };
+const setId = (lang: Lang) => `${localeUrl(lang, 'sozluk')}#sozluk`;
+
+function crumb(lang: Lang, extra?: { name: string; url: string }) {
+  const items = [
+    { '@type': 'ListItem', position: 1, name: HOME_NAME[lang], item: localeUrl(lang, 'index') },
+    { '@type': 'ListItem', position: 2, name: CRUMB_NAME[lang], item: localeUrl(lang, 'sozluk') },
+  ];
+  if (extra) items.push({ '@type': 'ListItem', position: 3, name: extra.name, item: extra.url });
+  return { '@type': 'BreadcrumbList', itemListElement: items };
+}
+
+// Landing: DefinedTermSet + harf alt setleri + breadcrumb
+export function landingJsonLd(lang: Lang): string {
+  const url = localeUrl(lang, 'sozluk');
+  const graph = [
+    {
+      '@type': 'DefinedTermSet',
+      '@id': setId(lang),
+      name: SET_NAME[lang],
+      description: landingDesc(lang),
+      url,
+      inLanguage: lang,
+      hasPart: LETTERS.map((l) => ({
+        '@type': 'DefinedTermSet',
+        name: l.letter,
+        url: `${url}harf/${l.slug}/`,
+      })),
+    },
+    crumb(lang),
+  ];
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+}
+
+// Harf sayfası: DefinedTerm listesi (anlamı olanlar) + breadcrumb
+export function letterJsonLd(lang: Lang, info: LetterInfo): string {
+  const url = `${localeUrl(lang, 'sozluk')}harf/${info.slug}/`;
+  const words = wordsForSlug(info.slug);
+  const terms = words
+    .filter((w) => w.a && w.a.trim())
+    .map((w) => ({
+      '@type': 'DefinedTerm',
+      name: w.k,
+      description: w.a,
+      inLanguage: 'tr',
+      inDefinedTermSet: setId(lang),
+    }));
+  const graph: any[] = [
+    { '@type': 'DefinedTermSet', '@id': setId(lang), name: SET_NAME[lang], url: localeUrl(lang, 'sozluk') },
+    crumb(lang, { name: info.letter, url }),
+    ...terms,
+  ];
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph });
+}

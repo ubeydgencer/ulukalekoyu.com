@@ -1,6 +1,7 @@
 import { LOCALES, localeUrl } from '../lib/i18n';
 import { POSTS } from '../data/blog';
 import { CUSTOM, customPath } from '../data/custom';
+import { LETTERS } from '../data/sozluk';
 
 // Dinamik site haritası: sabit sayfalar + tüm duyurular (panelden eklenince otomatik girer)
 const PAGES: { key: string; freq: string; prio: number }[] = [
@@ -10,6 +11,7 @@ const PAGES: { key: string; freq: string; prio: number }[] = [
   { key: 'dut', freq: 'monthly', prio: 0.7 },
   { key: 'arsiv', freq: 'monthly', prio: 0.7 },
   { key: 'hafiza', freq: 'monthly', prio: 0.6 },
+  { key: 'sozluk', freq: 'monthly', prio: 0.8 },
   { key: 'basin', freq: 'monthly', prio: 0.6 },
   { key: 'duyurular', freq: 'weekly', prio: 0.7 },
   { key: 'ulasim', freq: 'monthly', prio: 0.6 },
@@ -43,6 +45,16 @@ export function GET() {
       const prio = lang === 'tr' ? 0.6 : 0.5;
       const alternates = LOCALES.map((l) => ({ lang: l, href: localeUrl(l, 'duyurular') + post.slug + '/' }));
       body += urlEntry(localeUrl(lang, 'duyurular') + post.slug + '/', post.date, 'monthly', prio, alternates, post.cover ? 'https://ulukalekoyu.com' + post.cover : undefined);
+    }
+  }
+
+  // Sözlük harf sayfaları (her harf × her dil)
+  for (const li of LETTERS) {
+    const sub = `harf/${li.slug}/`;
+    for (const lang of LOCALES) {
+      const prio = lang === 'tr' ? 0.6 : 0.5;
+      const alternates = LOCALES.map((l) => ({ lang: l, href: localeUrl(l, 'sozluk') + sub }));
+      body += urlEntry(localeUrl(lang, 'sozluk') + sub, today, 'monthly', prio, alternates);
     }
   }
 
