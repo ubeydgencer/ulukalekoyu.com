@@ -400,6 +400,10 @@ section { padding: 72px 0; }
 .footer li { margin-bottom: 8px; font-size: 0.95rem; }
 .footer .brand-f { font-family: var(--display); font-size: 1.4rem; color: #f4ecdd; margin-bottom: 10px; }
 .footer .desc { font-size: 0.95rem; color: #b8ac99; max-width: 360px; }
+.footer .social { margin-top: 16px; }
+.footer .social a { display: inline-flex; align-items: center; gap: 8px; color: #e8c79a; font-weight: 600; font-size: 0.95rem; }
+.footer .social a:hover { color: #f4ecdd; text-decoration: none; }
+.ico-ig { width: 22px; height: 22px; flex-shrink: 0; }
 .footer .bottom { border-top: 1px solid #463a2c; padding-top: 22px; font-size: 0.85rem; color: #9c907d; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 
 /* ---------- Page hero (iç sayfa başlığı) ---------- */
