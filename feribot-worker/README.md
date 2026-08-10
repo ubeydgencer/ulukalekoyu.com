@@ -1,13 +1,21 @@
-# Feribot Saatleri Worker (Pertek ↔ Elazığ)
+# Feribot Saatleri Worker (Çemişgezek + Pertek → Elazığ)
 
-Pertek Belediyesi'nin duyuru sayfasındaki feribot saatlerini her gece otomatik
-tarayıp **JSON API** olarak sunan bağımsız bir Cloudflare Worker. Ana siteden
-ayrıdır; kendi başına deploy edilir.
+Çemişgezek ve Pertek belediyelerinin duyuru sayfalarındaki feribot saatlerini her
+gece otomatik tarayıp **tek bir JSON API** olarak sunan bağımsız bir Cloudflare
+Worker. Ana siteden ayrıdır; kendi başına deploy edilir.
+
+Canlı adres: `https://feribot-api.ubeyd.workers.dev`
+Sitede kullanan bileşen: `src/components/FeribotBody.astro` (`/ulasim/` sayfası).
 
 ## Mimari
-- **scheduled()** — Cron ile her gece 03:00'te (TR) kaynağı tarar, `FERIBOT_KV`'ye yazar.
+- **scheduled()** — Cron ile her gece 03:00'te (TR) her iki kaynağı tarar, `FERIBOT_KV`'ye yazar.
 - **fetch()** — Frontend istek attığında KV'deki veriyi (yeniden tarama yapmadan)
   hızlıca, CORS başlıklarıyla JSON döner. KV boşsa ilk istekte bir kez tarar.
+- **Kaynaklar** (`src/index.js` → `SOURCES`):
+  - `cemisgezek` — https://www.cemisgezek.bel.tr/ (2 sütun: Çemişgezek / Elazığ)
+  - `pertek` — https://www.pertek.bel.tr/ (3 sütun: Pertek / işletme / Elazığ)
+- Bir kaynak çekilemezse (HTML yapısı değişmişse) o hat atlanır; diğeri yine döner.
+  Hiçbiri çekilemezse Worker hata döndürür, site son KV verisini göstermeye devam eder.
 
 ## Kurulum (tek seferlik)
 
@@ -18,13 +26,13 @@ cd feribot-worker
 npx wrangler kv namespace create FERIBOT_KV
 #   -> { binding = "FERIBOT_KV", id = "abc123..." }
 
-# 2) wrangler.toml içindeki BURAYA_KV_NAMESPACE_ID yerine o id'yi yapıştır
+# 2) wrangler.toml içindeki [[kv_namespaces]] id'sini o değerle güncelle
 
 # 3) Deploy et
 npx wrangler deploy
 
-# 4) (İsteğe bağlı) ilk veriyi hemen doldurmak için cron'u elle tetikle
-#    veya API'ye bir kez istek at (KV boşsa kendi tarar):
+# 4) (İsteğe bağlı) ilk veriyi hemen doldurmak için API'ye bir kez istek at
+#    (KV boşsa kendi tarar):
 #    curl https://feribot-api.<hesabın>.workers.dev
 ```
 
@@ -34,55 +42,57 @@ Deploy sonrası adres: `https://feribot-api.<hesabın>.workers.dev`
 
 ## API yanıtı
 
+Her hat `routes` dizisinde bir nesnedir:
+
 ```json
 {
-  "updatedAt": "2026-06-24T00:00:00.000Z",
-  "source": "https://www.pertek.bel.tr/...",
-  "route": "Pertek ↔ Elazığ",
-  "note": "Saatler ... otomatik derlenir; doğruluğu garanti edilmez.",
-  "pertek": ["05:30", "06:00", "..."],
-  "elazig": ["06:00", "06:30", "..."],
-  "rows": [{ "pertek": "05:30", "operator": "Belediye", "elazig": "06:00" }]
+  "updatedAt": "2026-08-01T00:00:00.000Z",
+  "note": "Saatler ilgili belediyelerin duyurularından otomatik derlenir; doğruluğu garanti edilmez. Seyahatten önce teyit ediniz.",
+  "routes": [
+    {
+      "id": "cemisgezek",
+      "side1": "Çemişgezek",
+      "side2": "Elazığ",
+      "source": "https://www.cemisgezek.bel.tr/...",
+      "hasOperator": false,
+      "rows": [{ "from": "07:00", "operator": "", "to": "07:30" }],
+      "side1Times": ["07:00", "..."],
+      "side2Times": ["07:30", "..."]
+    },
+    {
+      "id": "pertek",
+      "side1": "Pertek",
+      "side2": "Elazığ",
+      "source": "https://www.pertek.bel.tr/...",
+      "hasOperator": true,
+      "rows": [{ "from": "05:30", "operator": "Belediye", "to": "06:00" }],
+      "side1Times": ["05:30", "..."],
+      "side2Times": ["06:00", "..."]
+    }
+  ]
 }
 ```
 
-## Frontend entegrasyonu (site önyüzü)
+- `rows[].from` = `side1` kalkışı, `rows[].to` = `side2` kalkışı, `operator` yalnızca `hasOperator: true` hatlarda dolu.
+- `side1Times` / `side2Times` = "sıradaki kalkış" hesabı için düz saat listeleri.
 
-```html
-<div id="feribot"></div>
-<script>
-const WORKER_URL = "https://feribot-api.<hesabın>.workers.dev"; // <-- kendi adresin
-(async () => {
-  const el = document.getElementById("feribot");
-  try {
-    const data = await (await fetch(WORKER_URL)).json();
-    const now = new Date();
-    const cur = now.getHours() * 60 + now.getMinutes();
-    const toMin = (t) => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
-    const next = (list) => list.find((t) => toMin(t) >= cur) || list[0];
+## Frontend entegrasyonu (özet)
 
-    el.innerHTML = `
-      <p class="feribot-next">
-        <strong>Sıradaki kalkış</strong> — Pertek: <b>${next(data.pertek)}</b> ·
-        Elazığ: <b>${next(data.elazig)}</b>
-      </p>
-      <table class="feribot-tablo">
-        <thead><tr><th>Pertek'ten</th><th>İşletme</th><th>Elazığ'dan</th></tr></thead>
-        <tbody>${data.rows.map((r) => `
-          <tr><td>${r.pertek || "—"}</td><td>${r.operator || ""}</td><td>${r.elazig || "—"}</td></tr>`).join("")}
-        </tbody>
-      </table>
-      <p class="feribot-not">${data.note} Güncelleme: ${new Date(data.updatedAt).toLocaleDateString("tr-TR")}</p>`;
-  } catch (e) {
-    el.innerHTML = '<p>Feribot saatleri şu an yüklenemedi.</p>';
-  }
-})();
-</script>
+Site içinde bunu `FeribotBody.astro` yapar (her hat için ayrı tablo + "sıradaki
+kalkış"). Ham kullanım:
+
+```js
+const WORKER_URL = "https://feribot-api.<hesabın>.workers.dev";
+const data = await (await fetch(WORKER_URL)).json();
+for (const route of data.routes) {
+  console.log(`${route.side1} → ${route.side2}`);
+  for (const r of route.rows) console.log(r.from, r.operator, r.to);
+}
 ```
 
 ## Notlar / riskler
-- Kaynak 2021 tarihli bir duyuru sayfası; saatler nadiren değişir. Sayfanın HTML
-  yapısı değişirse parser güncellenmelidir (Worker `error` döndürür, site eski
-  KV verisini göstermeye devam eder).
+- Kaynaklar belediye duyuru sayfalarıdır; saatler nadiren değişir. Bir sayfanın HTML
+  yapısı değişirse yalnızca o hattın parser'ı güncellenmelidir (diğer hat çalışmaya
+  devam eder).
 - İstersen tamamen statik (panelde elle güncellenen) bir tabloya da çevrilebilir;
   bu Worker, "otomatik güncel kalsın" senaryosu içindir.

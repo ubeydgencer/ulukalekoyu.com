@@ -19,9 +19,14 @@ Cloudflare otomatik olarak yeni sürümü yayına alır (~1-2 dk).
 
 **Token nasıl alınır (bir kez):**
 1. https://github.com/settings/tokens/new?scopes=repo&description=Ulukale%20CMS
-   (ya da Fine-grained token → repo: `ulukalekoyu.com`, Contents: Read and write)
 2. Aşağı in → **Generate token** → kopyala
 3. Panelde **"Sign In Using Access Token"** → yapıştır → gir
+
+> 💡 **"Classic" token kullan** (yukarıdaki bağlantı zaten onu açar, tek kutu: `repo`).
+> "Fine-grained" token'da izinler doğru olsa bile kaydederken
+> **"Resource not accessible by personal access token"** hatası alabilirsin —
+> Sveltia bazı işlemlerde GitHub GraphQL API'sini kullanır, fine-grained token'lar
+> bunu tam desteklemez. Bu hatayı görürsen classic token'a geç.
 
 > ⚠️ Token'ı kimseyle paylaşma; sadece Sveltia ekranına yapıştır (tarayıcında saklanır).
 
@@ -39,11 +44,16 @@ Cloudflare otomatik olarak yeni sürümü yayına alır (~1-2 dk).
 
 Her değişiklikte sağ üstten **Save → Publish**. ~1-2 dakikada sitede görünür.
 
+> **Sözlük** panelde yoktur; Excel'den üretilir (bkz. **§6**).
+
 ---
 
 ## 3. Sık yapılacaklar
 
 **Yeni duyuru eklemek:** Duyurular → New → tarih, başlık/özet/içerik (3 dil), (ops.) kapak → Publish.
+- **Tür** alanı: "Genel duyuru" ya da "Vefat / Taziye". **Vefat** seçilirse duyurunun
+  altında **Bakara 156 ayeti + Türkçe meali** otomatik gösterilir. (Başlıkta "vefat/
+  taziye/memoriam" geçerse tür seçilmese de otomatik algılanır.)
 
 **Fotoğraf eklemek:** Fotoğraf Galerisi → New → galeri seç, görseli yükle, kaynak künyesi, 3 dilde başlık → Publish.
 
@@ -73,14 +83,29 @@ belediyelerinin** sayfalarından saatleri çeker. Elle bir şey yapman gerekmez.
 
 ---
 
-## 6. Formlar
+## 6. Sözlük (Ulukale ağzı)
 
-`/hafiza/` ve `/iletisim/` formları **Web3Forms** ile çalışır; gönderiler doğrudan
-**mubeyd@gmail.com**'a mail gelir, sonra `/tesekkurler/` sayfasına yönlenir.
+`/sozluk/` sayfası ve harf sayfaları (`/sozluk/harf/g/` gibi) **panelden (CMS) düzenlenmez** —
+veri `ULUKALE V6 …xlsx` dosyasından üretilip `src/content/sozluk/*.json` altına konur
+(`sozluk` = kelimeler, `deyimler` = deyim/dua/beddua, `yer` = yer adları, `kaynak` = kaynakça).
+
+- **Ziyaretçi katkısı:** her sözlük sayfasındaki form (ve anlamı boş kelimelerdeki
+  "Anlamını biliyorum → ekle" butonu) gönderileri **mubeyd@gmail.com**'a mail eder.
+- **Sözlüğü güncellemek:** gelen düzeltmeleri Excel'e işleyip yeniden JSON üretmek gerekir;
+  bu teknik bir adımdır — bana (geliştiriciye) iletmen yeterli.
+- Tamamı büyük harfle girilmiş kelimeler otomatik olarak "baş harf büyük" gösterilir.
 
 ---
 
-## 7. Geliştirici notları
+## 7. Formlar
+
+`/hafiza/`, `/iletisim/`, `/duyurular/` ve `/sozluk/` formları **Web3Forms** ile
+çalışır; gönderiler doğrudan **mubeyd@gmail.com**'a mail gelir, sonra
+`/tesekkurler/` sayfasına yönlenir.
+
+---
+
+## 8. Geliştirici notları
 
 ```bash
 npm install

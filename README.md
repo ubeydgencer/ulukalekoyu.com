@@ -14,6 +14,8 @@ Kullanım ve kurulum için **[KILAVUZ.md](KILAVUZ.md)**.
 - Arapça — `/ar/` (RTL, Cairo fontu, Arapça-Hint rakamları)
 
 Masaüstünde dil seçici sol kenarda dikey yüzen bir popup'tır; mobilde header'dadır.
+Masaüstü menüsünde **Tarih** öğesinin altında **Tarihi Yapılar** açılır alt menüde;
+mobilde ikisi ayrı satır. Footer'da Instagram bağlantısı ([@ulukala](https://www.instagram.com/ulukala/)).
 
 ## Sayfalar (her biri 3 dilde)
 `index` · `tarih` · `mimari` · `dut` · `arsiv` · `hafiza` ·
@@ -26,7 +28,7 @@ Masaüstünde dil seçici sol kenarda dikey yüzen bir popup'tır; mobilde heade
 src/
   pages/        İnce sayfa dosyaları (tr kök, en/, ar/) + dinamik [slug] (özel sayfalar)
   layouts/      Base.astro (head, SEO, hreflang, JSON-LD, GA)
-  components/   Header, Footer, *Body, Gallery, FeribotBody, CustomPageBody
+  components/   Header, Footer, *Body, Gallery, FeribotBody, CustomPageBody, Sozluk{Body,Letter,Form}
   data/         Sayfa metinleri / yükleyiciler — *.ts (JSON'ı import eder)
   content/      Panelden yönetilen içerik:
                   pages/*.json   tüm sayfa metinleri (3 dil, i18n)
@@ -68,4 +70,5 @@ Site haritası dinamik (`src/pages/sitemap.xml.ts`).
 - Enver Çakar — *Osmanlı Döneminde Ulukale Köyü* (Fırat Üniv. Harput Araştırmaları Dergisi, 2018)
 - İ.Ü. Sanat Tarihi — *Çemişgezek'in Ulukale Köyündeki Mimari Eserler*
 - Sevan Nişanyan — *Nişanyan Yeradları* (Xozan)
+- **Sözlük:** `ULUKALE V6 .xlsx` (köy derlemesi); karşılaştırma için Harput/Elazığ, Erzurum, Erzincan ve Çemişgezek ağzı sözlükleri + TDK ağız kaynakları (künye: `/sozluk/` sayfası)
 - Anadolu Ajansı, NTV, Hürriyet, Milliyet, Habertürk vd. (basın ve görsel derlemesi)
