@@ -21,3 +21,6 @@ dist/
 
 # Sözlük kaynak Excel (türetilmiş JSON src/content/sozluk/ içinde)
 *.xlsx
+
+# Kök dizindeki kaynak/derleme görselleri (siteye giren görseller public/images/ altında)
+/ulukale*.jpeg
