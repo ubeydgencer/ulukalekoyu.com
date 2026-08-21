@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import CookieBar from '../components/CookieBar.astro';
 import { LOCALES, DIR, HTML_LANG, OG_LOCALE, localeUrl, localePath, type Lang } from '../lib/i18n';
 import { ogCardUrl } from '../lib/og-cards';
 
@@ -105,5 +106,6 @@ const fontHref = lang === 'ar'
 <Header lang={lang} page={page} />
 <slot />
 <Footer lang={lang} />
+<CookieBar lang={lang} />
 </body>
 </html>

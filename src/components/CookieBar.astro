@@ -1,0 +1,39 @@
+---
+import type { Lang } from '../lib/i18n';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const T: Record<Lang, { text: string; accept: string; policy: string; aria: string }> = {
+  tr: {
+    text: 'Bu sitede deneyiminizi iyileştirmek ve ziyaret istatistiklerini anonim olarak ölçmek için çerezler kullanıyoruz.',
+    accept: 'Kabul Et', policy: 'Çerez Politikası', aria: 'Çerez bildirimi',
+  },
+  en: {
+    text: 'We use cookies to improve your experience and measure visits anonymously.',
+    accept: 'Accept', policy: 'Cookie Policy', aria: 'Cookie notice',
+  },
+  ar: {
+    text: 'نستخدم ملفات تعريف الارتباط لتحسين تجربتك وقياس الزيارات بشكل مجهول الهوية.',
+    accept: 'موافق', policy: 'سياسة ملفات تعريف الارتباط', aria: 'إشعار ملفات تعريف الارتباط',
+  },
+};
+const t = T[lang];
+const policyHref = lang === 'tr' ? '/gizlilik/' : `/${lang}/gizlilik/`;
+---
+<div class="cookiebar" id="cookiebar" role="dialog" aria-label={t.aria} aria-live="polite">
+  <p class="cb-text">{t.text} <a href={policyHref}>{t.policy}</a></p>
+  <button type="button" class="cb-accept" id="cb-accept">{t.accept}</button>
+</div>
+<script is:inline>
+  (function () {
+    var KEY = 'cerez-onay';
+    try { if (localStorage.getItem(KEY) === '1') return; } catch (e) {}
+    var bar = document.getElementById('cookiebar');
+    if (!bar) return;
+    bar.classList.add('show');
+    var btn = document.getElementById('cb-accept');
+    if (btn) btn.addEventListener('click', function () {
+      try { localStorage.setItem(KEY, '1'); } catch (e) {}
+      bar.classList.remove('show');
+    });
+  })();
+</script>
