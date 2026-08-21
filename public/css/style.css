@@ -557,6 +557,14 @@ section { padding: 72px 0; }
   /* Tüm sayfada tutarlı kenar boşluğu */
   .container { padding: 0 20px; }
 
+  /* Header dar ekranda sığsın: dekoratif alt yazı gizli, boşluklar sıkı */
+  .topbar .container { gap: 8px; }
+  .brand .sub { display: none; }
+  .brand .mark { font-size: 1.25rem; }
+  .lang-head { gap: 0; }
+  .lang-head a { padding: 6px 7px; }
+  .nav-toggle { margin-left: 4px; padding: 8px; }
+
   /* Tek sütun yerleşim */
   .grid-3, .grid-2, .gallery { grid-template-columns: 1fr; }
   .stats { grid-template-columns: 1fr 1fr; gap: 20px 12px; }
